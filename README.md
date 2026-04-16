@@ -3,3 +3,7 @@
 ```
 (⌐■_■)
 ```
+
+# Quellen
+## Bildquellen
+- https://lucide.dev/ (Icons)
