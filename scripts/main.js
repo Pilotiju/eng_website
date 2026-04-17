@@ -18,6 +18,8 @@ const initFuncs = {
 };
 
 const loaderEl = document.getElementById('loader');
+loaderEl.setAttribute("hidden", true);
+
 window.addEventListener('pageshow', resetLoadingElement);
 function resetLoadingElement(){
     loaderEl.setAttribute("hidden", true);
@@ -40,7 +42,7 @@ let preventPost = 0;
 function openPost(){
     if (preventPost === 0){
         const postLink = this.getAttribute('data-href');
-        loaderEl.removeAttribute("hidden");
+        loaderEl.setAttribute("hidden", false);
         preventPost = 0;
         window.location.href = postLink;
     }
