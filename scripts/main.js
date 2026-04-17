@@ -21,6 +21,7 @@ const loaderEl = document.getElementById('loader');
 window.addEventListener('pageshow', resetLoadingElement);
 function resetLoadingElement(){
     loaderEl.setAttribute("hidden", true);
+    console.log('hide');
 }
 
 const posts = document.querySelectorAll('.js_post');
