@@ -41,7 +41,7 @@ let preventPost = 0;
 function openPost(){
     if (preventPost === 0){
         const postLink = this.getAttribute('data-href');
-        loaderEl.setAttribute("hidden", false);
+        loaderEl.removeAttribute("hidden");
         console.log('unHide');
         preventPost = 0;
         window.location.href = postLink;
