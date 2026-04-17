@@ -18,10 +18,10 @@ const initFuncs = {
 };
 
 const loaderEl = document.getElementById('loader');
-loaderEl.setAttribute("hidden", true);
-
 window.addEventListener('pageshow', resetLoadingElement);
 function resetLoadingElement(){
+    
+    const loaderEl = document.getElementById('loader');
     loaderEl.setAttribute("hidden", true);
     console.log('hide');
 }
