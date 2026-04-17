@@ -7,9 +7,22 @@ body{
     background-color: rgb(110, 110, 110);
 }
 :root{
-    --feed-posts-card-bg: rgb(88, 57, 57);
+    /* Feed */
+    --feed-posts-card-bg: rgb(236, 236, 236);
+    --feed-posts-card-bg-hover: rgb(209, 209, 209);
 
-    /* Flair */
+    /* Post Actions */
+    --post-action-bg: rgb(182, 182, 182);
+    --post-action-bg-hover: rgb(199, 199, 199);
+
+    --post-action-upvote: rgb(252, 44, 17);
+    --post-action-downvote: rgb(106, 92, 255);
+
+    /* NavBar */
+    --main-navbar-bg: rgb(247, 152, 45);
+    --main-navbar-border-bottom: rgb(43, 43, 43);
+
+    /* Flairs */
     --flair-vent-color: rgb(255, 63, 29);
     --flair-meme-color: rgb(79, 224, 106);
 }
@@ -21,15 +34,53 @@ body{
 }
 
 /** =================== NavBar =================== **/
-.index_navbar{
+.main_navbar{
     display: grid;
     position: relative;
-    grid-template-columns: max-content 1fr max-content;
+    grid-template-columns: max-content 1fr 65px;
     grid-template-rows: 100%;
     width: 100%;
     height: 65px;
-    border-bottom: 3px black solid;
-    background-color: red;
+    border-bottom: 3px var(--main-navbar-border-bottom) solid;
+    background-color: var(--main-navbar-bg);
+}
+.main_navbar__item{
+    padding: 10px;
+}
+.main_navbar__account_image{
+    width: 100%;
+}
+
+/** =================== Loader =================== **/
+#loader{
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    background-color: white;
+    border-radius: 10px;
+}
+#loader[hidden]{
+    display: none;
+}
+#loader img{
+    width: 60%;
+    animation: loaderAnim 0.2s ease-in-out infinite;
+}
+
+@keyframes loaderAnim {
+    0%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 360deg;
+    }
 }
 
 /** ==================== Index ==================== **/
@@ -47,12 +98,13 @@ main.index_main{
 .post{
     display: block;
     position: relative;
-    background-color: wheat;
+    background-color: var(--feed-posts-card-bg);
     margin: 25px 0px;
     padding: 15px 15px 8px 15px;
     border-radius: 12px;
 }
 .post:hover{
+    filter: brightness(0.9);
     cursor: pointer;
 }
 .post__item{
@@ -164,9 +216,8 @@ main.index_main{
 .post__actions{
     display: grid;
     position: relative;
-    grid-template-columns: max-content max-content max-content 1fr max-content;
+    grid-template-columns: max-content max-content 1fr max-content;
     gap: 10px;
-    align-items: center;
     grid-template-rows: 100%;
     margin-top: 10px;
     width: 100%;
@@ -175,31 +226,59 @@ main.index_main{
 .post__actions_btn{
     display: flex;
     justify-content: center;
-    height: 36px;
-    min-width: 36px;
-    padding-left: 10px;
-    padding-right: 11px;
     align-items: center;
-    background-color: gray;
+    height: 36;
+    min-width: 36px;
+    padding-left: 8px;
+    padding-right: 11px;
+    background-color: var(--post-action-bg);
     border-radius: 100px;
+}
+.post__actions_btn:not(.post__upvote_btn--voted){
+    background-color: var(--post-action-bg-hover);
 }
 .post__action_btn_icon{
     user-select: none;
-    width: 22px;
+    width: 25px;
+    transition:
+    transform 0.1s,
+    scale 0.2s;
+}
+
+.post__vote_btns_wrapper{
+    display: flex;
+    position: relative;
+    height: 100%;
+    gap: 10px;
+    justify-content: center;
 }
 .post__votes_count{
-    margin-left: 8px;
-}
-.post__upvote_btn{
-
+    margin-left: 6px;
 }
 .post__upvote_btn:hover{
-
+    outline: var(--post-action-upvote) 2px solid;
+}
+.post__upvote_btn:hover .post__action_btn_icon{
+    transform: translate(0px, -3px);
+    scale: 1.1;
+}
+.post__downvote_btn:hover{
+    outline: var(--post-action-downvote) 2px solid;
+}
+.post__downvote_btn:hover .post__action_btn_icon{
+    transform: translate(0px, -3px);
+    scale: 1.1;
 }
 
+.post__upvote_btn--upvoted{
+    background-color: var(--post-action-upvote) !important;
+}
+.post__downvote_btn--downvoted{
+    background-color: var(--post-action-downvote) !important;
+}
 
 .post__comments_count{
-    margin-left: 8px;
+    margin-left: 5px;
 }
 
 .post__share_btn{
@@ -209,6 +288,7 @@ main.index_main{
     height: 100%;
 }
 .post__share_text{
+    margin-left: 4px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
