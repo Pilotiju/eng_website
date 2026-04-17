@@ -17,14 +17,6 @@ const initFuncs = {
     }
 };
 
-const loaderEl = document.getElementById('loader');
-window.addEventListener('pageshow', resetLoadingElement);
-function resetLoadingElement(){
-    const loaderEl = document.getElementById('loader');
-    loaderEl.setAttribute("hidden", true);
-    console.log('hide');
-}
-
 const posts = document.querySelectorAll('.js_post');
 posts.forEach(initFuncs.initPost);
 const postActions = document.querySelectorAll('.js_post__actions_btn');
@@ -41,8 +33,6 @@ let preventPost = 0;
 function openPost(){
     if (preventPost === 0){
         const postLink = this.getAttribute('data-href');
-        loaderEl.removeAttribute("hidden");
-        console.log('unHide');
         preventPost = 0;
         window.location.href = postLink;
     }
