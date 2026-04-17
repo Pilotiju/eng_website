@@ -18,6 +18,10 @@ const initFuncs = {
 };
 
 const loaderEl = document.getElementById('loader');
+window.addEventListener('pageshow', resetLoadingElement);
+function resetLoadingElement(){
+    loaderEl.setAttribute("hidden", true);
+}
 
 const posts = document.querySelectorAll('.js_post');
 posts.forEach(initFuncs.initPost);
