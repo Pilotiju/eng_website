@@ -15,8 +15,10 @@ body{
     --post-action-bg: rgb(182, 182, 182);
     --post-action-bg-hover: rgb(199, 199, 199);
 
-    --post-action-upvote: rgb(252, 44, 17);
-    --post-action-downvote: rgb(106, 92, 255);
+    --post-action-upvote-outline: rgb(252, 44, 17);
+    --post-action-downvote-outline: rgb(106, 92, 255);
+    --post-action-upvote-bg: linear;
+    --post-action-downvote-bg: linear;
 
     /* NavBar */
     --main-navbar-bg: rgb(247, 152, 45);
@@ -224,14 +226,14 @@ main.index_main{
     margin-left: 6px;
 }
 .post__upvote_btn:hover{
-    outline: var(--post-action-upvote) 2px solid;
+    outline: var(--post-action-upvote-outline) 2px solid;
 }
 .post__upvote_btn:hover .post__action_btn_icon{
     transform: translate(0px, -3px);
     scale: 1.1;
 }
 .post__downvote_btn:hover{
-    outline: var(--post-action-downvote) 2px solid;
+    outline: var(--post-action-downvote-outline) 2px solid;
 }
 .post__downvote_btn:hover .post__action_btn_icon{
     transform: translate(0px, -3px);
@@ -239,10 +241,11 @@ main.index_main{
 }
 
 .post__upvote_btn--upvoted{
-    background-color: var(--post-action-upvote) !important;
+    /* background-color: var(--post-action-upvote) !important; */
+    background: linear-gradient(to top, var(--post-action-upvote-outline), rgb(255, 81, 0));
 }
 .post__downvote_btn--downvoted{
-    background-color: var(--post-action-downvote) !important;
+    background: linear-gradient(to top, var(--post-action-downvote-outline), rgb(92, 130, 255));
 }
 
 .post__comments_count{
