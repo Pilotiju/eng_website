@@ -36,7 +36,7 @@ function renderPosts(){
                 <div class="post__date">${date}</div>
               </div>
 
-            <div class="post__content--max_height post__item">
+            <div class="post__content post__item">
               <h1 class="post__heading">
                 ${title}
                 <div class="post__flair_wrapper">
@@ -45,9 +45,7 @@ function renderPosts(){
                   </div>
                 </div>
               </h1>
-              <p class="post__text normal_fs">
                 ${content}
-              </p>
             </div>
 
             <div class="post__actions post__item">

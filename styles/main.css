@@ -144,9 +144,6 @@ main.index_main{
     align-items: center;
 }
 /* Post Content */
-.post__content--max_height{
-    max-height: 340px;
-}
 .post__heading{
     font-size: 1.7rem;
     margin-bottom: 12px;
