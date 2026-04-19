@@ -2,6 +2,7 @@ const posts = [
     {
         title: "Lorem dolor",
         author: "Unknown John",
+        avatar: "hat-glasses.svg",
         date: "02.05.2023",
         content: `
         <p class="post__text normal_fs">   
@@ -9,7 +10,7 @@ const posts = [
         </p>
         `,
         flair: "vent",
-        postLink: "",
+        postLink: "temp1-post.html",
         upvotesNum: 7,
         downvotesNum: 84,
         commentsNum: 132,
@@ -17,6 +18,7 @@ const posts = [
     {
         title: "sit amet consectetur:",
         author: "John Unknown",
+        avatar: "hat-glasses.svg",
         date: "03.04.2010",
         content: `
         <div class="post__image_wrapper">
@@ -25,7 +27,7 @@ const posts = [
         </div>
         `,
         flair: "meme",
-        postLink: "",
+        postLink: "temp2-post.html",
         upvotesNum: 924,
         downvotesNum: 13,
         commentsNum: 84,

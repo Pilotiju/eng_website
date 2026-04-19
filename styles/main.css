@@ -15,10 +15,8 @@ body{
     --post-action-bg: rgb(182, 182, 182);
     --post-action-bg-hover: rgb(199, 199, 199);
 
-    --post-action-upvote-outline: rgb(252, 44, 17);
-    --post-action-downvote-outline: rgb(106, 92, 255);
-    --post-action-upvote-bg: linear;
-    --post-action-downvote-bg: linear;
+    --post-action-upvote-bg: linear-gradient(to top, rgb(252, 44, 17), rgb(255, 81, 0));
+    --post-action-downvote-bg: linear-gradient(to top, rgb(106, 92, 255), rgb(92, 130, 255));
 
     /* NavBar */
     --main-navbar-bg: rgb(247, 152, 45);
@@ -194,6 +192,7 @@ main.index_main{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     height: 36;
     min-width: 36px;
     padding-left: 8px;
@@ -204,12 +203,21 @@ main.index_main{
 .post__actions_btn:not(.post__upvote_btn--voted){
     background-color: var(--post-action-bg-hover);
 }
-.post__action_btn_icon{
+.post__actions_vote_btn .post__action_btn_icon{
     user-select: none;
     width: 25px;
     transition:
     transform 0.1s,
     scale 0.2s;
+}
+.post__actions_other_btn .post__action_btn_icon{
+    user-select: none;
+    width: 25px;
+    transition:
+    scale 0.07s;
+}
+.post__actions_other_btn:hover .post__action_btn_icon{
+    scale: 1.1;
 }
 
 .post__vote_btns_wrapper{
@@ -222,27 +230,38 @@ main.index_main{
 .post__votes_count{
     margin-left: 6px;
 }
-.post__upvote_btn:hover{
-    outline: var(--post-action-upvote-outline) 2px solid;
+.post__upvote_btn:hover::after{
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border-radius: 100px;
+    background: var(--post-action-upvote-bg);
+    z-index: -1;
 }
-.post__upvote_btn:hover .post__action_btn_icon{
-    transform: translate(0px, -3px);
-    scale: 1.1;
+.post__downvote_btn:hover::after{
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border-radius: 100px;
+    background: var(--post-action-downvote-bg);
+    z-index: -1;
 }
-.post__downvote_btn:hover{
-    outline: var(--post-action-downvote-outline) 2px solid;
-}
-.post__downvote_btn:hover .post__action_btn_icon{
+.post__actions_vote_btn:hover .post__action_btn_icon{
     transform: translate(0px, -3px);
     scale: 1.1;
 }
 
 .post__upvote_btn--upvoted{
-    /* background-color: var(--post-action-upvote) !important; */
-    background: linear-gradient(to top, var(--post-action-upvote-outline), rgb(255, 81, 0));
+    background: var(--post-action-upvote-bg);
 }
 .post__downvote_btn--downvoted{
-    background: linear-gradient(to top, var(--post-action-downvote-outline), rgb(92, 130, 255));
+    background: var(--post-action-downvote-bg);
 }
 
 .post__comments_count{
