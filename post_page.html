@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="styles/main.css">
   <link rel="preload" as="image" href="img/system/heart-voted.svg">
   <link rel="preload" as="image" href="img/system/heart-crack-voted.svg">
-  <title>English</title>
+  <title>Posts</title>
 </head>
 <body>
 <nav class="main_navbar">
@@ -19,21 +19,21 @@
   </div>
 </nav>
 
-<main class="index_main">
-  <div class="index_main_item_column"></div>
-  <div class="index_main_item_column post_feed"> <!-- JS injects here --> </div>
-  <div class="index_main_item_column"></div>
+<main class="posts_main">
+  <div class="posts_main_item_column"></div>
+  <div class="posts_main_item_column post_page">
+    <div class="js_posts_wrapper">
+      
+    </div>
+
+    
+  </div>
+  <div class="posts_main_item_column"></div>
 </main>
 
 <script src="scripts/init.js"></script>
 <script src="scripts/data/posts.js"></script>
-<script src="scripts/feed.js"></script>
 <script src="scripts/post_actions.js"></script>
-<!-- <script>
-  let string = posts[0].content;
-  let result = string.replace(/<(.*?)>/g, "");
-  result = result.replace("            ", "");
-  console.log(result);
-</script> -->
+<script src="scripts/post_page.js"></script>
 </body>
 </html>
