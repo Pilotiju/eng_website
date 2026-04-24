@@ -259,6 +259,9 @@ main.posts_main{
 .post__votes_count{
     margin-left: 6px;
 }
+.post__actions_btn:hover{
+    cursor: pointer;
+}
 .post__upvote_btn:hover::after{
     content: '';
     position: absolute;

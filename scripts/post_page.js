@@ -4,7 +4,8 @@
 // ======================================================
 function renderPosts(){
     let postsHTML = '';
-        const postIndex = localStorage.getItem('postIndex');
+        const postIndex = JSON.parse(localStorage.getItem('postIndex'));
+        console.log(postIndex);
         const postObject = posts[postIndex];
         const {title, author, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink, avatar} = postObject;
         const html = /*html*/`
@@ -28,6 +29,7 @@ function renderPosts(){
                 </div>
               </h1>
               ${content}
+            </div>
 
               <div class="post__actions post__item">
                 <div class="post__vote_btns_wrapper">

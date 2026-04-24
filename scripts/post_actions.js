@@ -75,6 +75,7 @@ function addVoteBtnUI(thisVoteBtn, otherVoteBtn){
     const thisVoteBtnImg =  thisVoteBtn.querySelector('.js_post__action_btn_icon');
     const thisVoteBtnCount =  thisVoteBtn.querySelector('.js_post__votes_count');
     const postIndex = thisVoteBtn.parentElement.parentElement.parentElement.getAttribute('data-post-index');
+    console.log(postIndex);
     if (thisVoteBtn.classList.contains('js_upvote_btn')){
         // Update Counter
         posts[postIndex].upvotesNum++;
