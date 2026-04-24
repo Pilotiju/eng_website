@@ -1,12 +1,12 @@
 function checkURLsearchParams(){
     let postIndex = '';
     const urlParams = new URLSearchParams(document.location.search);
-    if (urlParams.has('postIndex')){
-        postIndex = urlParams.get('postIndex');
+    if (urlParams.has('data-post-index')){
+        postIndex = urlParams.get('data-post-index');
         console.log(urlParams);
         console.log('urlParam');
     } else{
-        postIndex = JSON.parse(localStorage.getItem('postIndex'));
+        postIndex = JSON.parse(localStorage.getItem('data-post-index'));
         console.log('localStorage');
     }
     return postIndex;
