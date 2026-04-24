@@ -27,7 +27,7 @@ function renderPosts(){
         const {title, author, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink, avatar} = postObject;
         const postIndex = i;
         const html = /*html*/`
-            <div data-href="${postLink}" data-post-index="${postIndex}" class="post js_post">
+            <div data-href="${postLink}" data-post-index="${postIndex}" class="feed_post js_feed_post">
               <div class="post__meta post__item">
                 <div class="post__user_wrapper">
                   <img src="img/avatars/${avatar}" alt="Avatar" class="post__avatar">
@@ -38,7 +38,7 @@ function renderPosts(){
               </div>
 
             <div class="post__content post__item">
-              <h1 class="post__heading">
+              <h1 class="feed_post__heading">
                 ${title}
                 <div class="post__flair_wrapper">
                   <div class="post__flair flair__${flair}">
@@ -81,7 +81,7 @@ function renderPosts(){
 
 renderPosts();
 
-const postsEl = document.querySelectorAll('.js_post');
+const postsEl = document.querySelectorAll('.js_feed_post');
 postsEl.forEach(initFuncs.initPost);
 const postActions = document.querySelectorAll('.js_post__actions_btn');
 postActions.forEach(initFuncs.initPostActions);

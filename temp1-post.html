@@ -21,11 +21,58 @@
 
 <main class="posts_main">
   <div class="posts_main_item_column"></div>
-  <div class="posts_main_item_column post_page"> <!-- JS injects here --> </div>
+  <div class="posts_main_item_column post_page">
+
+    <div data-href="${postLink}" data-post-index="${postIndex}" class="posts js_posts">
+              <div class="post__meta post__item">
+                <div class="post__user_wrapper">
+                  <img src="img/avatars/${avatar}" alt="Avatar" class="post__avatar">
+                  <div class="post_username">${author}</div>
+                </div>
+                <div class="whitespace"></div>
+                <div class="post__date">${date}</div>
+              </div>
+
+            <div class="post__content post__item">
+              <h1 class="post__heading">
+                ${title}
+                <div class="post__flair_wrapper">
+                  <div class="post__flair flair__${flair}">
+                    ${flair}
+                  </div>
+                </div>
+              </h1>
+              <p class="post__text normal_fs"> 
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio earum libero illo quidem nemo iste repellendus laudantium accusantium voluptas ratione, est voluptates consectetur fugit quae explicabo voluptatum debitis voluptatem rem? Excepturi, aliquam ea recusandae repellat aut delectus minima quidem veniam a sapiente totam reprehenderit, eos unde maiores facere omnis nesciunt aspernatur? Doloremque maiores libero, ipsam, delectus officiis consequatur beatae quisquam, nobis natus rem vero. Ipsa voluptas odio tenetur ratione magnam doloribus repellendus inventore in, earum reprehenderit eligendi recusandae culpa architecto ab magni, minima dolores distinctio et quam corrupti cupiditate. Ex, ut odio necessitatibus sequi eaque, omnis provident voluptatem quos doloremque eos deleniti excepturi nostrum maxime fugit molestias deserunt, repellat exercitationem? Officiis similique cumque beatae. Inventore ut quos fuga alias eos quas sapiente molestiae, animi eligendi repudiandae laudantium perferendis temporibus, doloremque corporis beatae dolorem, veritatis eaque aut? Voluptatem, ratione. Beatae repellendus praesentium architecto explicabo, aperiam quibusdam sit qui fuga quae fugit eius placeat iste eveniet odio nobis officiis voluptatibus nihil dolorem tempora laboriosam officia porro. Temporibus impedit ipsam fugiat totam. Dolorem qui impedit labore, tempore nesciunt iusto? Laudantium et ullam quas nesciunt incidunt, laborum explicabo ex magni nisi cumque optio! Saepe sint dicta consequatur similique unde fugiat dignissimos dolores maxime error.
+              </p>
+
+              <div class="post__actions post__item">
+                <div class="post__vote_btns_wrapper">
+                  <button class="js_upvote_btn post__upvote_btn post__actions_btn js_post__actions_btn post__actions_vote_btn">
+                    <img class="js_post__action_btn_icon post__action_btn_icon" src="img/system/heart.svg" alt="Upvote">
+                    <span class="js_upvotes_count js_post__votes_count post__votes_count">${upvotesNum}</span>
+                  </button>
+                  <button class="js_downvote_btn post__downvote_btn post__actions_btn js_post__actions_btn post__actions_vote_btn">
+                    <img class="js_post__action_btn_icon post__action_btn_icon" src="img/system/heart-crack.svg" alt="Downvote">
+                    <span class="js_downvotes_count js_post__votes_count post__votes_count">${downvotesNum}</span>
+                  </button>
+                </div>
+                <button class="post__comments post__actions_btn js_post__actions_btn post__actions_other_btn">
+                  <img class="js_post__action_btn_icon post__action_btn_icon" src="img/system/comments.svg" alt="Comments">
+                  <span class="js_comments_count post__comments_count">${commentsNum}</span>
+                </button>
+                <div class="whitespace"></div>
+                <button class="js_share_btn post__share_btn post__actions_btn js_post__actions_btn post__actions_other_btn">
+                    <div class="post__share_text">Share</div>
+                    <img class="js_post__action_btn_icon post__action_btn_icon" src="img/system/share.svg" alt="Share">
+                </button>
+            </div>
+            </div>
+  </div>
   <div class="posts_main_item_column"></div>
 </main>
 
-<script src="scripts/data/posts.js"></script>
-<script src="scripts/main.js"></script>
+<!-- <script src="scripts/data/posts.js"></script>
+<script src="scripts/main.js"></script> -->
 </body>
 </html>

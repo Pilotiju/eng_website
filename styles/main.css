@@ -63,7 +63,7 @@ main.index_main{
     outline: red 2px solid;
 }
 
-.post{
+.feed_post{
     display: block;
     position: relative;
     background-color: var(--feed-posts-card-bg);
@@ -71,7 +71,7 @@ main.index_main{
     padding: 15px 15px 8px 15px;
     border-radius: 12px;
 }
-.post:hover{
+.feed_post:hover{
     filter: brightness(0.9);
     cursor: pointer;
 }
@@ -79,6 +79,70 @@ main.index_main{
     position: relative;
     width: 100%;
 }
+/* Index Post Content */
+.feed_post__heading{
+    font-size: 1.7rem;
+    margin-bottom: 12px;
+}
+.feed_post__text{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.feed_post__image_wrapper{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.feed_post__image{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    max-height: 450px;
+    max-width: 100%;
+    z-index: 1;
+}
+.feed_post__image__bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(25px) brightness(0.35);
+    scale: 1.2;
+    z-index: 0;
+}
+
+/** ==================== Post Page ==================== **/
+main.posts_main{
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1fr;
+    grid-template-rows: 100%;
+    min-height: 100vh;
+    width: 100%;
+}
+.posts{
+    display: block;
+    position: relative;
+    background-color: var(--feed-posts-card-bg);
+    margin: 25px 0px;
+    padding: 15px 15px 8px 15px;
+    border-radius: 12px;
+}
+.post__heading{
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+.post__text{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+
 /* ? -------------------- Flairs -------------------- */
 .post__flair_wrapper{
     display: flex;
@@ -140,42 +204,6 @@ main.index_main{
 .post__date{
     display: flex;
     align-items: center;
-}
-/* Post Content */
-.post__heading{
-    font-size: 1.7rem;
-    margin-bottom: 12px;
-}
-.post__text{
-    margin-top: 0;
-    margin-bottom: 0;
-}
-.post__image_wrapper{
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-color: black;
-    overflow: hidden;
-    border-radius: 15px;
-}
-.post__image{
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
-    max-height: 450px;
-    max-width: 100%;
-    z-index: 1;
-}
-.post__image__bg{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: blur(25px) brightness(0.35);
-    scale: 1.2;
-    z-index: 0;
 }
 /* Post Actions */
 .post__actions{

@@ -5,7 +5,7 @@ const posts = [
         avatar: "hat-glasses.svg",
         date: "02.05.2023",
         content: `
-        <p class="post__text normal_fs">   
+        <p class="feed_post__text normal_fs"> 
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt quas atque natus dolorem consequatur suscipit distinctio. Repellat nostrum alias odit delectus saepe minima fuga odio temporibus facilis? Nostrum, culpa velit.
         </p>
         `,
@@ -21,9 +21,9 @@ const posts = [
         avatar: "hat-glasses.svg",
         date: "03.04.2010",
         content: `
-        <div class="post__image_wrapper">
-          <img src="img/posts/temps/shock-shocker.gif" alt="Post BG Image" class="post__image__bg">
-          <img src="img/posts/temps/shock-shocker.gif" alt="Post Image" class="post__image">
+        <div class="feed_post__image_wrapper">
+          <img src="img/posts/temps/shock-shocker.gif" alt="Post BG Image" class="feed_post__image__bg">
+          <img src="img/posts/temps/shock-shocker.gif" alt="Post Image" class="feed_post__image">
         </div>
         `,
         flair: "meme",
