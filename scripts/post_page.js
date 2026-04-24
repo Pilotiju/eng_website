@@ -1,10 +1,10 @@
-const urlParams = URLSearchParams(document.location.search);
-console.log(urlParams.get("postIndex"));
+// const urlParams = new URLSearchParams(document.location.search);
+// console.log(urlParams.get("postIndex"));
 
 // =====================================================
 function renderPosts(){
     let postsHTML = '';
-        const postObject = posts[i];
+        const postObject = posts[localStorage.getItem('postIndex')];
         const {title, author, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink, avatar} = postObject;
         const postIndex = i;
         const html = /*html*/`

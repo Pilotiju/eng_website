@@ -58,7 +58,7 @@ function renderPosts(){
 
     document.querySelector('.post_feed').innerHTML = postsHTML;
 }
-// ====================================================
+// =====================================================
 renderPosts();
 
 const postsEl = document.querySelectorAll('.js_feed_post');
@@ -68,6 +68,7 @@ function openPost(){
     if (preventPost === 0){
         const postIndex = this.getAttribute('data-post-index');
         preventPost = 0;
-        window.location.href = `https://pilotiju.github.io/eng_website/post_page.html?post-index=${postIndex}`;
+        localStorage.setItem('postIndex' ,JSON.stringify(postIndex));
+        window.location.href = `https://pilotiju.github.io/eng_website/post_page.html`;
     }
 }
