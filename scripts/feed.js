@@ -58,7 +58,7 @@ function renderPosts(){
 
     document.querySelector('.post_feed').innerHTML = postsHTML;
 }
-// =====================================================
+// ====================================================
 renderPosts();
 
 const postsEl = document.querySelectorAll('.js_feed_post');
