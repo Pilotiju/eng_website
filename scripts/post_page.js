@@ -1,4 +1,4 @@
-function checkURLsearchParams(){
+function checkURLSearchParams(){
     let postIndex = '';
     const urlParams = new URLSearchParams(document.location.search);
     if (urlParams.has('data-post-index')){
