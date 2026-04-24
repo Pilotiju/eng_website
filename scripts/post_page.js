@@ -4,7 +4,7 @@
 // =====================================================
 function renderPosts(){
     let postsHTML = '';
-        const postIndex = localStorage.getItem('postIndex')
+        const postIndex = localStorage.getItem('postIndex');
         const postObject = posts[postIndex];
         const {title, author, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink, avatar} = postObject;
         const html = /*html*/`
