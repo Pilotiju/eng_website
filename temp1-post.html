@@ -4,9 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="styles/main.css">
-  <title>English</title>
+  <link rel="preload" as="image" href="img/system/heart-voted.svg">
+  <link rel="preload" as="image" href="img/system/heart-crack-voted.svg">
+  <title>Posts</title>
 </head>
 <body>
+<nav class="main_navbar">
+  <div class="main_navbar__item ">
+    Logo
+  </div>
+  <div class="whitespace"></div>
+  <div class="main_navbar__item js_main_navbar__account">
+    <img src="img/system/circle-user-round.svg" alt="Account Image" class="main_navbar__account_image">
+  </div>
+</nav>
 
+<main class="posts_main">
+  <div class="posts_main_item_column"></div>
+  <div class="posts_main_item_column post_page"> <!-- JS injects here --> </div>
+  <div class="posts_main_item_column"></div>
+</main>
+
+<script src="scripts/data/posts.js"></script>
+<script src="scripts/main.js"></script>
 </body>
 </html>
