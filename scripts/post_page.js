@@ -7,7 +7,6 @@ function renderPosts(){
         const postIndex = localStorage.getItem('postIndex')
         const postObject = posts[postIndex];
         const {title, author, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink, avatar} = postObject;
-        const postIndex = i;
         const html = /*html*/`
             <div data-href="${postLink}" data-post-index="${postIndex}" class="posts js_posts">
               <div class="post__meta post__item">
