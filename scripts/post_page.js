@@ -1,7 +1,7 @@
 // const urlParams = new URLSearchParams(document.location.search);
 // console.log(urlParams.get("postIndex"));
 
-// =====================================================
+// ======================================================
 function renderPosts(){
     let postsHTML = '';
         const postIndex = localStorage.getItem('postIndex');
