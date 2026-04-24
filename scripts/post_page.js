@@ -3,11 +3,10 @@ function checkURLsearchParams(){
     const urlParams = new URLSearchParams(document.location.search);
     if (urlParams.has('data-post-index')){
         postIndex = urlParams.get('data-post-index');
-        console.log(urlParams);
-        console.log('urlParam');
+        console.log(`Using [urlParam] -> ${urlParams}`);
     } else{
         postIndex = JSON.parse(localStorage.getItem('data-post-index'));
-        console.log('localStorage');
+        console.log(`Using [localStorage] -> ${urlParams}`);
     }
     return postIndex;
 }
@@ -16,7 +15,6 @@ function checkURLsearchParams(){
 function renderPosts(){
     let postsHTML = '';
         const postIndex = checkURLsearchParams();
-        console.log(postIndex);
         const postObject = posts[postIndex];
         const {title, author, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink, avatar} = postObject;
         const html = /*html*/`
