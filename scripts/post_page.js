@@ -1,10 +1,21 @@
-// const urlParams = new URLSearchParams(document.location.search);
-// console.log(urlParams.get("postIndex"));
+function checkURLsearchParams(){
+    let postIndex = '';
+    const urlParams = new URLSearchParams(document.location.search);
+    if (urlParams.has('postIndex')){
+        postIndex = urlParams.get('postIndex');
+        console.log(urlParams);
+        console.log('urlParam');
+    } else{
+        postIndex = JSON.parse(localStorage.getItem('postIndex'));
+        console.log('localStorage');
+    }
+    return postIndex;
+}
 
 // ======================================================
 function renderPosts(){
     let postsHTML = '';
-        const postIndex = JSON.parse(localStorage.getItem('postIndex'));
+        const postIndex = checkURLsearchParams();
         console.log(postIndex);
         const postObject = posts[postIndex];
         const {title, author, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink, avatar} = postObject;
