@@ -14,7 +14,7 @@ function checkURLSearchParams(){
 // ======================================================
 function renderPosts(){
     let postsHTML = '';
-        const postIndex = checkURLsearchParams();
+        const postIndex = checkURLSearchParams();
         const postObject = posts[postIndex];
         const {title, author, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink, avatar} = postObject;
         const html = /*html*/`
