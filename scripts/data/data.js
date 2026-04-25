@@ -44,7 +44,7 @@ const posts = [
             {
                 commenterIndex: 0,
                 content: "this post is dog water",
-                date: "",
+                date: "∞ years ago",
                 upvotesNum: 311,
                 downvotesNum: 10,
             }
