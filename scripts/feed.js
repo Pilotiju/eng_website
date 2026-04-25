@@ -68,6 +68,6 @@ function openPost(){
     if (preventPost === 0){
         const postIndex = this.getAttribute('data-post-index');
         preventPost = 0;
-        window.location.href = `https://pilotiju.github.io/eng_website/post_page.html?post-index=${postIndex}`;
+        window.location.href = `https://pilotiju.github.io/eng_website/post_page.html?postIndex=${postIndex}`;
     }
 }
