@@ -14,6 +14,9 @@ const posts = [
         upvotesNum: 7,
         downvotesNum: 84,
         commentsNum: 132,
+        comments: [
+            
+        ]
     },
     {
         title: "sit amet consectetur:",
@@ -31,5 +34,8 @@ const posts = [
         upvotesNum: 924,
         downvotesNum: 13,
         commentsNum: 84,
+        comments: [
+            
+        ]
     }
 ];
