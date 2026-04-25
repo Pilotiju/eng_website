@@ -1,7 +1,8 @@
+let postIndex = 0;
 function checkURLSearchParams(){
     const urlParams = new URLSearchParams(document.location.search);
-    const postIndex = urlParams.get('postIndex');
-    console.log(`Using [urlParam] -> ${postIndex}`);
+    postIndex = urlParams.get('postIndex');
+    console.log(`URLParam postIndex: ${postIndex}`);
     return postIndex;
 }
 
@@ -10,7 +11,9 @@ function renderPosts(){
     let postsHTML = '';
         const postIndex = checkURLSearchParams();
         const postObject = posts[postIndex];
-        const {title, author, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink, avatar} = postObject;
+        const {title, userIndex, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink} = postObject;
+        const author = users[userIndex].name;
+        const avatar = users[userIndex].avatar;
         const html = /*html*/`
             <div data-href="${postLink}" data-post-index="${postIndex}" class="posts js_posts">
               <div class="post__meta post__item">
@@ -58,4 +61,43 @@ function renderPosts(){
     document.querySelector('.js_posts_wrapper').innerHTML = postsHTML;
 }
 // =====================================================
+function renderComments(){
+  let commentsHTML = '';
+  for (let i = 0; i < posts[postIndex].comments.length; i++){
+    const commentObject = posts[postIndex].comments[i];
+    const {commenterIndex, content, date, upvotesNum, downvotesNum} = commentObject;
+    const userObject = users[commenterIndex];
+    const {name, avatar} = userObject;
+      const html = /*html*/`
+      <div class="comment_wrapper comment__item">
+        <div class="comment__meta">
+          <img src="img/avatars/${avatar}" alt="Commentor avatar" class="comment__avatar">
+          <span class="comment__user_name">${name}</span>
+          <span class="comment__meta_seperator">•</span>
+          <span class="comment__date">${date}</span>
+        </div>
+        <div class="comment__content comment__item">
+          ${content}
+        </div>
+        <div class="comment__actions comment__item">
+          <div class="post__vote_btns_wrapper">
+            <button class="js_upvote_btn post__upvote_btn comments__actions_vote_btn js_post__actions_btn post__actions_vote_btn">
+              <img class="js_post__action_btn_icon comments__actions_vote_img" src="img/system/heart.svg" alt="Upvote">
+              <span class="js_upvotes_count comment__votes_count post__votes_count">${upvotesNum}</span>
+            </button>
+            <button class="js_downvote_btn post__downvote_btn comments__actions_vote_btn js_post__actions_btn post__actions_vote_btn">
+              <img class="js_post__action_btn_icon comments__actions_vote_img" src="img/system/heart-crack.svg" alt="Downvote">
+              <span class="js_downvotes_count comment__votes_count post__votes_count">${downvotesNum}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      `;
+      commentsHTML += html;
+  }
+  document.querySelector('.js_posts_comments_wrapper').innerHTML = commentsHTML;
+}
+// =====================================================
 renderPosts();
+
+renderComments();

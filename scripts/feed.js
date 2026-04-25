@@ -8,15 +8,15 @@ function renderPosts(){
         const {title, author, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink, avatar} = postObject;
         const postIndex = i;
         const html = /*html*/`
-            <div data-href="${postLink}" data-post-index="${postIndex}" class="feed_post js_feed_post">
-              <div class="post__meta post__item">
-                <div class="post__user_wrapper">
-                  <img src="img/avatars/${avatar}" alt="Avatar" class="post__avatar">
-                  <div class="post_username">${author}</div>
-                </div>
-                <div class="whitespace"></div>
-                <div class="post__date">${date}</div>
+          <div data-href="${postLink}" data-post-index="${postIndex}" class="feed_post js_feed_post">
+            <div class="post__meta post__item">
+              <div class="post__user_wrapper">
+                <img src="img/avatars/${avatar}" alt="Avatar" class="post__avatar">
+                <div class="post_username">${author}</div>
               </div>
+              <div class="whitespace"></div>
+              <div class="post__date">${date}</div>
+            </div>
 
             <div class="post__content post__item">
               <h1 class="feed_post__heading">
@@ -51,7 +51,7 @@ function renderPosts(){
                     <img class="js_post__action_btn_icon post__action_btn_icon" src="img/system/share.svg" alt="Share">
                 </button>
             </div>
-            </div>
+          </div>
         `;
         postsHTML += html;
     }

@@ -1,8 +1,34 @@
+const users = [
+    {
+        name: "Unknown John",
+        avatar: "hat-glasses.svg",
+        description: "",
+        joinDate: "",
+    },
+    {
+        name: "Tom Unknown",
+        avatar: "hat-glasses.svg",
+        description: "",
+        joinDate: "",
+    },
+    {
+        name: "MyNameIsNull",
+        avatar: "hat-glasses.svg",
+        description: "",
+        joinDate: "",
+    },
+    {
+        name: "Iron Man",
+        avatar: "hat-glasses.svg",
+        description: "",
+        joinDate: "",
+    },
+];
+
 const posts = [
     {
         title: "Lorem dolor",
-        author: "Unknown John",
-        avatar: "hat-glasses.svg",
+        userIndex: 0,
         date: "02.05.2023",
         content: `
         <p class="feed_post__text normal_fs"> 
@@ -15,12 +41,18 @@ const posts = [
         downvotesNum: 84,
         commentsNum: 132,
         comments: [
-            
+            {
+                commenterIndex: 0,
+                content: "this post is dog water",
+                date: "",
+                upvotesNum: 311,
+                downvotesNum: 10,
+            }
         ]
     },
     {
         title: "sit amet consectetur:",
-        author: "John Unknown",
+        userIndex: 1,
         avatar: "hat-glasses.svg",
         date: "03.04.2010",
         content: `
@@ -34,8 +66,5 @@ const posts = [
         upvotesNum: 924,
         downvotesNum: 13,
         commentsNum: 84,
-        comments: [
-            
-        ]
     }
 ];
