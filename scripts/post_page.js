@@ -3,10 +3,10 @@ function checkURLSearchParams(){
     const urlParams = new URLSearchParams(document.location.search);
     if (urlParams.has('data-post-index')){
         postIndex = urlParams.get('data-post-index');
-        console.log(`Using [urlParam] -> ${urlParams}`);
+        console.log(`Using [urlParam] -> ${postIndex}`);
     } else{
-        postIndex = JSON.parse(localStorage.getItem('data-post-index'));
-        console.log(`Using [localStorage] -> ${urlParams}`);
+        postIndex = JSON.parse(localStorage.getItem('postIndex'));
+        console.log(`Using [localStorage] -> ${postIndex}`);
     }
     return postIndex;
 }
