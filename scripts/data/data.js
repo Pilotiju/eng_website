@@ -23,6 +23,12 @@ const users = [
         description: "",
         joinDate: "",
     },
+    {
+        name: "Nikola tesla",
+        avatar: "hat-glasses.svg",
+        description: "",
+        joinDate: "",
+    },
 ];
 
 const posts = [
@@ -43,10 +49,33 @@ const posts = [
         comments: [
             {
                 commenterIndex: 0,
-                content: "this post is dog water",
+                content: `this post is so dog water`,
                 date: "∞ years ago",
-                upvotesNum: 311,
-                downvotesNum: 10,
+                upvotesNum: 8,
+                downvotesNum: 139,
+                comments: [
+                    {
+                        commenterIndex: 1,
+                        content: "<strong>You</strong> posted this 😭😭",
+                        date: "today",
+                        upvotesNum: 13,
+                        downvotesNum: 0,
+                    },
+                    {
+                        commenterIndex: 4,
+                        content: `<img src="img/comments/temps/albert_nikola.jpg" alt="Comment Img" class="comment__img">`,
+                        date: "∞ years ago",
+                        upvotesNum: 311,
+                        downvotesNum: 10,
+                    }
+                ]
+            },
+            {
+                commenterIndex: 3,
+                content: "Jarvis like this post",
+                date: "10 seconds in the future",
+                upvotesNum: 0,
+                downvotesNum: 1,
             }
         ]
     },
@@ -66,5 +95,8 @@ const posts = [
         upvotesNum: 924,
         downvotesNum: 13,
         commentsNum: 84,
+        comments: [
+            
+        ]
     }
 ];

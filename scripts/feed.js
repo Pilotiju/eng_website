@@ -5,8 +5,10 @@ function renderPosts(){
     let postsHTML = '';
     for (let i = 0; i < posts.length; i++){
         const postObject = posts[i];
-        const {title, author, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink, avatar} = postObject;
+        const {title, userIndex, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink} = postObject;
         const postIndex = i;
+        const author = users[userIndex].name;
+        const avatar = users[userIndex].avatar;
         const html = /*html*/`
           <div data-href="${postLink}" data-post-index="${postIndex}" class="feed_post js_feed_post">
             <div class="post__meta post__item">
