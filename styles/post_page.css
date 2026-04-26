@@ -68,7 +68,7 @@
     min-width: 36px;
     padding-left: 5px;
     padding-right: 7px;
-    background-color: var(--post-action-bg);
+    background-color: var(--comment-action-bg);
     border-radius: 100px;
     font-size: 0.9375rem;
 }

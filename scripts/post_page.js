@@ -110,23 +110,23 @@ CommentDownvoteBtns.forEach(initFuncs.initCommentDownvoteBtn);
 function toggleCommentUpvotePost(){
     const parentElement = this.parentElement;
     const otherVoteBtn = this.parentElement.querySelector('.js_comment_downvote_btn');
-    if (parentElement.classList.contains('post__vote_btn--voted')){
-        if (this.classList.contains('post__upvote_btn--upvoted')){
+    if (parentElement.classList.contains('comment__vote_btn--voted')){
+        if (this.classList.contains('comment__upvote_btn--upvoted')){
             // remove Upvote
-            this.classList.remove('post__upvote_btn--upvoted');
+            this.classList.remove('comment__upvote_btn--upvoted');
             removeCommentVoteBtnUI(this);
-            parentElement.classList.remove('post__vote_btn--voted');
+            parentElement.classList.remove('comment__vote_btn--voted');
         } else{
             // remove other Vote
-            otherVoteBtn.classList.remove('post__downvote_btn--downvoted');
-            this.classList.add('post__upvote_btn--upvoted');
+            otherVoteBtn.classList.remove('comment__downvote_btn--downvoted');
+            this.classList.add('comment__upvote_btn--upvoted');
             removeCommentVoteBtnUI(otherVoteBtn);
             addCommentVoteBtnUI(this);
             console.log('Upvoted');
         }
     } else{
-        parentElement.classList.add('post__vote_btn--voted');
-        this.classList.add('post__upvote_btn--upvoted');
+        parentElement.classList.add('comment__vote_btn--voted');
+        this.classList.add('comment__upvote_btn--upvoted');
         addCommentVoteBtnUI(this, otherVoteBtn);
         console.log('Upvoted');
     }
@@ -134,23 +134,23 @@ function toggleCommentUpvotePost(){
 function toggleCommentDownvotePost(){
     const parentElement = this.parentElement;
     const otherVoteBtn = this.parentElement.querySelector('.js_comment_upvote_btn');
-    if (parentElement.classList.contains('post__vote_btn--voted')){
-        if (this.classList.contains('post__downvote_btn--downvoted')){
+    if (parentElement.classList.contains('comment__vote_btn--voted')){
+        if (this.classList.contains('comment__downvote_btn--downvoted')){
             // remove Downvote
-            this.classList.remove('post__downvote_btn--downvoted');
+            this.classList.remove('comment__downvote_btn--downvoted');
             removeCommentVoteBtnUI(this);
-            parentElement.classList.remove('post__vote_btn--voted');
+            parentElement.classList.remove('comment__vote_btn--voted');
         } else{
             // remove other Vote
-            otherVoteBtn.classList.remove('post__upvote_btn--upvoted');
-            this.classList.add('post__downvote_btn--downvoted');
+            otherVoteBtn.classList.remove('comment__upvote_btn--upvoted');
+            this.classList.add('comment__downvote_btn--downvoted');
             removeCommentVoteBtnUI(otherVoteBtn);
             addCommentVoteBtnUI(this);
             console.log('Downvoted');
         }
     } else{
-        parentElement.classList.add('post__vote_btn--voted');
-        this.classList.add('post__downvote_btn--downvoted');
+        parentElement.classList.add('comment__vote_btn--voted');
+        this.classList.add('comment__downvote_btn--downvoted');
         addCommentVoteBtnUI(this, otherVoteBtn);
         console.log('Downvoted');
     }
@@ -164,14 +164,12 @@ function addCommentVoteBtnUI(thisVoteBtn, otherVoteBtn, thisCommentVoteNum){
         posts[postIndex].comments[commentIndex].upvotesNum++;
         thisVoteBtnCount.innerText = posts[postIndex].comments[commentIndex].upvotesNum;
 
-        thisVoteBtnCount.style.color = 'white';
         thisVoteBtnImg.src = 'img/system/comment_heart-voted.svg';
     } else{
         // Update Counter
         posts[postIndex].comments[commentIndex].downvotesNum++;
         thisVoteBtnCount.innerText = posts[postIndex].comments[commentIndex].downvotesNum;
 
-        thisVoteBtnCount.style.color = 'white';
         thisVoteBtnImg.src = 'img/system/comment_heart-crack-voted.svg';
     }
 }
@@ -185,14 +183,12 @@ function removeCommentVoteBtnUI(voteBtn, thisCommentVoteNum){
         posts[postIndex].comments[commentIndex].upvotesNum--;
         voteBtnCount.innerText = posts[postIndex].comments[commentIndex].upvotesNum;
 
-        voteBtnCount.style.color = 'black';
         voteBtnImg.src = 'img/system/comment_heart.svg';
     } else{
         // Update Counter
         posts[postIndex].comments[commentIndex].downvotesNum--;
         voteBtnCount.innerText = posts[postIndex].comments[commentIndex].downvotesNum;
 
-        voteBtnCount.style.color = 'black';
         voteBtnImg.src = 'img/system/comment_heart-crack.svg';
     }
 }
