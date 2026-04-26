@@ -14,5 +14,11 @@ const initFuncs = {
     },
     initDownvoteBtn: function initDownvoteBtn(downvoteBtn){
         downvoteBtn.addEventListener('click', toggleDownvotePost);
+    },
+    initCommentUpvoteBtn: function initUpvoteBtn(commentUpvoteBtn){
+        commentUpvoteBtn.addEventListener('click', toggleCommentUpvotePost);
+    },
+    initCommentDownvoteBtn: function initDownvoteBtn(commentDownvoteBtn){
+        commentDownvoteBtn.addEventListener('click', toggleCommentDownvotePost);
     }
 };

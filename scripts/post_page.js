@@ -6,6 +6,11 @@ function checkURLSearchParams(){
     return postIndex;
 }
 
+const CommentUpvoteBtns = document.querySelectorAll('.js_comment_upvote_btn');
+CommentUpvoteBtns.forEach(initFuncs.initCommentUpvoteBtn);
+const CommentDownvoteBtns = document.querySelectorAll('.js_comment_downvote_btn');
+CommentDownvoteBtns.forEach(initFuncs.initCommentDownvoteBtn);
+
 // ======================================================
 function renderPosts(){
     let postsHTML = '';
@@ -39,11 +44,11 @@ function renderPosts(){
 
               <div class="post__actions post__item">
                 <div class="post__vote_btns_wrapper">
-                  <button class="js_upvote_btn post__upvote_btn post__actions_btn js_post__actions_btn post__actions_vote_btn">
+                  <button class="js_comment_upvote_btn post__upvote_btn post__actions_btn js_post__actions_btn post__actions_vote_btn">
                     <img class="js_post__action_btn_icon post__action_btn_icon" src="img/system/heart.svg" alt="Upvote">
                     <span class="js_upvotes_count js_post__votes_count post__votes_count">${upvotesNum}</span>
                   </button>
-                  <button class="js_downvote_btn post__downvote_btn post__actions_btn js_post__actions_btn post__actions_vote_btn">
+                  <button class="js_comment_downvote_btn post__downvote_btn post__actions_btn js_post__actions_btn post__actions_vote_btn">
                     <img class="js_post__action_btn_icon post__action_btn_icon" src="img/system/heart-crack.svg" alt="Downvote">
                     <span class="js_downvotes_count js_post__votes_count post__votes_count">${downvotesNum}</span>
                   </button>
@@ -81,11 +86,11 @@ function renderComments(){
         </div>
         <div class="comment__actions comment__item">
           <div class="post__vote_btns_wrapper">
-            <button class="js_upvote_btn post__upvote_btn comments__actions_vote_btn js_post__actions_btn post__actions_vote_btn">
+            <button class="js_comment_upvote_btn post__upvote_btn comments__actions_vote_btn js_post__actions_btn post__actions_vote_btn">
               <img class="js_post__action_btn_icon comments__actions_vote_img" src="img/system/heart.svg" alt="Upvote">
               <span class="js_upvotes_count comment__votes_count post__votes_count">${upvotesNum}</span>
             </button>
-            <button class="js_downvote_btn post__downvote_btn comments__actions_vote_btn js_post__actions_btn post__actions_vote_btn">
+            <button class="js_comment_downvote_btn post__downvote_btn comments__actions_vote_btn js_post__actions_btn post__actions_vote_btn">
               <img class="js_post__action_btn_icon comments__actions_vote_img" src="img/system/heart-crack.svg" alt="Downvote">
               <span class="js_downvotes_count comment__votes_count post__votes_count">${downvotesNum}</span>
             </button>
@@ -101,3 +106,94 @@ function renderComments(){
 renderPosts();
 
 renderComments();
+
+
+function toggleCommentUpvotePost(){
+    const parentElement = this.parentElement;
+    const otherVoteBtn = this.parentElement.querySelector('.js_comment_downvote_btn');
+    if (parentElement.classList.contains('post__vote_btn--voted')){
+        if (this.classList.contains('post__upvote_btn--upvoted')){
+            // remove Upvote
+            this.classList.remove('post__upvote_btn--upvoted');
+            removeVoteBtnUI(this);
+            parentElement.classList.remove('post__vote_btn--voted');
+        } else{
+            // remove other Vote
+            otherVoteBtn.classList.remove('post__downvote_btn--downvoted');
+            this.classList.add('post__upvote_btn--upvoted');
+            removeVoteBtnUI(otherVoteBtn);
+            addVoteBtnUI(this);
+            console.log('Upvoted');
+        }
+    } else{
+        parentElement.classList.add('post__vote_btn--voted');
+        this.classList.add('post__upvote_btn--upvoted');
+        addVoteBtnUI(this, otherVoteBtn);
+        console.log('Upvoted');
+    }
+}
+function toggleCommentDownvotePost(){
+    const parentElement = this.parentElement;
+    const otherVoteBtn = this.parentElement.querySelector('.js_comment_upvote_btn');
+    if (parentElement.classList.contains('post__vote_btn--voted')){
+        if (this.classList.contains('post__downvote_btn--downvoted')){
+            // remove Downvote
+            this.classList.remove('post__downvote_btn--downvoted');
+            removeVoteBtnUI(this);
+            parentElement.classList.remove('post__vote_btn--voted');
+        } else{
+            // remove other Vote
+            otherVoteBtn.classList.remove('post__upvote_btn--upvoted');
+            this.classList.add('post__downvote_btn--downvoted');
+            removeVoteBtnUI(otherVoteBtn);
+            addVoteBtnUI(this);
+            console.log('Downvoted');
+        }
+    } else{
+        parentElement.classList.add('post__vote_btn--voted');
+        this.classList.add('post__downvote_btn--downvoted');
+        addVoteBtnUI(this, otherVoteBtn);
+        console.log('Downvoted');
+    }
+}
+function addVoteBtnUI(thisVoteBtn, otherVoteBtn){
+    const thisVoteBtnImg =  thisVoteBtn.querySelector('.js_post__action_btn_icon');
+    const thisVoteBtnCount =  thisVoteBtn.querySelector('.js_post__votes_count');
+    const postIndex = thisVoteBtn.parentElement.parentElement.parentElement.getAttribute('data-post-index');
+    console.log(postIndex);
+    if (thisVoteBtn.classList.contains('js_comment_upvote_btn')){
+        // Update Counter
+        posts[postIndex].upvotesNum++;
+        thisVoteBtnCount.innerText = posts[postIndex].upvotesNum;
+
+        thisVoteBtnCount.style.color = 'white';
+        thisVoteBtnImg.src = 'img/system/heart-voted.svg';
+    } else{
+        // Update Counter
+        posts[postIndex].downvotesNum++;
+        thisVoteBtnCount.innerText = posts[postIndex].downvotesNum;
+
+        thisVoteBtnCount.style.color = 'white';
+        thisVoteBtnImg.src = 'img/system/heart-crack-voted.svg';
+    }
+}
+function removeVoteBtnUI(voteBtn){
+    const voteBtnImg =  voteBtn.querySelector('.js_post__action_btn_icon');
+    const voteBtnCount =  voteBtn.querySelector('.js_post__votes_count');
+    const postIndex = voteBtn.parentElement.parentElement.parentElement.getAttribute('data-post-index');
+    if (voteBtn.classList.contains('js_comment_upvote_btn')){
+        // Update Counter
+        posts[postIndex].upvotesNum--;
+        voteBtnCount.innerText = posts[postIndex].upvotesNum;
+
+        voteBtnCount.style.color = 'black';
+        voteBtnImg.src = 'img/system/heart.svg';
+    } else{
+        // Update Counter
+        posts[postIndex].downvotesNum--;
+        voteBtnCount.innerText = posts[postIndex].downvotesNum;
+
+        voteBtnCount.style.color = 'black';
+        voteBtnImg.src = 'img/system/heart-crack.svg';
+    }
+}
