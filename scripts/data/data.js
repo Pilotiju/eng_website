@@ -59,7 +59,16 @@ const posts = [
                         date: "today",
                         upvotesNum: 13,
                         downvotesNum: 0,
-                        comments: []
+                        comments: [
+                            {
+                                commenterIndex: 0,
+                                content: "Nah",
+                                date: "(wdym nah)",
+                                upvotesNum: 0,
+                                downvotesNum: 0,
+                                comments: []
+                            }
+                        ]
                     },
                     {
                         commenterIndex: 4,
