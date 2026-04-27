@@ -123,14 +123,23 @@ function renderPostComments(){
   const postsCommentsWrapper = document.querySelector('.js_posts_comments_wrapper');
   postsCommentsWrapper.innerHTML = commentsHTML;
   const commentThreads = postsCommentsWrapper.querySelectorAll('.js_comment__comment_thread');
+  commentThreads.forEach((element) => {
+    asEachNestedComment(element, commentObject);
+  });
+}
 
-  commentThreads.forEach((commentThreadEl) => {
-    const commentIndex = Number(commentThreadEl.getAttribute('data-comment-index'));
-    commentsHTML = createNestedComments(commentObject[commentIndex].comments, 35);
+function asEachNestedComment(commentThreadEl, passedCommentObject){
+  const commentIndex = Number(commentThreadEl.getAttribute('data-comment-index'));
+  let commentObject = passedCommentObject[commentIndex].comments;
+  commentsHTML = createNestedComments(commentObject, 35);
 
-    // Add nested comments inside target element (js_comment__comment_thread) after the beginning tag
-    commentThreadEl.insertAdjacentHTML('beforeend', commentsHTML);
-    console.log(commentThreadEl);
+  // Add nested comments inside target element (js_comment__comment_thread) after the rest
+  commentThreadEl.insertAdjacentHTML('beforeend', commentsHTML);
+  const commentNestedComments = commentThreadEl.querySelectorAll('.js_comment_wrapper');
+  console.log(commentNestedComments);
+  commentObject += 'comments';
+  commentNestedComments.forEach((element) => {
+    asEachNestedComment(element, commentObject);
   });
 }
 
