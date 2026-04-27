@@ -7,6 +7,9 @@ body{
     background-color: rgb(110, 110, 110);
 }
 :root{
+    /* Texts */
+    --text-comment-date-color: rgb(78, 78, 78);
+
     /* Feed */
     --feed-posts-card-bg: rgb(236, 236, 236);
     --feed-posts-card-bg-hover: rgb(209, 209, 209);
@@ -15,8 +18,11 @@ body{
     --post-action-bg: rgb(182, 182, 182);
     --post-action-bg-hover: rgb(199, 199, 199);
 
-    --post-action-upvote-bg: linear-gradient(to top, rgb(252, 44, 17), rgb(255, 81, 0));
-    --post-action-downvote-bg: linear-gradient(to top, rgb(106, 92, 255), rgb(92, 130, 255));
+    --post-action-upvote-bg: linear-gradient(to top, rgb(252, 44, 17), rgb(255, 81, 0)); /*Also used in comment actions*/
+    --post-action-downvote-bg: linear-gradient(to top, rgb(106, 92, 255), rgb(92, 130, 255)); /*Also used in comment actions*/
+
+    /* Comment Actions */
+    --comment-action-bg: rgb(209, 209, 209);
 
     /* NavBar */
     --main-navbar-bg: rgb(247, 152, 45);
@@ -67,7 +73,7 @@ main.index_main{
     display: block;
     position: relative;
     background-color: var(--feed-posts-card-bg);
-    margin: 25px 0px;
+    margin: 20px 0px;
     padding: 15px 15px 8px 15px;
     border-radius: 12px;
 }
@@ -131,6 +137,7 @@ main.posts_main{
     margin: 25px 0px;
     padding: 15px 15px 8px 15px;
     border-radius: 12px;
+    z-index: 0;
 }
 .post__heading{
     font-size: 1.8rem;
@@ -191,15 +198,21 @@ main.posts_main{
     position: relative;
     height: 100%;
 }
+.post__avatar_wrapper{
+    height: 35px;
+    width: 35px;
+}
 .post__avatar{
-    border: 2px solid gray;
-    padding: 2px;
+    height: 35px;
+    width: 35px;
+    object-fit: cover;
     border-radius: 50%;
 }
 .post_username{
-    margin-left: 10px;
     display: inline-flex;
     align-items: center;
+    margin-left: 10px;
+    font-weight: bold;
 }
 .post__date{
     display: flex;
@@ -257,6 +270,9 @@ main.posts_main{
 }
 .post__votes_count{
     margin-left: 6px;
+}
+.post__actions_btn:hover{
+    cursor: pointer;
 }
 .post__upvote_btn:hover::after{
     content: '';
