@@ -12,20 +12,20 @@ const users = [
         joinDate: "",
     },
     {
-        name: "MyNameIsNull",
-        avatar: "hat-glasses.svg",
-        description: "",
-        joinDate: "",
-    },
-    {
         name: "Iron Man",
-        avatar: "hat-glasses.svg",
+        avatar: "jarvis.webp",
         description: "",
         joinDate: "",
     },
     {
         name: "Nikola tesla",
         avatar: "hat-glasses.svg",
+        description: "",
+        joinDate: "",
+    },
+    {
+        name: "Spider Man",
+        avatar: "spiderman.jpg",
         description: "",
         joinDate: "",
     },
@@ -42,7 +42,6 @@ const posts = [
         </p>
         `,
         flair: "vent",
-        postLink: "temp1-post.html",
         upvotesNum: 7,
         downvotesNum: 84,
         commentsNum: 132,
@@ -60,6 +59,7 @@ const posts = [
                         date: "today",
                         upvotesNum: 13,
                         downvotesNum: 0,
+                        comments: []
                     },
                     {
                         commenterIndex: 4,
@@ -67,22 +67,23 @@ const posts = [
                         date: "∞ years ago",
                         upvotesNum: 311,
                         downvotesNum: 10,
+                        comments: []
                     }
                 ]
             },
             {
-                commenterIndex: 3,
+                commenterIndex: 2,
                 content: "Jarvis like this post",
                 date: "10 seconds in the future",
                 upvotesNum: 0,
                 downvotesNum: 1,
+                comments: []
             }
         ]
     },
     {
         title: "sit amet consectetur:",
         userIndex: 1,
-        avatar: "hat-glasses.svg",
         date: "03.04.2010",
         content: `
         <div class="feed_post__image_wrapper">
@@ -91,10 +92,27 @@ const posts = [
         </div>
         `,
         flair: "meme",
-        postLink: "temp2-post.html",
         upvotesNum: 924,
         downvotesNum: 13,
         commentsNum: 84,
+        comments: [
+            
+        ]
+    },
+    {
+        title: "Yo",
+        userIndex: 4,
+        date: "03.04.2010",
+        content: `
+        <div class="feed_post__image_wrapper">
+          <img src="img/posts/temps/spiderman.webp" alt="Post BG Image" class="feed_post__image__bg">
+          <img src="img/posts/temps/spiderman.webp" alt="Post Image" class="feed_post__image">
+        </div>
+        `,
+        flair: "meme",
+        upvotesNum: 91236,
+        downvotesNum: 4,
+        commentsNum: 1,
         comments: [
             
         ]

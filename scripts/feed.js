@@ -13,7 +13,9 @@ function renderPosts(){
           <div data-href="${postLink}" data-post-index="${postIndex}" class="feed_post js_feed_post">
             <div class="post__meta post__item">
               <div class="post__user_wrapper">
-                <img src="img/avatars/${avatar}" alt="Avatar" class="post__avatar">
+                <div class="post__avatar_wrapper">
+                  <img src="img/avatars/${avatar}" alt="Avatar" class="post__avatar">
+                </div>
                 <div class="post_username">${author}</div>
               </div>
               <div class="whitespace"></div>

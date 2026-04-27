@@ -16,7 +16,9 @@ function renderPosts(){
             <div data-href="${postLink}" data-post-index="${postIndex}" class="posts js_posts">
               <div class="post__meta post__item">
                 <div class="post__user_wrapper">
-                  <img src="img/avatars/${avatar}" alt="Avatar" class="post__avatar">
+                  <div class="post__avatar_wrapper">
+                    <img src="img/avatars/${avatar}" alt="Avatar" class="post__avatar">
+                  </div>
                   <div class="post_username">${author}</div>
                 </div>
                 <div class="whitespace"></div>
@@ -70,7 +72,9 @@ function renderPostComments(){
       <div class="js_comment__comment_thread comment__comment_thread">
         <div class="comment_wrapper comment__item">
           <div class="comment__meta normal_fs">
-            <img src="img/avatars/${avatar}" alt="Commentor avatar" class="comment__avatar">
+            <div class="comment__avatar_wrapper">
+              <img src="img/avatars/${avatar}" alt="Commentor avatar" class="comment__avatar">
+            </div>
             <span class="comment__user_name">${name}</span>
             <span class="comment__meta_seperator">•</span>
             <span class="comment__date">${date}</span>

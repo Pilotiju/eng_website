@@ -198,9 +198,14 @@ main.posts_main{
     position: relative;
     height: 100%;
 }
+.post__avatar_wrapper{
+    height: 35px;
+    width: 35px;
+}
 .post__avatar{
-    border: 2px solid gray;
-    padding: 2px;
+    height: 35px;
+    width: 35px;
+    object-fit: cover;
     border-radius: 50%;
 }
 .post_username{
