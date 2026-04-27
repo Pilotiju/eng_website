@@ -10,7 +10,7 @@ downvoteBtns.forEach(initFuncs.initDownvoteBtn);
 function sharePost(){
     const thisPost = this.parentElement.parentElement;
     const postIndex = thisPost.getAttribute('data-post-index');
-    navigator.clipboard.writeText(`https://pilotiju.github.io/eng_website/post_page.html?post-index=${postIndex}`);
+    navigator.clipboard.writeText(`https://pilotiju.github.io/eng_website/post_page.html?postIndex=${postIndex}`);
     alert(`Copied post into clipboard.`);
 }
 function setPreventPostTrue(){
