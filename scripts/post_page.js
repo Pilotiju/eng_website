@@ -129,7 +129,7 @@ function renderPostComments(){
     commentsHTML = createNestedComments(commentObject[commentIndex].comments, 35);
 
     // Add nested comments inside target element (js_comment__comment_thread) after the beginning tag
-    commentThreadEl.insertAdjacentHTML("beforeend", commentsHTML);
+    commentThreadEl.insertAdjacentHTML('beforeend', commentsHTML);
     console.log(commentThreadEl);
   });
 }
