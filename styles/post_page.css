@@ -6,8 +6,8 @@
     border-radius: 10px;
     z-index: 0;
 }
-.comment__comment_thread{
-    margin-bottom: 20px;
+.comment__thread_seperator{
+    height: 20px;
 }
 /* Comment Meta */
 .comment__meta{

@@ -47,6 +47,14 @@ const posts = [
         commentsNum: 132,
         comments: [
             {
+                commenterIndex: 2,
+                content: "Yo",
+                date: "now",
+                upvotesNum: 0,
+                downvotesNum: 13,
+                comments: []
+            },
+            {
                 commenterIndex: 0,
                 content: `this post is so dog water`,
                 date: "∞ years ago",
@@ -90,7 +98,7 @@ const posts = [
             },
             {
                 commenterIndex: 4,
-                content: ".",
+                content: "Spooder time",
                 date: "now",
                 upvotesNum: 0,
                 downvotesNum: 13,
