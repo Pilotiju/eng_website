@@ -175,9 +175,15 @@ function toggleCommentDownvotePost(){
     }
 }
 function addCommentVoteBtnUI(thisVoteBtn, otherVoteBtn, thisCommentVoteNum){
-    const thisVoteBtnImg =  thisVoteBtn.querySelector('.js_post__action_btn_icon');
-    const thisVoteBtnCount =  thisVoteBtn.querySelector('.js_comment__votes_count');
-    const commentIndex = thisVoteBtn.parentElement.getAttribute('data-comment-index');
+  // ! WIP!
+  const thisVoteBtnImg =  thisVoteBtn.querySelector('.js_post__action_btn_icon');
+  const thisVoteBtnCount =  thisVoteBtn.querySelector('.js_comment__votes_count');
+  const commentIndex = thisVoteBtn.parentElement.getAttribute('data-comment-index');
+  const thisCommentWrapper = thisVoteBtnImg.closest('.js_comment_wrapper');
+
+  const commentObject = thisCommentWrapper.getAttribute('data-comment-object');
+  console.log(commentObject);
+
     if (thisVoteBtn.classList.contains('js_comment_upvote_btn')){
         // Update Counter
         posts[postIndex].comments[commentIndex].upvotesNum++;
