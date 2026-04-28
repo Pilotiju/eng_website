@@ -1,11 +1,10 @@
-const postIndex = getURLPostIndex();
+let postIndex = 0;
 function getURLPostIndex(){
     const urlParams = new URLSearchParams(document.location.search);
-    const postIndex = urlParams.get('postIndex');
+    postIndex = urlParams.get('postIndex');
     console.log(`URLParam postIndex: ${postIndex}`);
-    return postIndex;
 }
-
+getURLPostIndex();
 // ======================================================
 function renderPosts(){
     let postsHTML = '';
@@ -63,15 +62,43 @@ function renderPosts(){
 }
 // =====================================================
 
-function renderComments(commentArray, nestedLevel){
+function renderPostComments(){
   let commentsHTML = '';
-  commentArray.forEach((commentObject, i) => {
-    console.log(commentObject);
-    const {commenterIndex, content, date, upvotesNum, downvotesNum} = commentObject;
+  let marginLeft = 20;
+  const commentObject = posts[postIndex].comments;
+
+  commentsHTML = createComments(commentObject, 0);
+  const postsCommentsWrapper = document.querySelector('.js_posts_comments_wrapper');
+  postsCommentsWrapper.innerHTML = commentsHTML;
+  const commentThreads = postsCommentsWrapper.querySelectorAll('.js_comment__comment_thread');
+  commentThreads.forEach((element) => {
+    asEachNestedComment(element, commentObject);
+  });
+}
+
+function asEachNestedComment(commentThreadEl, passedCommentObject){
+  const commentIndex = Number(commentThreadEl.getAttribute('data-comment-index'));
+  let commentObject = passedCommentObject[commentIndex].comments;
+  commentsHTML = createNestedComments(commentObject, 35);
+
+  // Add nested comments inside target element (js_comment__comment_thread) after the rest
+  commentThreadEl.insertAdjacentHTML('beforeend', commentsHTML);
+  const commentNestedComments = commentThreadEl.querySelectorAll('.js_comment_wrapper');
+  console.log(commentNestedComments);
+  commentObject += 'comments';
+  commentNestedComments.forEach((element) => {
+    asEachNestedComment(element, commentObject);
+  });
+}
+
+function createComments(commentObject){
+  let commentsHTML = '';
+  for (let i = 0; i < commentObject.length; i++){
+    const {commenterIndex, content, date, upvotesNum, downvotesNum} = commentObject[i];
     const userObject = users[commenterIndex];
     const {name, avatar} = userObject;
     const html = /*html*/`
-      <div class="js_comment__comment_thread comment__comment_thread" data-comment-index="${i}" style="margin-left:${nestedLevel*30}px">
+      <div class="js_comment__comment_thread comment__comment_thread" data-comment-index="${i}">
         <div class="js_comment_wrapper comment_wrapper comment__item">
           <div class="comment__meta normal_fs">
             <div class="comment__avatar_wrapper">
@@ -99,18 +126,51 @@ function renderComments(commentArray, nestedLevel){
         </div>
       </div>
     `;
-    if (commentObject.comments.length > 0){
-      commentsHTML += renderComments(commentObject.comments, nestedLevel++);
-    }
     commentsHTML += html;
-  });
+    }    
   return commentsHTML;
 }
-
+function createNestedComments(commentObject, marginLeft){
+  let commentsHTML = '';
+  for (let i = 0; i < commentObject.length; i++){
+    const {commenterIndex, content, date, upvotesNum, downvotesNum} = commentObject[i];
+    const userObject = users[commenterIndex];
+    const {name, avatar} = userObject;
+    const html = /*html*/`
+        <div class="js_comment_wrapper comment_wrapper comment__item" data-comment-index="${i}" style="margin-left:${marginLeft}px">
+          <div class="comment__meta normal_fs">
+            <div class="comment__avatar_wrapper">
+              <img src="img/avatars/${avatar}" alt="Commentor avatar" class="comment__avatar">
+            </div>
+            <span class="comment__user_name">${name}</span>
+            <span class="comment__meta_seperator">•</span>
+            <span class="comment__date">${date}</span>
+          </div>
+          <div class="comment__content comment__item normal_fs">
+            ${content}
+          </div>
+          <div class="comment__actions comment__item">
+            <div class="post__vote_btns_wrapper" data-comment-index="${i}">
+              <button class="js_comment_upvote_btn comment__upvote_btn comment__actions_vote_btn js_comment__actions_btn">
+                <img class="js_post__action_btn_icon comment__actions_vote_img" src="img/system/comment_heart.svg" alt="Upvote">
+                <span class="js_upvotes_count js_comment__votes_count comment__votes_count post__votes_count">${upvotesNum}</span>
+              </button>
+              <button class="js_comment_downvote_btn comment__downvote_btn comment__actions_vote_btn js_comment__actions_btn">
+                <img class="js_post__action_btn_icon comment__actions_vote_img" src="img/system/comment_heart-crack.svg" alt="Downvote">
+                <span class="js_downvotes_count js_comment__votes_count comment__votes_count post__votes_count">${downvotesNum}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+    `;
+    commentsHTML += html;
+    }    
+  return commentsHTML;
+}
 // =====================================================
 renderPosts();
-document.querySelector('.js_posts_comments_wrapper').innerHTML = renderComments(posts[postIndex].comments, 0);
 
+renderPostComments();
 
 const CommentUpvoteBtns = document.querySelectorAll('.js_comment_upvote_btn');
 CommentUpvoteBtns.forEach(initFuncs.initCommentUpvoteBtn);
