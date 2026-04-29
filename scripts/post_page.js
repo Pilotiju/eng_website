@@ -6,6 +6,8 @@ function getURLPostIndex(){
     return postIndex;
 }
 
+let commentID = 0;
+
 // ======================================================
 function renderPosts(){
     let html = '';
@@ -69,17 +71,18 @@ function renderComments(commentArray, nestedLevel){
   let html = '';
   commentArray.forEach((commentObject, i) => {
     let seperatorHTML = '';
-    console.log(`Object: ${commentObject.content}  |  nestedLevel: ${nestedLevel}`);
     const {commenterIndex, content, date, upvotesNum, downvotesNum} = commentObject;
+    commentObject.commentID = commentID;
     const userObject = users[commenterIndex];
+    console.log(`Object: ${commentObject.content}  |  nestedLevel: ${nestedLevel}  |  commentID: ${commentID}`);
     const {name, avatar} = userObject;
     let commentsHTML = /*html*/`
-    <div class="js_comment_wrapper comment_wrapper comment__item" data-comment-index="${i}" data-comment-object="${commentObject}" style="margin-left:${nestedLevel*50}px">
+    <div class="js_comment_wrapper comment_wrapper comment__item" data-comment-id="${commentID}" style="margin-left:${nestedLevel*50}px">
       <div class="comment__meta normal_fs">
         <div class="comment__avatar_wrapper">
           <img src="img/avatars/${avatar}" alt="Commentor avatar" class="comment__avatar">
         </div>
-        <span class="comment__user_name">${name} - ${nestedLevel}</span>
+        <span class="comment__user_name">${name} --- nested:[${nestedLevel}] --- ID:[${commentID}]</span>
         <span class="comment__meta_seperator">•</span>
         <span class="comment__date">${date}</span>
       </div>
@@ -87,7 +90,7 @@ function renderComments(commentArray, nestedLevel){
         ${content}
       </div>
       <div class="comment__actions comment__item">
-        <div class="post__vote_btns_wrapper" data-comment-index="${i}">
+        <div class="post__vote_btns_wrapper">
           <button class="js_comment_upvote_btn comment__upvote_btn comment__actions_vote_btn js_comment__actions_btn">
             <img class="js_post__action_btn_icon comment__actions_vote_img" src="img/system/comment_heart.svg" alt="Upvote">
             <span class="js_upvotes_count js_comment__votes_count comment__votes_count post__votes_count">${upvotesNum}</span>
@@ -100,6 +103,7 @@ function renderComments(commentArray, nestedLevel){
       </div>
     </div>
     `;
+    commentID++;
     if (nestedLevel === 0 && commentObject.comments.length === 0){
       seperatorHTML += /*html*/`<div class="comment__thread_seperator"></div>`;
     }
@@ -174,28 +178,37 @@ function toggleCommentDownvotePost(){
         console.log('Downvoted');
     }
 }
-function addCommentVoteBtnUI(thisVoteBtn, otherVoteBtn, thisCommentVoteNum){
+
+function searchCommentID(thisCommentID, thisCommentArray){
   // ! WIP!
-  const thisVoteBtnImg =  thisVoteBtn.querySelector('.js_post__action_btn_icon');
-  const thisVoteBtnCount =  thisVoteBtn.querySelector('.js_comment__votes_count');
+  for (commentObject of thisCommentArray){
+    if (commentObject.commentID == thisCommentID){
+      return commentObject;
+    } else if(commentObject.comments.length > 0){
+      return searchCommentID(thisCommentID, commentObject.comments);
+    }
+  }
+}
+
+function addCommentVoteBtnUI(thisVoteBtn, otherVoteBtn, thisCommentVoteNum){
+  const voteBtnImg =  thisVoteBtn.querySelector('.js_post__action_btn_icon');
+  const voteBtnCount =  thisVoteBtn.querySelector('.js_comment__votes_count');
   const commentIndex = thisVoteBtn.parentElement.getAttribute('data-comment-index');
-  const thisCommentWrapper = thisVoteBtnImg.closest('.js_comment_wrapper');
-
-  const commentObject = thisCommentWrapper.getAttribute('data-comment-object');
-  console.log(commentObject);
-
-    if (thisVoteBtn.classList.contains('js_comment_upvote_btn')){
+  let thisCommentID = thisVoteBtn.closest('.js_comment_wrapper').getAttribute('data-comment-id');
+  if (thisVoteBtn.classList.contains('js_comment_upvote_btn')){
         // Update Counter
-        posts[postIndex].comments[commentIndex].upvotesNum++;
-        thisVoteBtnCount.innerText = posts[postIndex].comments[commentIndex].upvotesNum;
+        const commentObject = searchCommentID(thisCommentID, posts[postIndex].comments);
+        console.log(commentObject);
+        // commentObject.upvotesNum++;
+        voteBtnCount.innerText = searchCommentID(thisCommentID, posts[postIndex].comments).upvotesNum;
 
-        thisVoteBtnImg.src = 'img/system/comment_heart-voted.svg';
+        voteBtnImg.src = 'img/system/comment_heart.svg';
     } else{
         // Update Counter
         posts[postIndex].comments[commentIndex].downvotesNum++;
-        thisVoteBtnCount.innerText = posts[postIndex].comments[commentIndex].downvotesNum;
+        voteBtnCount.innerText = posts[postIndex].comments[commentIndex].downvotesNum;
 
-        thisVoteBtnImg.src = 'img/system/comment_heart-crack-voted.svg';
+        voteBtnImg.src = 'img/system/comment_heart-crack.svg';
     }
 }
 function removeCommentVoteBtnUI(voteBtn, thisCommentVoteNum){
