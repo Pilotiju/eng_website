@@ -143,3 +143,13 @@ const posts = [
         ]
     }
 ];
+
+localStorage.clear();
+let upvotedPosts = []
+if (JSON.parse(localStorage.getItem('upvotedPosts'))){
+    upvotedPosts = JSON.parse(localStorage.getItem('upvotedPosts'));
+}
+let downvotedPosts = []
+if (JSON.parse(localStorage.getItem('downvotedPosts'))){
+    downvotedPosts = JSON.parse(localStorage.getItem('downvotedPosts'));
+}

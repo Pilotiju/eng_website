@@ -71,14 +71,18 @@ function toggleDownvotePost(){
         console.log('Downvoted');
     }
 }
-function addVoteBtnUI(thisVoteBtn, otherVoteBtn){
-    const thisVoteBtnImg =  thisVoteBtn.querySelector('.js_post__action_btn_icon');
-    const thisVoteBtnCount =  thisVoteBtn.querySelector('.js_post__votes_count');
-    const postIndex = thisVoteBtn.parentElement.parentElement.parentElement.getAttribute('data-post-index');
-    if (thisVoteBtn.classList.contains('js_upvote_btn')){
+function addVoteBtnUI(voteBtn){
+    const thisVoteBtnImg =  voteBtn.querySelector('.js_post__action_btn_icon');
+    const thisVoteBtnCount =  voteBtn.querySelector('.js_post__votes_count');
+    const postIndex = voteBtn.parentElement.parentElement.parentElement.getAttribute('data-post-index');
+    if (voteBtn.classList.contains('js_upvote_btn')){
         // Update Counter
         posts[postIndex].upvotesNum++;
         thisVoteBtnCount.innerText = posts[postIndex].upvotesNum;
+
+        upvotedPosts.push(postIndex);
+        localStorage.setItem('upvotedPosts', JSON.stringify(upvotedPosts))
+        console.log(upvotedPosts)
 
         thisVoteBtnCount.style.color = 'white';
         thisVoteBtnImg.src = 'img/system/heart-voted.svg';
@@ -86,6 +90,10 @@ function addVoteBtnUI(thisVoteBtn, otherVoteBtn){
         // Update Counter
         posts[postIndex].downvotesNum++;
         thisVoteBtnCount.innerText = posts[postIndex].downvotesNum;
+
+        downvotedPosts.push(postIndex);
+        localStorage.setItem('downvotedPosts', JSON.stringify(downvotedPosts))
+        console.log(downvotedPosts)
 
         thisVoteBtnCount.style.color = 'white';
         thisVoteBtnImg.src = 'img/system/heart-crack-voted.svg';
@@ -99,6 +107,14 @@ function removeVoteBtnUI(voteBtn){
         // Update Counter
         posts[postIndex].upvotesNum--;
         voteBtnCount.innerText = posts[postIndex].upvotesNum;
+
+        upvotedPosts.forEach((post) => {
+            
+        })
+
+        upvotedPosts.push(postIndex);
+        localStorage.setItem('upvotedPosts', JSON.stringify(upvotedPosts))
+        console.log(upvotedPosts)
 
         voteBtnCount.style.color = 'black';
         voteBtnImg.src = 'img/system/heart.svg';

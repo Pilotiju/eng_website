@@ -150,7 +150,7 @@ function toggleCommentUpvotePost(){
     } else{
         parentElement.classList.add('comment__vote_btn--voted');
         this.classList.add('comment__upvote_btn--upvoted');
-        addCommentVoteBtnUI(this, otherVoteBtn);
+        addCommentVoteBtnUI(this);
         console.log('Upvoted');
     }
 }
@@ -174,59 +174,60 @@ function toggleCommentDownvotePost(){
     } else{
         parentElement.classList.add('comment__vote_btn--voted');
         this.classList.add('comment__downvote_btn--downvoted');
-        addCommentVoteBtnUI(this, otherVoteBtn);
+        addCommentVoteBtnUI(this);
         console.log('Downvoted');
     }
 }
 
 function searchCommentID(thisCommentID, thisCommentArray){
-  // ! WIP!
   for (commentObject of thisCommentArray){
     if (commentObject.commentID == thisCommentID){
       return commentObject;
     } else if(commentObject.comments.length > 0){
-      return searchCommentID(thisCommentID, commentObject.comments);
+      // !!!! why need return here?????
+      const found = searchCommentID(thisCommentID, commentObject.comments);
+      if (found){
+        return found;
+      }
     }
   }
 }
 
-function addCommentVoteBtnUI(thisVoteBtn, otherVoteBtn, thisCommentVoteNum){
-  const voteBtnImg =  thisVoteBtn.querySelector('.js_post__action_btn_icon');
-  const voteBtnCount =  thisVoteBtn.querySelector('.js_comment__votes_count');
-  const commentIndex = thisVoteBtn.parentElement.getAttribute('data-comment-index');
-  let thisCommentID = thisVoteBtn.closest('.js_comment_wrapper').getAttribute('data-comment-id');
-  if (thisVoteBtn.classList.contains('js_comment_upvote_btn')){
-        // Update Counter
-        const commentObject = searchCommentID(thisCommentID, posts[postIndex].comments);
-        console.log(commentObject);
-        // commentObject.upvotesNum++;
-        voteBtnCount.innerText = searchCommentID(thisCommentID, posts[postIndex].comments).upvotesNum;
+function addCommentVoteBtnUI(voteBtn){
+  const voteBtnImg =  voteBtn.querySelector('.js_post__action_btn_icon');
+  const voteBtnCount =  voteBtn.querySelector('.js_comment__votes_count');
+  const thisCommentID = voteBtn.closest('.js_comment_wrapper').getAttribute('data-comment-id');
+  const commentObject = searchCommentID(thisCommentID, posts[postIndex].comments);
+  if (voteBtn.classList.contains('js_comment_upvote_btn')){
+    // Update Counter
+    commentObject.upvotesNum++;
+    voteBtnCount.innerText = commentObject.upvotesNum;
 
-        voteBtnImg.src = 'img/system/comment_heart.svg';
-    } else{
-        // Update Counter
-        posts[postIndex].comments[commentIndex].downvotesNum++;
-        voteBtnCount.innerText = posts[postIndex].comments[commentIndex].downvotesNum;
+    voteBtnImg.src = 'img/system/comment_heart-voted.svg';
+  } else{
+    // Update Counter
+    commentObject.downvotesNum++;
+    voteBtnCount.innerText = commentObject.downvotesNum;
 
-        voteBtnImg.src = 'img/system/comment_heart-crack.svg';
-    }
+    voteBtnImg.src = 'img/system/comment_heart-crack-voted.svg';
+  }
 }
-function removeCommentVoteBtnUI(voteBtn, thisCommentVoteNum){
-    const voteBtnImg =  voteBtn.querySelector('.js_post__action_btn_icon');
-    const voteBtnCount =  voteBtn.querySelector('.js_comment__votes_count');
-    const commentIndex = voteBtn.parentElement.getAttribute('data-comment-index');
-    console.log(postIndex);
-    if (voteBtn.classList.contains('js_comment_upvote_btn')){
-        // Update Counter
-        posts[postIndex].comments[commentIndex].upvotesNum--;
-        voteBtnCount.innerText = posts[postIndex].comments[commentIndex].upvotesNum;
+function removeCommentVoteBtnUI(voteBtn){
+  const voteBtnImg =  voteBtn.querySelector('.js_post__action_btn_icon');
+  const voteBtnCount =  voteBtn.querySelector('.js_comment__votes_count');
+  const thisCommentID = voteBtn.closest('.js_comment_wrapper').getAttribute('data-comment-id');
+  const commentObject = searchCommentID(thisCommentID, posts[postIndex].comments);
+  if (voteBtn.classList.contains('js_comment_upvote_btn')){
+    // Update Counter
+    commentObject.upvotesNum--;
+    voteBtnCount.innerText = commentObject.upvotesNum;
 
-        voteBtnImg.src = 'img/system/comment_heart.svg';
-    } else{
-        // Update Counter
-        posts[postIndex].comments[commentIndex].downvotesNum--;
-        voteBtnCount.innerText = posts[postIndex].comments[commentIndex].downvotesNum;
+    voteBtnImg.src = 'img/system/comment_heart.svg';
+  } else{
+    // Update Counter
+    commentObject.downvotesNum--;
+    voteBtnCount.innerText = commentObject.downvotesNum;
 
-        voteBtnImg.src = 'img/system/comment_heart-crack.svg';
-    }
+    voteBtnImg.src = 'img/system/comment_heart-crack.svg';
+  }
 }
