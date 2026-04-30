@@ -16,62 +16,62 @@ function sharePost(){
 function setPreventPostTrue(){
     if (!this.classList.contains('post__comments')){
         preventPost = 1;
-        console.log(`preventPost: ${preventPost}`);
     }
 }
 function setPreventPostFalse(){
     preventPost = 0;
-    console.log(`preventPost: ${preventPost}`);
 }
-function toggleUpvotePost(){
-    const parentElement = this.parentElement;
-    const otherVoteBtn = this.parentElement.querySelector('.js_downvote_btn');
+function toggleUpvotePost(thisEl, addToArray){
+    console.log(thisEl);
+    const parentElement = thisEl.parentElement;
+    const otherVoteBtn = thisEl.parentElement.querySelector('.js_downvote_btn');
     if (parentElement.classList.contains('post__vote_btn--voted')){
-        if (this.classList.contains('post__upvote_btn--upvoted')){
+        if (thisEl.classList.contains('post__upvote_btn--upvoted')){
             // remove Upvote
-            this.classList.remove('post__upvote_btn--upvoted');
-            removeVoteBtnUI(this);
+            thisEl.classList.remove('post__upvote_btn--upvoted');
+            removeVoteBtnUI(thisEl);
             parentElement.classList.remove('post__vote_btn--voted');
         } else{
             // remove other Vote
             otherVoteBtn.classList.remove('post__downvote_btn--downvoted');
-            this.classList.add('post__upvote_btn--upvoted');
+            thisEl.classList.add('post__upvote_btn--upvoted');
             removeVoteBtnUI(otherVoteBtn);
-            addVoteBtnUI(this);
+            addVoteBtnUI(thisEl, addToArray);
             console.log('Upvoted');
         }
     } else{
         parentElement.classList.add('post__vote_btn--voted');
-        this.classList.add('post__upvote_btn--upvoted');
-        addVoteBtnUI(this, otherVoteBtn);
+        thisEl.classList.add('post__upvote_btn--upvoted');
+        addVoteBtnUI(thisEl, otherVoteBtn);
         console.log('Upvoted');
     }
 }
-function toggleDownvotePost(){
-    const parentElement = this.parentElement;
-    const otherVoteBtn = this.parentElement.querySelector('.js_upvote_btn');
+function toggleDownvotePost(thisEl, addToArray){
+    console.log(thisEl);
+    const parentElement = thisEl.parentElement;
+    const otherVoteBtn = thisEl.parentElement.querySelector('.js_upvote_btn');
     if (parentElement.classList.contains('post__vote_btn--voted')){
-        if (this.classList.contains('post__downvote_btn--downvoted')){
+        if (thisEl.classList.contains('post__downvote_btn--downvoted')){
             // remove Downvote
-            this.classList.remove('post__downvote_btn--downvoted');
-            removeVoteBtnUI(this);
+            thisEl.classList.remove('post__downvote_btn--downvoted');
+            removeVoteBtnUI(thisEl);
             parentElement.classList.remove('post__vote_btn--voted');
         } else{
             // remove other Vote
             otherVoteBtn.classList.remove('post__upvote_btn--upvoted');
-            this.classList.add('post__downvote_btn--downvoted');
+            thisEl.classList.add('post__downvote_btn--downvoted');
             removeVoteBtnUI(otherVoteBtn);
-            addVoteBtnUI(this);
+            addVoteBtnUI(thisEl, addToArray);
             console.log('Downvoted');
         }
     } else{
         parentElement.classList.add('post__vote_btn--voted');
-        this.classList.add('post__downvote_btn--downvoted');
-        addVoteBtnUI(this, otherVoteBtn);
+        thisEl.classList.add('post__downvote_btn--downvoted');
+        addVoteBtnUI(thisEl, otherVoteBtn);
         console.log('Downvoted');
     }
 }
-function addVoteBtnUI(voteBtn){
+function addVoteBtnUI(voteBtn, addToArray){
     const thisVoteBtnImg =  voteBtn.querySelector('.js_post__action_btn_icon');
     const thisVoteBtnCount =  voteBtn.querySelector('.js_post__votes_count');
     const postIndex = voteBtn.parentElement.parentElement.parentElement.getAttribute('data-post-index');
@@ -79,10 +79,12 @@ function addVoteBtnUI(voteBtn){
         // Update Counter
         posts[postIndex].upvotesNum++;
         thisVoteBtnCount.innerText = posts[postIndex].upvotesNum;
-
-        upvotedPosts.push(postIndex);
-        localStorage.setItem('upvotedPosts', JSON.stringify(upvotedPosts))
-        console.log(upvotedPosts)
+        if (addToArray){
+            upvotedPosts.push(postIndex);
+            localStorage.setItem('upvotedPosts', JSON.stringify(upvotedPosts));
+            console.log('update upvote');
+            console.log(upvotedPosts);
+        }
 
         thisVoteBtnCount.style.color = 'white';
         thisVoteBtnImg.src = 'img/system/heart-voted.svg';
@@ -91,9 +93,11 @@ function addVoteBtnUI(voteBtn){
         posts[postIndex].downvotesNum++;
         thisVoteBtnCount.innerText = posts[postIndex].downvotesNum;
 
-        downvotedPosts.push(postIndex);
-        localStorage.setItem('downvotedPosts', JSON.stringify(downvotedPosts))
-        console.log(downvotedPosts)
+        if (addToArray != 'addToArray'){
+            downvotedPosts.push(postIndex);
+            localStorage.setItem('downvotedPosts', JSON.stringify(downvotedPosts));
+            console.log(downvotedPosts);
+        }
 
         thisVoteBtnCount.style.color = 'white';
         thisVoteBtnImg.src = 'img/system/heart-crack-voted.svg';
@@ -108,13 +112,11 @@ function removeVoteBtnUI(voteBtn){
         posts[postIndex].upvotesNum--;
         voteBtnCount.innerText = posts[postIndex].upvotesNum;
 
-        upvotedPosts.forEach((post) => {
-            
-        })
-
-        upvotedPosts.push(postIndex);
-        localStorage.setItem('upvotedPosts', JSON.stringify(upvotedPosts))
-        console.log(upvotedPosts)
+        const tempUpVotedPosts = upvotedPosts.filter((post) => {
+            return post !== postIndex;
+        });
+        upvotedPosts = tempUpVotedPosts;
+        localStorage.setItem('upvotedPosts', JSON.stringify(upvotedPosts));
 
         voteBtnCount.style.color = 'black';
         voteBtnImg.src = 'img/system/heart.svg';
@@ -123,7 +125,26 @@ function removeVoteBtnUI(voteBtn){
         posts[postIndex].downvotesNum--;
         voteBtnCount.innerText = posts[postIndex].downvotesNum;
 
+        const tempDownVotedPosts = downvotedPosts.filter((post) => {
+            return post !== postIndex;
+        });
+        downvotedPosts = tempDownVotedPosts;
+        localStorage.setItem('downvotedPosts', JSON.stringify(downvotedPosts));
+
         voteBtnCount.style.color = 'black';
         voteBtnImg.src = 'img/system/heart-crack.svg';
     }
 }
+
+const postsElHTML = document.getElementsByClassName('js_post_get_data');
+Array.from(postsElHTML).forEach((postEl) => {
+    const postElIndex = postEl.getAttribute('data-post-index');
+    if (upvotedPosts.includes(postElIndex)){
+        toggleUpvotePost(postEl.querySelector('.js_upvote_btn'), '');
+        return;
+    }
+    if (downvotedPosts.includes(postElIndex)){
+        toggleDownvotePost(postEl.querySelector('.js_downvote_btn'), '');
+        return;
+    }
+});

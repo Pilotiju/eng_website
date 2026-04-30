@@ -10,15 +10,15 @@ const initFuncs = {
         shareBtn.addEventListener('click', sharePost);
     },
     initUpvoteBtn: function initUpvoteBtn(upvoteBtn){
-        upvoteBtn.addEventListener('click', toggleUpvotePost);
+        upvoteBtn.addEventListener('click', () => toggleUpvotePost(upvoteBtn, ''));
     },
     initDownvoteBtn: function initDownvoteBtn(downvoteBtn){
-        downvoteBtn.addEventListener('click', toggleDownvotePost);
+        downvoteBtn.addEventListener('click', () => toggleDownvotePost(downvoteBtn, ''));
     },
-    initCommentUpvoteBtn: function initUpvoteBtn(commentUpvoteBtn){
-        commentUpvoteBtn.addEventListener('click', toggleCommentUpvotePost);
+    initCommentUpvoteBtn: function initCommentUpvoteBtn(commentUpvoteBtn){
+        commentUpvoteBtn.addEventListener('click', () => toggleCommentUpvotePost(commentUpvoteBtn));
     },
-    initCommentDownvoteBtn: function initDownvoteBtn(commentDownvoteBtn){
-        commentDownvoteBtn.addEventListener('click', toggleCommentDownvotePost);
+    initCommentDownvoteBtn: function initCommentDownvoteBtn(commentDownvoteBtn){
+        commentDownvoteBtn.addEventListener('click', () => toggleCommentDownvotePost(commentDownvoteBtn));
     }
 };

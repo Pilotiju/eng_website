@@ -16,7 +16,7 @@ function renderPosts(){
         const author = users[userIndex].name;
         const avatar = users[userIndex].avatar;
         const postHTML = /*html*/`
-            <div data-href="${postLink}" data-post-index="${postIndex}" class="posts js_posts">
+            <div data-href="${postLink}" data-post-index="${postIndex}" class="posts js_posts js_post_get_data">
               <div class="post__meta post__item">
                 <div class="post__user_wrapper">
                   <div class="post__avatar_wrapper">
@@ -184,7 +184,6 @@ function searchCommentID(thisCommentID, thisCommentArray){
     if (commentObject.commentID == thisCommentID){
       return commentObject;
     } else if(commentObject.comments.length > 0){
-      // !!!! why need return here?????
       const found = searchCommentID(thisCommentID, commentObject.comments);
       if (found){
         return found;

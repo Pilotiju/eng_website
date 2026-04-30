@@ -5,12 +5,12 @@ function renderPosts(){
     let postsHTML = '';
     for (let i = 0; i < posts.length; i++){
         const postObject = posts[i];
-        const {title, userIndex, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink} = postObject;
+        const {title, userIndex, date, content, flair, upvotesNum, downvotesNum, commentsNum} = postObject;
         const postIndex = i;
         const author = users[userIndex].name;
         const avatar = users[userIndex].avatar;
         const html = /*html*/`
-          <div data-href="${postLink}" data-post-index="${postIndex}" class="feed_post js_feed_post">
+          <div data-post-index="${postIndex}" class="feed_post js_feed_post js_post_get_data">
             <div class="post__meta post__item">
               <div class="post__user_wrapper">
                 <div class="post__avatar_wrapper">
@@ -59,8 +59,7 @@ function renderPosts(){
         `;
         postsHTML += html;
     }
-
-    document.querySelector('.post_feed').innerHTML = postsHTML;
+    document.querySelector('.js_post_feed').innerHTML = postsHTML;
 }
 // =====================================================
 renderPosts();
