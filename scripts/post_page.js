@@ -203,8 +203,8 @@ function addCommentVoteBtnUI(voteBtn){
     commentObject.upvotesNum++;
     voteBtnCount.innerText = commentObject.upvotesNum;
 
-    if (!upvotedComments.includes(thisCommentID)){
-      upvotedComments.push(thisCommentID);
+    if (!upvotedComments[postIndex].includes(thisCommentID)){
+      upvotedComments[postIndex].push(thisCommentID);
       localStorage.setItem('upvotedComments', JSON.stringify(upvotedComments));
     }
     console.log(upvotedComments);
@@ -215,8 +215,8 @@ function addCommentVoteBtnUI(voteBtn){
     commentObject.downvotesNum++;
     voteBtnCount.innerText = commentObject.downvotesNum;
 
-    if (!downvotedComments.includes(thisCommentID)){
-      downvotedComments.push(thisCommentID);
+    if (!downvotedComments[postIndex].includes(thisCommentID)){
+      downvotedComments[postIndex].push(thisCommentID);
       localStorage.setItem('downvotedComments', JSON.stringify(downvotedComments));
     }
     console.log(downvotedComments);
@@ -260,11 +260,11 @@ window.addEventListener('pageshow', () => {
     const commentsHTML = document.getElementsByClassName('js_comment_wrapper');
     Array.from(commentsHTML).forEach((commentEl) => {
         const commentID = commentEl.getAttribute('data-comment-id');
-        if (upvotedComments.includes(commentID)){
+        if (upvotedComments[postIndex].includes(commentID)){
             toggleCommentUpvotePost(commentEl.querySelector('.js_comment_upvote_btn'), '');
             return;
         }
-        if (downvotedComments.includes(commentID)){
+        if (downvotedComments[postIndex].includes(commentID)){
             toggleCommentDownvotePost(commentEl.querySelector('.js_comment_downvote_btn'), '');
             return;
         }

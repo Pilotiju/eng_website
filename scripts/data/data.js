@@ -162,10 +162,16 @@ if (JSON.parse(localStorage.getItem('downvotedPosts'))){
 }
 
 let upvotedComments = [];
+for (let i = 0; i < posts.length; i++){
+    upvotedComments.push([]);
+}
 if (JSON.parse(localStorage.getItem('upvotedComments'))){
     upvotedComments = JSON.parse(localStorage.getItem('upvotedComments'));
 }
 let downvotedComments = [];
+for (let i = 0; i < posts.length; i++){
+    downvotedComments.push([]);
+}
 if (JSON.parse(localStorage.getItem('downvotedComments'))){
     downvotedComments = JSON.parse(localStorage.getItem('downvotedComments'));
 }
