@@ -121,7 +121,14 @@ const posts = [
         downvotesNum: 13,
         commentsNum: 84,
         comments: [
-            
+            {
+                commenterIndex: 2,
+                content: "Yo",
+                date: "now",
+                upvotesNum: 0,
+                downvotesNum: 13,
+                comments: []
+            }
         ]
     },
     {
@@ -152,4 +159,13 @@ if (JSON.parse(localStorage.getItem('upvotedPosts'))){
 let downvotedPosts = [];
 if (JSON.parse(localStorage.getItem('downvotedPosts'))){
     downvotedPosts = JSON.parse(localStorage.getItem('downvotedPosts'));
+}
+
+let upvotedComments = [];
+if (JSON.parse(localStorage.getItem('upvotedComments'))){
+    upvotedComments = JSON.parse(localStorage.getItem('upvotedComments'));
+}
+let downvotedComments = [];
+if (JSON.parse(localStorage.getItem('downvotedComments'))){
+    downvotedComments = JSON.parse(localStorage.getItem('downvotedComments'));
 }

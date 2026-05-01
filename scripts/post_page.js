@@ -131,6 +131,7 @@ const CommentDownvoteBtns = document.querySelectorAll('.js_comment_downvote_btn'
 CommentDownvoteBtns.forEach(initFuncs.initCommentDownvoteBtn);
 
 function toggleCommentUpvotePost(thisEl){
+  console.log(thisEl);
     const parentElement = thisEl.parentElement;
     const otherVoteBtn = thisEl.parentElement.querySelector('.js_comment_downvote_btn');
     if (parentElement.classList.contains('comment__vote_btn--voted')){
@@ -202,11 +203,23 @@ function addCommentVoteBtnUI(voteBtn){
     commentObject.upvotesNum++;
     voteBtnCount.innerText = commentObject.upvotesNum;
 
+    if (!upvotedComments.includes(thisCommentID)){
+      upvotedComments.push(thisCommentID);
+      localStorage.setItem('upvotedComments', JSON.stringify(upvotedComments));
+    }
+    console.log(upvotedComments);
+
     voteBtnImg.src = 'img/system/comment_heart-voted.svg';
   } else{
     // Update Counter
     commentObject.downvotesNum++;
     voteBtnCount.innerText = commentObject.downvotesNum;
+
+    if (!downvotedComments.includes(thisCommentID)){
+      downvotedComments.push(thisCommentID);
+      localStorage.setItem('downvotedComments', JSON.stringify(downvotedComments));
+    }
+    console.log(downvotedComments);
 
     voteBtnImg.src = 'img/system/comment_heart-crack-voted.svg';
   }
@@ -221,12 +234,39 @@ function removeCommentVoteBtnUI(voteBtn){
     commentObject.upvotesNum--;
     voteBtnCount.innerText = commentObject.upvotesNum;
 
+    const tempUpvotedComments = upvotedComments.filter((comment) => {
+      return comment !== thisCommentID;
+    });
+    upvotedComments = tempUpvotedComments;
+    localStorage.setItem('upvotedComments', JSON.stringify(upvotedComments));
+
     voteBtnImg.src = 'img/system/comment_heart.svg';
   } else{
     // Update Counter
     commentObject.downvotesNum--;
     voteBtnCount.innerText = commentObject.downvotesNum;
 
+    const tempDownvotedComments = downvotedComments.filter((comment) => {
+      return comment !== thisCommentID;
+    });
+    downvotedComments = tempDownvotedComments;
+    localStorage.setItem('downvotedComments', JSON.stringify(downvotedComments));
+
     voteBtnImg.src = 'img/system/comment_heart-crack.svg';
   }
 }
+
+window.addEventListener('pageshow', () => {
+    const commentsHTML = document.getElementsByClassName('js_comment_wrapper');
+    Array.from(commentsHTML).forEach((commentEl) => {
+        const commentID = commentEl.getAttribute('data-comment-id');
+        if (upvotedComments.includes(commentID)){
+            toggleCommentUpvotePost(commentEl.querySelector('.js_comment_upvote_btn'), '');
+            return;
+        }
+        if (downvotedComments.includes(commentID)){
+            toggleCommentDownvotePost(commentEl.querySelector('.js_comment_downvote_btn'), '');
+            return;
+        }
+    });
+});
