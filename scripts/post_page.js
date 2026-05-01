@@ -130,51 +130,51 @@ CommentUpvoteBtns.forEach(initFuncs.initCommentUpvoteBtn);
 const CommentDownvoteBtns = document.querySelectorAll('.js_comment_downvote_btn');
 CommentDownvoteBtns.forEach(initFuncs.initCommentDownvoteBtn);
 
-function toggleCommentUpvotePost(){
-    const parentElement = this.parentElement;
-    const otherVoteBtn = this.parentElement.querySelector('.js_comment_downvote_btn');
+function toggleCommentUpvotePost(thisEl){
+    const parentElement = thisEl.parentElement;
+    const otherVoteBtn = thisEl.parentElement.querySelector('.js_comment_downvote_btn');
     if (parentElement.classList.contains('comment__vote_btn--voted')){
-        if (this.classList.contains('comment__upvote_btn--upvoted')){
+        if (thisEl.classList.contains('comment__upvote_btn--upvoted')){
             // remove Upvote
-            this.classList.remove('comment__upvote_btn--upvoted');
-            removeCommentVoteBtnUI(this);
+            thisEl.classList.remove('comment__upvote_btn--upvoted');
+            removeCommentVoteBtnUI(thisEl);
             parentElement.classList.remove('comment__vote_btn--voted');
         } else{
             // remove other Vote
             otherVoteBtn.classList.remove('comment__downvote_btn--downvoted');
-            this.classList.add('comment__upvote_btn--upvoted');
+            thisEl.classList.add('comment__upvote_btn--upvoted');
             removeCommentVoteBtnUI(otherVoteBtn);
-            addCommentVoteBtnUI(this);
+            addCommentVoteBtnUI(thisEl);
             console.log('Upvoted');
         }
     } else{
         parentElement.classList.add('comment__vote_btn--voted');
-        this.classList.add('comment__upvote_btn--upvoted');
-        addCommentVoteBtnUI(this);
+        thisEl.classList.add('comment__upvote_btn--upvoted');
+        addCommentVoteBtnUI(thisEl);
         console.log('Upvoted');
     }
 }
-function toggleCommentDownvotePost(){
-    const parentElement = this.parentElement;
-    const otherVoteBtn = this.parentElement.querySelector('.js_comment_upvote_btn');
+function toggleCommentDownvotePost(thisEl){
+    const parentElement = thisEl.parentElement;
+    const otherVoteBtn = thisEl.parentElement.querySelector('.js_comment_upvote_btn');
     if (parentElement.classList.contains('comment__vote_btn--voted')){
-        if (this.classList.contains('comment__downvote_btn--downvoted')){
+        if (thisEl.classList.contains('comment__downvote_btn--downvoted')){
             // remove Downvote
-            this.classList.remove('comment__downvote_btn--downvoted');
-            removeCommentVoteBtnUI(this);
+            thisEl.classList.remove('comment__downvote_btn--downvoted');
+            removeCommentVoteBtnUI(thisEl);
             parentElement.classList.remove('comment__vote_btn--voted');
         } else{
             // remove other Vote
             otherVoteBtn.classList.remove('comment__upvote_btn--upvoted');
-            this.classList.add('comment__downvote_btn--downvoted');
+            thisEl.classList.add('comment__downvote_btn--downvoted');
             removeCommentVoteBtnUI(otherVoteBtn);
-            addCommentVoteBtnUI(this);
+            addCommentVoteBtnUI(thisEl);
             console.log('Downvoted');
         }
     } else{
         parentElement.classList.add('comment__vote_btn--voted');
-        this.classList.add('comment__downvote_btn--downvoted');
-        addCommentVoteBtnUI(this);
+        thisEl.classList.add('comment__downvote_btn--downvoted');
+        addCommentVoteBtnUI(thisEl);
         console.log('Downvoted');
     }
 }

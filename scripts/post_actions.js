@@ -79,12 +79,12 @@ function addVoteBtnUI(voteBtn, addToArray){
         // Update Counter
         posts[postIndex].upvotesNum++;
         thisVoteBtnCount.innerText = posts[postIndex].upvotesNum;
-        if (addToArray){
+        
+        if (!upvotedPosts.includes(postIndex)){
             upvotedPosts.push(postIndex);
             localStorage.setItem('upvotedPosts', JSON.stringify(upvotedPosts));
-            console.log('update upvote');
-            console.log(upvotedPosts);
         }
+        console.log(upvotedPosts);
 
         thisVoteBtnCount.style.color = 'white';
         thisVoteBtnImg.src = 'img/system/heart-voted.svg';
@@ -93,11 +93,12 @@ function addVoteBtnUI(voteBtn, addToArray){
         posts[postIndex].downvotesNum++;
         thisVoteBtnCount.innerText = posts[postIndex].downvotesNum;
 
-        if (addToArray != 'addToArray'){
+        if (!downvotedPosts.includes(postIndex)){
             downvotedPosts.push(postIndex);
             localStorage.setItem('downvotedPosts', JSON.stringify(downvotedPosts));
-            console.log(downvotedPosts);
         }
+        console.log(downvotedPosts);
+        
 
         thisVoteBtnCount.style.color = 'white';
         thisVoteBtnImg.src = 'img/system/heart-crack-voted.svg';
