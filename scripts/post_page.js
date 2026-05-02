@@ -90,7 +90,7 @@ function renderComments(commentArray, nestedLevel, parentCommentID){
         ${content}
       </div>
       <div class="comment__actions comment__item">
-        <div class="post__vote_btns_wrapper">
+        <div class="js_post__vote_btns_wrapper post__vote_btns_wrapper">
           <button class="js_comment_upvote_btn comment__upvote_btn comment__actions_vote_btn js_comment__actions_btn">
             <img class="js_post__action_btn_icon comment__actions_vote_img" src="img/system/comment_heart.svg" alt="Upvote">
             <span class="js_upvotes_count js_comment__votes_count comment__votes_count post__votes_count">${upvotesNum}</span>
@@ -306,15 +306,16 @@ window.addEventListener('pageshow', () => {
   console.log('================= Check Comments Vote =================');
     const commentsHTML = document.getElementsByClassName('js_comment_wrapper');
     Array.from(commentsHTML).forEach((commentEl) => {
-        const commentID = Number(commentEl.getAttribute('data-comment-id'));
-        if (upvotedComments[postIndex].includes(commentID)){
-            toggleCommentUpvotePost(commentEl.querySelector('.js_comment_upvote_btn'), '');
-            return;
-        }
-        if (downvotedComments[postIndex].includes(commentID)){
-            toggleCommentDownvotePost(commentEl.querySelector('.js_comment_downvote_btn'), '');
-            return;
-        }
+      const checkBtnVoted = commentEl.querySelector('.js_post__vote_btns_wrapper').classList.contains('comment__vote_btn--voted');
+      const commentID = Number(commentEl.getAttribute('data-comment-id'));
+      if (upvotedComments[postIndex].includes(commentID) && !checkBtnVoted){
+          toggleCommentUpvotePost(commentEl.querySelector('.js_comment_upvote_btn'), '');
+          return;
+      }
+      if (downvotedComments[postIndex].includes(commentID) && !checkBtnVoted){
+          toggleCommentDownvotePost(commentEl.querySelector('.js_comment_downvote_btn'), '');
+          return;
+      }
     });
 });
 
