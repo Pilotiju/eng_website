@@ -130,8 +130,16 @@ CommentUpvoteBtns.forEach(initFuncs.initCommentUpvoteBtn);
 const CommentDownvoteBtns = document.querySelectorAll('.js_comment_downvote_btn');
 CommentDownvoteBtns.forEach(initFuncs.initCommentDownvoteBtn);
 
+const commentWrappers = document.querySelectorAll('.js_comment_wrapper');
+commentWrappers.forEach((commentWrapper) => {
+  const commentID = commentWrapper.getAttribute('data-comment-id');
+  const commentObject = searchCommentID(commentID, posts[postIndex].comments);
+  if (commentObject.comments.length > 0){
+    commentWrapper.classList.add('comment_wrapper--has_comments');
+  }
+});
+
 function toggleCommentUpvotePost(thisEl){
-  console.log(thisEl);
     const parentElement = thisEl.parentElement;
     const otherVoteBtn = thisEl.parentElement.querySelector('.js_comment_downvote_btn');
     if (parentElement.classList.contains('comment__vote_btn--voted')){
@@ -207,7 +215,6 @@ function addCommentVoteBtnUI(voteBtn){
       upvotedComments[postIndex].push(thisCommentID);
       localStorage.setItem('upvotedComments', JSON.stringify(upvotedComments));
     }
-    console.log(upvotedComments);
 
     voteBtnImg.src = 'img/system/comment_heart-voted.svg';
   } else{
@@ -219,7 +226,6 @@ function addCommentVoteBtnUI(voteBtn){
       downvotedComments[postIndex].push(thisCommentID);
       localStorage.setItem('downvotedComments', JSON.stringify(downvotedComments));
     }
-    console.log(downvotedComments);
 
     voteBtnImg.src = 'img/system/comment_heart-crack-voted.svg';
   }

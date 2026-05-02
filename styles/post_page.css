@@ -1,12 +1,31 @@
 .comment_wrapper{
     display: block;
     position: relative;
-    background-color: var(--feed-posts-card-bg);
+    /* background-color: var(--feed-posts-card-bg); */
     padding: 10px;
     border-radius: 10px;
     z-index: 0;
 }
-
+.comment_wrapper--has_comments::after{
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: calc(100% - 40px);
+    bottom: -10px;
+    left: 25px;
+    background-color: black;
+}
+.comment_wrapper--has_comments::before{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 30px;
+    bottom: -30px;
+    left: 25px;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    border-bottom-left-radius: 16px;
+}
 .comment__thread_seperator{
     height: 20px;
 }
