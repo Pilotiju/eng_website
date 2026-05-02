@@ -3,7 +3,7 @@ function getURLPostIndex(){
     const urlParams = new URLSearchParams(document.location.search);
     const postIndex = urlParams.get('postIndex');
     console.log(`URLParam postIndex: ${postIndex}`);
-    return postIndex;
+    return Number(postIndex);
 }
 
 let commentID = 0;
@@ -65,7 +65,7 @@ function renderPosts(){
 }
 // =====================================================
 
-function renderComments(commentArray, nestedLevel){
+function renderComments(commentArray, nestedLevel, parentCommentID){
   // level 0 => -1 | doesn't work otherwise idk why
   nestedLevel++;
   let html = '';
@@ -78,11 +78,11 @@ function renderComments(commentArray, nestedLevel){
     const {name, avatar} = userObject;
     let commentsHTML = /*html*/`
     <div class="js_comment_wrapper comment_wrapper comment__item" data-comment-id="${commentID}" style="margin-left:${nestedLevel*50}px">
-      <div class="comment__meta normal_fs">
+      <div class="js_comment__meta comment__meta normal_fs" data-parent-comment-id="${parentCommentID}">
         <div class="comment__avatar_wrapper">
           <img src="img/avatars/${avatar}" alt="Commentor avatar" class="comment__avatar">
         </div>
-        <span class="comment__user_name">${name} --- nested:[${nestedLevel}] --- ID:[${commentID}]</span>
+        <span class="comment__user_name">${name} --- nested:[${nestedLevel}] --- ID:[${commentID}] --- parentCommentID:[${parentCommentID}]</span>
         <span class="comment__meta_seperator">•</span>
         <span class="comment__date">${date}</span>
       </div>
@@ -115,7 +115,7 @@ function renderComments(commentArray, nestedLevel){
       html += seperatorHTML;
     }
     if (commentObject.comments.length > 0){
-      html += renderComments(commentObject.comments, nestedLevel);
+      html += renderComments(commentObject.comments, nestedLevel, commentID - 1);
     }
   });
   return html;
@@ -123,21 +123,61 @@ function renderComments(commentArray, nestedLevel){
 
 // =====================================================
 renderPosts();
-document.querySelector('.js_posts_comments_wrapper').innerHTML = renderComments(posts[postIndex].comments, -1);
+document.querySelector('.js_posts_comments_wrapper').innerHTML = renderComments(posts[postIndex].comments, -1, -1);
+
+const commentMetas = document.querySelectorAll('.js_comment__meta');
+
+let loadedImgs = 0;
+let checkDrewThreadlines = 0;
+const commentImgs = document.querySelectorAll('.js_comment__img');
+console.log(commentImgs);
+if (commentImgs){
+  commentImgs.forEach((commentImg) => {
+    commentImg.addEventListener('load', () => {
+      loadedImgs++;
+      checkLoadedAllCommentImgs();
+    });
+  });
+} else{
+  drawThreadLines();
+}
+
+function checkLoadedAllCommentImgs(){
+  if (loadedImgs === commentImgs.length){
+    drawThreadLines();
+  }
+}
+
+function drawThreadLines(){
+  checkDrewThreadlines = 1;
+  commentMetas.forEach((commentMeta) => {
+  const parentID = commentMeta.getAttribute('data-parent-comment-id');
+  if (parentID != "-1"){
+    const parentMeta = document.querySelector(`[data-comment-id="${parentID}"]`).querySelector('.js_comment__meta');
+    const ownRect = commentMeta.getBoundingClientRect();
+    const parentRect = parentMeta.getBoundingClientRect();
+    const yDistance = ownRect.top - parentRect.top;
+    // console.log('============================');
+    // console.log(commentMeta);
+    // console.log(parentMeta);
+    // console.log(ownRect);
+    // console.log(`ownRect: ${ownRect.top}`);
+    // console.log(`parentRect: ${parentRect.top}`);
+    // console.log(yDistance);
+    // console.log('============================');
+    const createThreadline = document.createElement('div');
+    createThreadline.classList.add('comment__threadline');
+    createThreadline.style.height = `${yDistance - 25}px`;
+    createThreadline.style.bottom = `20px`;
+    commentMeta.append(createThreadline);
+  }
+  });
+}
 
 const CommentUpvoteBtns = document.querySelectorAll('.js_comment_upvote_btn');
 CommentUpvoteBtns.forEach(initFuncs.initCommentUpvoteBtn);
 const CommentDownvoteBtns = document.querySelectorAll('.js_comment_downvote_btn');
 CommentDownvoteBtns.forEach(initFuncs.initCommentDownvoteBtn);
-
-const commentWrappers = document.querySelectorAll('.js_comment_wrapper');
-commentWrappers.forEach((commentWrapper) => {
-  const commentID = commentWrapper.getAttribute('data-comment-id');
-  const commentObject = searchCommentID(commentID, posts[postIndex].comments);
-  if (commentObject.comments.length > 0){
-    commentWrapper.classList.add('comment_wrapper--has_comments');
-  }
-});
 
 function toggleCommentUpvotePost(thisEl){
     const parentElement = thisEl.parentElement;
@@ -211,8 +251,8 @@ function addCommentVoteBtnUI(voteBtn){
     commentObject.upvotesNum++;
     voteBtnCount.innerText = commentObject.upvotesNum;
 
-    if (!upvotedComments[postIndex].includes(thisCommentID)){
-      upvotedComments[postIndex].push(thisCommentID);
+    if (!upvotedComments[postIndex].includes(Number(thisCommentID))){
+      upvotedComments[postIndex].push(Number(thisCommentID));
       localStorage.setItem('upvotedComments', JSON.stringify(upvotedComments));
     }
 
@@ -222,8 +262,8 @@ function addCommentVoteBtnUI(voteBtn){
     commentObject.downvotesNum++;
     voteBtnCount.innerText = commentObject.downvotesNum;
 
-    if (!downvotedComments[postIndex].includes(thisCommentID)){
-      downvotedComments[postIndex].push(thisCommentID);
+    if (!downvotedComments[postIndex].includes(Number(thisCommentID))){
+      downvotedComments[postIndex].push(Number(thisCommentID));
       localStorage.setItem('downvotedComments', JSON.stringify(downvotedComments));
     }
 
@@ -263,9 +303,10 @@ function removeCommentVoteBtnUI(voteBtn){
 }
 
 window.addEventListener('pageshow', () => {
+  console.log('================= Check Comments Vote =================');
     const commentsHTML = document.getElementsByClassName('js_comment_wrapper');
     Array.from(commentsHTML).forEach((commentEl) => {
-        const commentID = commentEl.getAttribute('data-comment-id');
+        const commentID = Number(commentEl.getAttribute('data-comment-id'));
         if (upvotedComments[postIndex].includes(commentID)){
             toggleCommentUpvotePost(commentEl.querySelector('.js_comment_upvote_btn'), '');
             return;
@@ -276,3 +317,7 @@ window.addEventListener('pageshow', () => {
         }
     });
 });
+
+if (!checkDrewThreadlines){
+  setTimeout(drawThreadLines, 1000);
+}

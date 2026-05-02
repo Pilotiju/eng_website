@@ -80,7 +80,7 @@ const posts = [
                     },
                     {
                         commenterIndex: 4,
-                        content: `<img src="img/comments/temps/albert_nikola.jpg" alt="Comment Img" class="comment__img">`,
+                        content: `<img src="img/comments/temps/albert_nikola.jpg" alt="Comment Img" class="js_comment__img comment__img">`,
                         date: "∞ years ago",
                         upvotesNum: 311,
                         downvotesNum: 10,

@@ -23,6 +23,7 @@ body{
 
     /* Comment Actions */
     --comment-action-bg: rgb(209, 209, 209);
+    --threadline-color: rgb(121, 121, 121);
 
     /* NavBar */
     --main-navbar-bg: rgb(247, 152, 45);
