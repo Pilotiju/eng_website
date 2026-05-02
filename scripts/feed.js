@@ -1,15 +1,15 @@
 let preventPost = 0;
 
 // =====================================================
-function renderPosts(){
-    let postsHTML = '';
-    for (let i = 0; i < posts.length; i++){
-        const postObject = posts[i];
-        const {title, userIndex, date, content, flair, upvotesNum, downvotesNum, commentsNum} = postObject;
-        const postIndex = i;
-        const author = users[userIndex].name;
-        const avatar = users[userIndex].avatar;
-        const html = /*html*/`
+function renderPosts() {
+  let postsHTML = '';
+  for (let i = 0; i < posts.length; i++) {
+    const postObject = posts[i];
+    const { title, userIndex, date, content, flair, upvotesNum, downvotesNum, commentsNum } = postObject;
+    const postIndex = i;
+    const author = users[userIndex].name;
+    const avatar = users[userIndex].avatar;
+    const html = /*html*/`
           <div data-post-index="${postIndex}" class="feed_post js_feed_post js_post_get_data">
             <div class="post__meta post__item">
               <div class="post__user_wrapper">
@@ -57,20 +57,21 @@ function renderPosts(){
             </div>
           </div>
         `;
-        postsHTML += html;
-    }
-    document.querySelector('.js_post_feed').innerHTML = postsHTML;
+    postsHTML += html;
+  }
+  document.querySelector('.js_post_feed').innerHTML = postsHTML;
 }
 // =====================================================
 renderPosts();
-
-const postsEl = document.querySelectorAll('.js_feed_post');
-postsEl.forEach(initFuncs.initPost);
-
-function openPost(){
-    if (preventPost === 0){
-        const postIndex = this.getAttribute('data-post-index');
-        preventPost = 0;
-        window.location.href = `https://pilotiju.github.io/eng_website/post_page.html?postIndex=${postIndex}`;
-    }
+function openPost() {
+  if (preventPost === 0) {
+    const postIndex = this.getAttribute('data-post-index');
+    preventPost = 0;
+    window.location.href = `https://pilotiju.github.io/eng_website/post_page.html?postIndex=${postIndex}`;
+  }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const postsEl = document.querySelectorAll('.js_feed_post');
+  postsEl.forEach(initFuncs.initPost);
+});

@@ -1,21 +1,21 @@
 const postIndex = getURLPostIndex();
-function getURLPostIndex(){
-    const urlParams = new URLSearchParams(document.location.search);
-    const postIndex = urlParams.get('postIndex');
-    console.log(`URLParam postIndex: ${postIndex}`);
-    return Number(postIndex);
+function getURLPostIndex() {
+  const urlParams = new URLSearchParams(document.location.search);
+  const postIndex = urlParams.get('postIndex');
+  console.log(`URLParam postIndex: ${postIndex}`);
+  return Number(postIndex);
 }
 
 let commentID = 0;
 
 // ======================================================
-function renderPosts(){
-    let html = '';
-        const postObject = posts[postIndex];
-        const {title, userIndex, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink} = postObject;
-        const author = users[userIndex].name;
-        const avatar = users[userIndex].avatar;
-        const postHTML = /*html*/`
+function renderPosts() {
+  let html = '';
+  const postObject = posts[postIndex];
+  const { title, userIndex, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink } = postObject;
+  const author = users[userIndex].name;
+  const avatar = users[userIndex].avatar;
+  const postHTML = /*html*/`
             <div data-href="${postLink}" data-post-index="${postIndex}" class="posts js_posts js_post_get_data">
               <div class="post__meta post__item">
                 <div class="post__user_wrapper">
@@ -60,24 +60,23 @@ function renderPosts(){
             </div>
             </div>
         `;
-        html += postHTML;
-    document.querySelector('.js_posts_wrapper').innerHTML = html;
+  html += postHTML;
+  document.querySelector('.js_posts_wrapper').innerHTML = html;
 }
 // =====================================================
-
-function renderComments(commentArray, nestedLevel, parentCommentID){
+function renderComments(commentArray, nestedLevel, parentCommentID) {
   // level 0 => -1 | doesn't work otherwise idk why
   nestedLevel++;
   let html = '';
   commentArray.forEach((commentObject, i) => {
     let seperatorHTML = '';
-    const {commenterIndex, content, date, upvotesNum, downvotesNum} = commentObject;
+    const { commenterIndex, content, date, upvotesNum, downvotesNum } = commentObject;
     commentObject.commentID = commentID;
     const userObject = users[commenterIndex];
     console.log(`Object: ${commentObject.content}  |  nestedLevel: ${nestedLevel}  |  commentID: ${commentID}`);
-    const {name, avatar} = userObject;
+    const { name, avatar } = userObject;
     let commentsHTML = /*html*/`
-    <div class="js_comment_wrapper comment_wrapper comment__item" data-comment-id="${commentID}" style="margin-left:${nestedLevel*50}px">
+    <div class="js_comment_wrapper comment_wrapper comment__item" data-comment-id="${commentID}" style="margin-left:${nestedLevel * 50}px">
       <div class="js_comment__meta comment__meta normal_fs" data-parent-comment-id="${parentCommentID}">
         <div class="comment__avatar_wrapper">
           <img src="img/avatars/${avatar}" alt="Commentor avatar" class="comment__avatar">
@@ -104,17 +103,17 @@ function renderComments(commentArray, nestedLevel, parentCommentID){
     </div>
     `;
     commentID++;
-    if (nestedLevel === 0 && commentObject.comments.length === 0){
+    if (nestedLevel === 0 && commentObject.comments.length === 0) {
       seperatorHTML += /*html*/`<div class="comment__thread_seperator"></div>`;
     }
-    if (i === 0){
+    if (i === 0) {
       html += commentsHTML;
       html += seperatorHTML;
-    } else{
+    } else {
       seperatorHTML += commentsHTML;
       html += seperatorHTML;
     }
-    if (commentObject.comments.length > 0){
+    if (commentObject.comments.length > 0) {
       html += renderComments(commentObject.comments, nestedLevel, commentID - 1);
     }
   });
@@ -122,147 +121,122 @@ function renderComments(commentArray, nestedLevel, parentCommentID){
 }
 
 // =====================================================
-renderPosts();
-document.querySelector('.js_posts_comments_wrapper').innerHTML = renderComments(posts[postIndex].comments, -1, -1);
-
-const commentMetas = document.querySelectorAll('.js_comment__meta');
-
-let loadedImgs = 0;
-let checkDrewThreadlines = 0;
-const commentImgs = document.querySelectorAll('.js_comment__img');
-console.log(commentImgs);
-if (commentImgs){
-  commentImgs.forEach((commentImg) => {
-    commentImg.addEventListener('load', () => {
-      loadedImgs++;
-      checkLoadedAllCommentImgs();
-    });
-  });
-} else{
-  drawThreadLines();
-}
-
-function checkLoadedAllCommentImgs(){
-  if (loadedImgs === commentImgs.length){
+function checkLoadedAllCommentImgs() {
+  if (loadedImgs === commentImgs.length) {
     drawThreadLines();
   }
 }
 
-function drawThreadLines(){
+function drawThreadLines() {
   checkDrewThreadlines = 1;
   commentMetas.forEach((commentMeta) => {
-  const parentID = commentMeta.getAttribute('data-parent-comment-id');
-  if (parentID != "-1"){
-    const parentMeta = document.querySelector(`[data-comment-id="${parentID}"]`).querySelector('.js_comment__meta');
-    const ownRect = commentMeta.getBoundingClientRect();
-    const parentRect = parentMeta.getBoundingClientRect();
-    const yDistance = ownRect.top - parentRect.top;
-    // console.log('============================');
-    // console.log(commentMeta);
-    // console.log(parentMeta);
-    // console.log(ownRect);
-    // console.log(`ownRect: ${ownRect.top}`);
-    // console.log(`parentRect: ${parentRect.top}`);
-    // console.log(yDistance);
-    // console.log('============================');
-    const createThreadline = document.createElement('div');
-    createThreadline.classList.add('comment__threadline');
-    createThreadline.style.height = `${yDistance - 25}px`;
-    createThreadline.style.bottom = `20px`;
-    commentMeta.append(createThreadline);
-  }
+    const parentID = commentMeta.getAttribute('data-parent-comment-id');
+    if (parentID != "-1") {
+      const parentMeta = document.querySelector(`[data-comment-id="${parentID}"]`).querySelector('.js_comment__meta');
+      const ownRect = commentMeta.getBoundingClientRect();
+      const parentRect = parentMeta.getBoundingClientRect();
+      const yDistance = ownRect.top - parentRect.top;
+      // console.log('============================');
+      // console.log(commentMeta);
+      // console.log(parentMeta);
+      // console.log(ownRect);
+      // console.log(`ownRect: ${ownRect.top}`);
+      // console.log(`parentRect: ${parentRect.top}`);
+      // console.log(yDistance);
+      // console.log('============================');
+      const createThreadline = document.createElement('div');
+      createThreadline.classList.add('comment__threadline');
+      createThreadline.style.height = `${yDistance - 25}px`;
+      createThreadline.style.bottom = `20px`;
+      commentMeta.append(createThreadline);
+    }
   });
 }
 
-const CommentUpvoteBtns = document.querySelectorAll('.js_comment_upvote_btn');
-CommentUpvoteBtns.forEach(initFuncs.initCommentUpvoteBtn);
-const CommentDownvoteBtns = document.querySelectorAll('.js_comment_downvote_btn');
-CommentDownvoteBtns.forEach(initFuncs.initCommentDownvoteBtn);
-
-function toggleCommentUpvotePost(thisEl){
-    const parentElement = thisEl.parentElement;
-    const otherVoteBtn = thisEl.parentElement.querySelector('.js_comment_downvote_btn');
-    if (parentElement.classList.contains('comment__vote_btn--voted')){
-        if (thisEl.classList.contains('comment__upvote_btn--upvoted')){
-            // remove Upvote
-            thisEl.classList.remove('comment__upvote_btn--upvoted');
-            removeCommentVoteBtnUI(thisEl);
-            parentElement.classList.remove('comment__vote_btn--voted');
-        } else{
-            // remove other Vote
-            otherVoteBtn.classList.remove('comment__downvote_btn--downvoted');
-            thisEl.classList.add('comment__upvote_btn--upvoted');
-            removeCommentVoteBtnUI(otherVoteBtn);
-            addCommentVoteBtnUI(thisEl);
-            console.log('Upvoted');
-        }
-    } else{
-        parentElement.classList.add('comment__vote_btn--voted');
-        thisEl.classList.add('comment__upvote_btn--upvoted');
-        addCommentVoteBtnUI(thisEl);
-        console.log('Upvoted');
+function toggleCommentUpvotePost(thisEl) {
+  const parentElement = thisEl.parentElement;
+  const otherVoteBtn = thisEl.parentElement.querySelector('.js_comment_downvote_btn');
+  if (parentElement.classList.contains('comment__vote_btn--voted')) {
+    if (thisEl.classList.contains('comment__upvote_btn--upvoted')) {
+      // remove Upvote
+      thisEl.classList.remove('comment__upvote_btn--upvoted');
+      removeCommentVoteBtnUI(thisEl);
+      parentElement.classList.remove('comment__vote_btn--voted');
+    } else {
+      // remove other Vote
+      otherVoteBtn.classList.remove('comment__downvote_btn--downvoted');
+      thisEl.classList.add('comment__upvote_btn--upvoted');
+      removeCommentVoteBtnUI(otherVoteBtn);
+      addCommentVoteBtnUI(thisEl);
+      console.log('Upvoted');
     }
+  } else {
+    parentElement.classList.add('comment__vote_btn--voted');
+    thisEl.classList.add('comment__upvote_btn--upvoted');
+    addCommentVoteBtnUI(thisEl);
+    console.log('Upvoted');
+  }
 }
-function toggleCommentDownvotePost(thisEl){
-    const parentElement = thisEl.parentElement;
-    const otherVoteBtn = thisEl.parentElement.querySelector('.js_comment_upvote_btn');
-    if (parentElement.classList.contains('comment__vote_btn--voted')){
-        if (thisEl.classList.contains('comment__downvote_btn--downvoted')){
-            // remove Downvote
-            thisEl.classList.remove('comment__downvote_btn--downvoted');
-            removeCommentVoteBtnUI(thisEl);
-            parentElement.classList.remove('comment__vote_btn--voted');
-        } else{
-            // remove other Vote
-            otherVoteBtn.classList.remove('comment__upvote_btn--upvoted');
-            thisEl.classList.add('comment__downvote_btn--downvoted');
-            removeCommentVoteBtnUI(otherVoteBtn);
-            addCommentVoteBtnUI(thisEl);
-            console.log('Downvoted');
-        }
-    } else{
-        parentElement.classList.add('comment__vote_btn--voted');
-        thisEl.classList.add('comment__downvote_btn--downvoted');
-        addCommentVoteBtnUI(thisEl);
-        console.log('Downvoted');
+function toggleCommentDownvotePost(thisEl) {
+  const parentElement = thisEl.parentElement;
+  const otherVoteBtn = thisEl.parentElement.querySelector('.js_comment_upvote_btn');
+  if (parentElement.classList.contains('comment__vote_btn--voted')) {
+    if (thisEl.classList.contains('comment__downvote_btn--downvoted')) {
+      // remove Downvote
+      thisEl.classList.remove('comment__downvote_btn--downvoted');
+      removeCommentVoteBtnUI(thisEl);
+      parentElement.classList.remove('comment__vote_btn--voted');
+    } else {
+      // remove other Vote
+      otherVoteBtn.classList.remove('comment__upvote_btn--upvoted');
+      thisEl.classList.add('comment__downvote_btn--downvoted');
+      removeCommentVoteBtnUI(otherVoteBtn);
+      addCommentVoteBtnUI(thisEl);
+      console.log('Downvoted');
     }
+  } else {
+    parentElement.classList.add('comment__vote_btn--voted');
+    thisEl.classList.add('comment__downvote_btn--downvoted');
+    addCommentVoteBtnUI(thisEl);
+    console.log('Downvoted');
+  }
 }
 
-function searchCommentID(thisCommentID, thisCommentArray){
-  for (commentObject of thisCommentArray){
-    if (commentObject.commentID == thisCommentID){
+function searchCommentID(thisCommentID, thisCommentArray) {
+  for (commentObject of thisCommentArray) {
+    if (commentObject.commentID == thisCommentID) {
       return commentObject;
-    } else if(commentObject.comments.length > 0){
+    } else if (commentObject.comments.length > 0) {
       const found = searchCommentID(thisCommentID, commentObject.comments);
-      if (found){
+      if (found) {
         return found;
       }
     }
   }
 }
 
-function addCommentVoteBtnUI(voteBtn){
-  const voteBtnImg =  voteBtn.querySelector('.js_post__action_btn_icon');
-  const voteBtnCount =  voteBtn.querySelector('.js_comment__votes_count');
+function addCommentVoteBtnUI(voteBtn) {
+  const voteBtnImg = voteBtn.querySelector('.js_post__action_btn_icon');
+  const voteBtnCount = voteBtn.querySelector('.js_comment__votes_count');
   const thisCommentID = voteBtn.closest('.js_comment_wrapper').getAttribute('data-comment-id');
   const commentObject = searchCommentID(thisCommentID, posts[postIndex].comments);
-  if (voteBtn.classList.contains('js_comment_upvote_btn')){
+  if (voteBtn.classList.contains('js_comment_upvote_btn')) {
     // Update Counter
     commentObject.upvotesNum++;
     voteBtnCount.innerText = commentObject.upvotesNum;
 
-    if (!upvotedComments[postIndex].includes(Number(thisCommentID))){
+    if (!upvotedComments[postIndex].includes(Number(thisCommentID))) {
       upvotedComments[postIndex].push(Number(thisCommentID));
       localStorage.setItem('upvotedComments', JSON.stringify(upvotedComments));
     }
 
     voteBtnImg.src = 'img/system/comment_heart-voted.svg';
-  } else{
+  } else {
     // Update Counter
     commentObject.downvotesNum++;
     voteBtnCount.innerText = commentObject.downvotesNum;
 
-    if (!downvotedComments[postIndex].includes(Number(thisCommentID))){
+    if (!downvotedComments[postIndex].includes(Number(thisCommentID))) {
       downvotedComments[postIndex].push(Number(thisCommentID));
       localStorage.setItem('downvotedComments', JSON.stringify(downvotedComments));
     }
@@ -270,12 +244,12 @@ function addCommentVoteBtnUI(voteBtn){
     voteBtnImg.src = 'img/system/comment_heart-crack-voted.svg';
   }
 }
-function removeCommentVoteBtnUI(voteBtn){
-  const voteBtnImg =  voteBtn.querySelector('.js_post__action_btn_icon');
-  const voteBtnCount =  voteBtn.querySelector('.js_comment__votes_count');
+function removeCommentVoteBtnUI(voteBtn) {
+  const voteBtnImg = voteBtn.querySelector('.js_post__action_btn_icon');
+  const voteBtnCount = voteBtn.querySelector('.js_comment__votes_count');
   const thisCommentID = voteBtn.closest('.js_comment_wrapper').getAttribute('data-comment-id');
   const commentObject = searchCommentID(thisCommentID, posts[postIndex].comments);
-  if (voteBtn.classList.contains('js_comment_upvote_btn')){
+  if (voteBtn.classList.contains('js_comment_upvote_btn')) {
     // Update Counter
     commentObject.upvotesNum--;
     voteBtnCount.innerText = commentObject.upvotesNum;
@@ -287,7 +261,7 @@ function removeCommentVoteBtnUI(voteBtn){
     localStorage.setItem('upvotedComments', JSON.stringify(upvotedComments));
 
     voteBtnImg.src = 'img/system/comment_heart.svg';
-  } else{
+  } else {
     // Update Counter
     commentObject.downvotesNum--;
     voteBtnCount.innerText = commentObject.downvotesNum;
@@ -302,23 +276,54 @@ function removeCommentVoteBtnUI(voteBtn){
   }
 }
 
+let commentMetas;
+let loadedImgs;
+let checkDrewThreadlines;
+let commentImgs;
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderPosts();
+  document.querySelector('.js_posts_comments_wrapper').innerHTML = renderComments(posts[postIndex].comments, -1, -1);
+
+  commentMetas = document.querySelectorAll('.js_comment__meta');
+  loadedImgs = 0;
+  checkDrewThreadlines = 0;
+  commentImgs = document.querySelectorAll('.js_comment__img');
+  console.log(commentImgs);
+  if (commentImgs.length > 0) {
+    //commentImgs is a Nodelist and returns a truthy value even if empty
+    commentImgs.forEach((commentImg) => {
+      commentImg.addEventListener('load', () => {
+        loadedImgs++;
+        checkLoadedAllCommentImgs();
+      });
+    });
+  } else {
+    drawThreadLines();
+  }
+
+  const commentUpvoteBtns = document.querySelectorAll('.js_comment_upvote_btn');
+  commentUpvoteBtns.forEach(initFuncs.initCommentUpvoteBtn);
+  const commentDownvoteBtns = document.querySelectorAll('.js_comment_downvote_btn');
+  commentDownvoteBtns.forEach(initFuncs.initCommentDownvoteBtn);
+
+  if (!checkDrewThreadlines) {
+    setTimeout(drawThreadLines, 1000);
+  }
+});
 window.addEventListener('pageshow', () => {
   console.log('================= Check Comments Vote =================');
-    const commentsHTML = document.getElementsByClassName('js_comment_wrapper');
-    Array.from(commentsHTML).forEach((commentEl) => {
-      const checkBtnVoted = commentEl.querySelector('.js_post__vote_btns_wrapper').classList.contains('comment__vote_btn--voted');
-      const commentID = Number(commentEl.getAttribute('data-comment-id'));
-      if (upvotedComments[postIndex].includes(commentID) && !checkBtnVoted){
-          toggleCommentUpvotePost(commentEl.querySelector('.js_comment_upvote_btn'), '');
-          return;
-      }
-      if (downvotedComments[postIndex].includes(commentID) && !checkBtnVoted){
-          toggleCommentDownvotePost(commentEl.querySelector('.js_comment_downvote_btn'), '');
-          return;
-      }
-    });
+  const commentsHTML = document.getElementsByClassName('js_comment_wrapper');
+  Array.from(commentsHTML).forEach((commentEl) => {
+    const checkBtnVoted = commentEl.querySelector('.js_post__vote_btns_wrapper').classList.contains('comment__vote_btn--voted');
+    const commentID = Number(commentEl.getAttribute('data-comment-id'));
+    if (upvotedComments[postIndex].includes(commentID) && !checkBtnVoted) {
+      toggleCommentUpvotePost(commentEl.querySelector('.js_comment_upvote_btn'), '');
+      return;
+    }
+    if (downvotedComments[postIndex].includes(commentID) && !checkBtnVoted) {
+      toggleCommentDownvotePost(commentEl.querySelector('.js_comment_downvote_btn'), '');
+      return;
+    }
+  });
 });
-
-if (!checkDrewThreadlines){
-  setTimeout(drawThreadLines, 1000);
-}
