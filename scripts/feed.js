@@ -35,7 +35,7 @@ function renderPosts() {
             </div>
 
             <div class="post__actions post__item">
-                <div class="post__vote_btns_wrapper">
+                <div class="js_post__vote_btns_wrapper post__vote_btns_wrapper">
                   <button class="js_upvote_btn post__upvote_btn post__actions_btn js_post__actions_btn post__actions_vote_btn">
                     <img class="js_post__action_btn_icon post__action_btn_icon" src="img/system/heart.svg" alt="Upvote">
                     <span class="js_upvotes_count js_post__votes_count post__votes_count">${upvotesNum}</span>

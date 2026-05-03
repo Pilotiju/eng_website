@@ -151,12 +151,13 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('pageshow', () => {
   const postsElHTML = document.getElementsByClassName('js_post_get_data');
   Array.from(postsElHTML).forEach((postEl) => {
+    const checkBtnVoted = postEl.querySelector('.js_post__vote_btns_wrapper').classList.contains('post__vote_btn--voted');
     const postElIndex = postEl.getAttribute('data-post-index');
-    if (upvotedPosts.includes(postElIndex)) {
+    if (upvotedPosts.includes(postElIndex) && !checkBtnVoted) {
       toggleUpvotePost(postEl.querySelector('.js_upvote_btn'), '');
       return;
     }
-    if (downvotedPosts.includes(postElIndex)) {
+    if (downvotedPosts.includes(postElIndex) && !checkBtnVoted) {
       toggleDownvotePost(postEl.querySelector('.js_downvote_btn'), '');
       return;
     }
