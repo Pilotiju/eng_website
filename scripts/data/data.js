@@ -177,7 +177,6 @@ window.addEventListener('pageshow', () => {
     upvotedComments.push([]);
   }
   if (JSON.parse(localStorage.getItem('upvotedComments'))) {
-    console.log('upvoted comments is sum in there');
     upvotedComments = JSON.parse(localStorage.getItem('upvotedComments'));
   } else {
     localStorage.setItem('upvotedComments', JSON.stringify(upvotedComments));
