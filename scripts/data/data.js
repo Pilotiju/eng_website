@@ -152,29 +152,31 @@ const posts = [
 ];
 
 // localStorage.clear();
-let upvotedPosts = [];
-if (JSON.parse(localStorage.getItem('upvotedPosts'))) {
-  upvotedPosts = JSON.parse(localStorage.getItem('upvotedPosts'));
-}
-let downvotedPosts = [];
-if (JSON.parse(localStorage.getItem('downvotedPosts'))) {
-  downvotedPosts = JSON.parse(localStorage.getItem('downvotedPosts'));
-}
+window.addEventListener('pageshow', () => {
+  let upvotedPosts = [];
+  if (JSON.parse(localStorage.getItem('upvotedPosts'))) {
+    upvotedPosts = JSON.parse(localStorage.getItem('upvotedPosts'));
+  }
+  let downvotedPosts = [];
+  if (JSON.parse(localStorage.getItem('downvotedPosts'))) {
+    downvotedPosts = JSON.parse(localStorage.getItem('downvotedPosts'));
+  }
 
-let upvotedComments = [];
-for (let i = 0; i < posts.length; i++) {
-  upvotedComments.push([]);
-}
-if (JSON.parse(localStorage.getItem('upvotedComments'))) {
-  console.log('upvoted comments is sum in there');
-  upvotedComments = JSON.parse(localStorage.getItem('upvotedComments'));
-} else {
-  localStorage.setItem('upvotedComments', JSON.stringify(upvotedComments));
-}
-let downvotedComments = [];
-for (let i = 0; i < posts.length; i++) {
-  downvotedComments.push([]);
-}
-if (JSON.parse(localStorage.getItem('downvotedComments'))) {
-  downvotedComments = JSON.parse(localStorage.getItem('downvotedComments'));
-}
+  let upvotedComments = [];
+  for (let i = 0; i < posts.length; i++) {
+    upvotedComments.push([]);
+  }
+  if (JSON.parse(localStorage.getItem('upvotedComments'))) {
+    console.log('upvoted comments is sum in there');
+    upvotedComments = JSON.parse(localStorage.getItem('upvotedComments'));
+  } else {
+    localStorage.setItem('upvotedComments', JSON.stringify(upvotedComments));
+  }
+  let downvotedComments = [];
+  for (let i = 0; i < posts.length; i++) {
+    downvotedComments.push([]);
+  }
+  if (JSON.parse(localStorage.getItem('downvotedComments'))) {
+    downvotedComments = JSON.parse(localStorage.getItem('downvotedComments'));
+  }
+});
