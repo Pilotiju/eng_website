@@ -18,7 +18,7 @@ body{
     --post-action-bg: rgb(182, 182, 182);
     --post-action-bg-hover: rgb(199, 199, 199);
 
-    --post-action-upvote-bg: linear-gradient(to top, rgb(252, 44, 17), rgb(255, 81, 0)); /*Also used in comment actions*/
+    --post-action-upvote-bg: linear-gradient(to top, rgb(248, 55, 29), rgb(255, 81, 0)); /*Also used in comment actions*/
     --post-action-downvote-bg: linear-gradient(to top, rgb(106, 92, 255), rgb(92, 130, 255)); /*Also used in comment actions*/
 
     /* Comment Actions */

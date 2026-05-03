@@ -13,7 +13,6 @@ function setPreventPostFalse() {
   preventPost = 0;
 }
 function toggleUpvotePost(thisEl) {
-  console.log(thisEl);
   const parentElement = thisEl.parentElement;
   const otherVoteBtn = thisEl.parentElement.querySelector('.js_downvote_btn');
   if (parentElement.classList.contains('post__vote_btn--voted')) {
@@ -28,17 +27,22 @@ function toggleUpvotePost(thisEl) {
       thisEl.classList.add('post__upvote_btn--upvoted');
       removeVoteBtnUI(otherVoteBtn);
       addVoteBtnUI(thisEl);
-      console.log('Upvoted');
+      console.log(
+        '%cUpvoted',
+        'color:rgb(255,89,9)'
+      );
     }
   } else {
     parentElement.classList.add('post__vote_btn--voted');
     thisEl.classList.add('post__upvote_btn--upvoted');
     addVoteBtnUI(thisEl, otherVoteBtn);
-    console.log('Upvoted');
+    console.log(
+      '%cUpvoted',
+      'color:rgb(255,89,9)'
+    );
   }
 }
 function toggleDownvotePost(thisEl) {
-  console.log(thisEl);
   const parentElement = thisEl.parentElement;
   const otherVoteBtn = thisEl.parentElement.querySelector('.js_upvote_btn');
   if (parentElement.classList.contains('post__vote_btn--voted')) {
@@ -53,13 +57,19 @@ function toggleDownvotePost(thisEl) {
       thisEl.classList.add('post__downvote_btn--downvoted');
       removeVoteBtnUI(otherVoteBtn);
       addVoteBtnUI(thisEl);
-      console.log('Downvoted');
+      console.log(
+        '%cDownvoted Post',
+        'color: rgb(92, 130, 255)'
+      );
     }
   } else {
     parentElement.classList.add('post__vote_btn--voted');
     thisEl.classList.add('post__downvote_btn--downvoted');
     addVoteBtnUI(thisEl, otherVoteBtn);
-    console.log('Downvoted');
+    console.log(
+      '%cDownvoted Post',
+      'color: rgb(92, 130, 255)'
+    );
   }
 }
 function addVoteBtnUI(voteBtn) {

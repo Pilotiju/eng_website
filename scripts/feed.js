@@ -62,6 +62,10 @@ function renderPosts() {
   document.querySelector('.js_post_feed').innerHTML = postsHTML;
 }
 // =====================================================
+if (!posts){
+  error();
+}
+
 renderPosts();
 function openPost() {
   if (preventPost === 0) {

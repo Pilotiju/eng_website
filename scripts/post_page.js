@@ -2,12 +2,22 @@ const postIndex = getURLPostIndex();
 function getURLPostIndex() {
   const urlParams = new URLSearchParams(document.location.search);
   const postIndex = urlParams.get('postIndex');
-  console.log(`URLParam postIndex: ${postIndex}`);
-  return Number(postIndex);
+  console.log(
+    `%cURLParam [postIndex]:%c${postIndex}`,
+    "border-left: LightSkyBlue solid 3px; color: LightSkyBlue; padding: 2px 3px 2px 6px; font-weight: bold; font-size: 15px; background-color: black",
+    "margin-left: 5px; color: LightSkyBlue; font-size: 16px;"
+  );
+  if (postIndex === null){
+    return null;
+  } else{
+    return Number(postIndex);
+  }
 }
-
 let commentID = 0;
 
+if (postIndex === null || posts.length - 1 < postIndex){
+  error();
+}
 // ======================================================
 function renderPosts() {
   let html = '';
@@ -28,36 +38,36 @@ function renderPosts() {
                 <div class="post__date">${date}</div>
               </div>
 
-            <div class="post__content post__item">
-              <h1 class="post__heading">
-                ${title}
-                <div class="post__flair_wrapper">
-                  <div class="post__flair flair__${flair}">
-                    ${flair}
+              <div class="post__content post__item">
+                <h1 class="post__heading">
+                  ${title}
+                  <div class="post__flair_wrapper">
+                    <div class="post__flair flair__${flair}">
+                      ${flair}
+                    </div>
                   </div>
+                  </h1>
+                  ${content}
                 </div>
-              </h1>
-              ${content}
-            </div>
-
-              <div class="post__actions post__item">
-                <div class="post__vote_btns_wrapper">
-                  <button class="js_upvote_btn post__upvote_btn post__actions_btn js_post__actions_btn post__actions_vote_btn">
-                    <img class="js_post__action_btn_icon post__action_btn_icon" src="img/system/heart.svg" alt="Upvote">
-                    <span class="js_upvotes_count js_post__votes_count post__votes_count">${upvotesNum}</span>
-                  </button>
-                  <button class="js_downvote_btn post__downvote_btn post__actions_btn js_post__actions_btn post__actions_vote_btn">
-                    <img class="js_post__action_btn_icon post__action_btn_icon" src="img/system/heart-crack.svg" alt="Downvote">
-                    <span class="js_downvotes_count js_post__votes_count post__votes_count">${downvotesNum}</span>
-                  </button>
-                </div>
-                <div class="whitespace"></div>
-                <div class="whitespace"></div>
-                <button class="js_share_btn post__share_btn post__actions_btn js_post__actions_btn post__actions_other_btn">
+                
+                <div class="post__actions post__item">
+                  <div class="post__vote_btns_wrapper">
+                    <button class="js_upvote_btn post__upvote_btn post__actions_btn js_post__actions_btn post__actions_vote_btn">
+                      <img class="js_post__action_btn_icon post__action_btn_icon" src="img/system/heart.svg" alt="Upvote">
+                      <span class="js_upvotes_count js_post__votes_count post__votes_count">${upvotesNum}</span>
+                    </button>
+                    <button class="js_downvote_btn post__downvote_btn post__actions_btn js_post__actions_btn post__actions_vote_btn">
+                      <img class="js_post__action_btn_icon post__action_btn_icon" src="img/system/heart-crack.svg" alt="Downvote">
+                      <span class="js_downvotes_count js_post__votes_count post__votes_count">${downvotesNum}</span>
+                    </button>
+                  </div>
+                  <div class="whitespace"></div>
+                  <div class="whitespace"></div>
+                  <button class="js_share_btn post__share_btn post__actions_btn js_post__actions_btn post__actions_other_btn">
                     <div class="post__share_text">Share</div>
                     <img class="js_post__action_btn_icon post__action_btn_icon" src="img/system/share.svg" alt="Share">
-                </button>
-            </div>
+                  </button>
+                </div>
             </div>
         `;
   html += postHTML;
@@ -168,13 +178,19 @@ function toggleCommentUpvotePost(thisEl) {
       thisEl.classList.add('comment__upvote_btn--upvoted');
       removeCommentVoteBtnUI(otherVoteBtn);
       addCommentVoteBtnUI(thisEl);
-      console.log('Upvoted');
+      console.log(
+        '%cUpvoted Comment',
+        'color:rgb(255,89,9)'
+      );
     }
   } else {
     parentElement.classList.add('comment__vote_btn--voted');
     thisEl.classList.add('comment__upvote_btn--upvoted');
     addCommentVoteBtnUI(thisEl);
-    console.log('Upvoted');
+    console.log(
+      '%cUpvoted Comment',
+      'color:rgb(255,89,9)'
+    );
   }
 }
 function toggleCommentDownvotePost(thisEl) {
@@ -192,13 +208,19 @@ function toggleCommentDownvotePost(thisEl) {
       thisEl.classList.add('comment__downvote_btn--downvoted');
       removeCommentVoteBtnUI(otherVoteBtn);
       addCommentVoteBtnUI(thisEl);
-      console.log('Downvoted');
+      console.log(
+        '%cDownvoted Comment',
+        'color: rgb(92, 130, 255)'
+      );
     }
   } else {
     parentElement.classList.add('comment__vote_btn--voted');
     thisEl.classList.add('comment__downvote_btn--downvoted');
     addCommentVoteBtnUI(thisEl);
-    console.log('Downvoted');
+    console.log(
+      '%cDownvoted Comment',
+      'color: rgb(92, 130, 255)'
+    );
   }
 }
 
@@ -280,9 +302,9 @@ let commentMetas;
 let loadedImgs;
 let checkDrewThreadlines;
 let commentImgs;
+renderPosts();
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderPosts();
   document.querySelector('.js_posts_comments_wrapper').innerHTML = renderComments(posts[postIndex].comments, -1, -1);
 
   commentMetas = document.querySelectorAll('.js_comment__meta');
