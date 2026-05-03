@@ -26,7 +26,7 @@ function renderPosts() {
   const author = users[userIndex].name;
   const avatar = users[userIndex].avatar;
   const postHTML = /*html*/`
-            <div data-href="${postLink}" data-post-index="${postIndex}" class="posts js_posts js_post_get_data">
+            <div data-post-index="${postIndex}" class="posts js_posts js_post_get_data">
               <div class="post__meta post__item">
                 <div class="post__user_wrapper">
                   <div class="post__avatar_wrapper">
@@ -269,17 +269,21 @@ function addCommentVoteBtnUI(voteBtn) {
 function removeCommentVoteBtnUI(voteBtn) {
   const voteBtnImg = voteBtn.querySelector('.js_post__action_btn_icon');
   const voteBtnCount = voteBtn.querySelector('.js_comment__votes_count');
-  const thisCommentID = voteBtn.closest('.js_comment_wrapper').getAttribute('data-comment-id');
+  const thisCommentID = Number(voteBtn.closest('.js_comment_wrapper').getAttribute('data-comment-id'));
   const commentObject = searchCommentID(thisCommentID, posts[postIndex].comments);
   if (voteBtn.classList.contains('js_comment_upvote_btn')) {
     // Update Counter
     commentObject.upvotesNum--;
     voteBtnCount.innerText = commentObject.upvotesNum;
 
-    const tempUpvotedComments = upvotedComments.filter((comment) => {
+    const tempUpvotedComments = upvotedComments[postIndex].filter((comment) => {
+      console.log('comment: ',comment);
+      if (comment !== thisCommentID){
+        console.log('add');
+      }
       return comment !== thisCommentID;
     });
-    upvotedComments = tempUpvotedComments;
+    upvotedComments[postIndex] = tempUpvotedComments;
     localStorage.setItem('upvotedComments', JSON.stringify(upvotedComments));
 
     voteBtnImg.src = 'img/system/comment_heart.svg';
@@ -288,10 +292,10 @@ function removeCommentVoteBtnUI(voteBtn) {
     commentObject.downvotesNum--;
     voteBtnCount.innerText = commentObject.downvotesNum;
 
-    const tempDownvotedComments = downvotedComments.filter((comment) => {
+    const tempDownvotedComments = downvotedComments[postIndex].filter((comment) => {
       return comment !== thisCommentID;
     });
-    downvotedComments = tempDownvotedComments;
+    downvotedComments[postIndex] = tempDownvotedComments;
     localStorage.setItem('downvotedComments', JSON.stringify(downvotedComments));
 
     voteBtnImg.src = 'img/system/comment_heart-crack.svg';
@@ -339,13 +343,24 @@ window.addEventListener('pageshow', () => {
   Array.from(commentsHTML).forEach((commentEl) => {
     const checkBtnVoted = commentEl.querySelector('.js_post__vote_btns_wrapper').classList.contains('comment__vote_btn--voted');
     const commentID = Number(commentEl.getAttribute('data-comment-id'));
-    if (upvotedComments[postIndex].includes(commentID) && !checkBtnVoted) {
-      toggleCommentUpvotePost(commentEl.querySelector('.js_comment_upvote_btn'), '');
-      return;
-    }
-    if (downvotedComments[postIndex].includes(commentID) && !checkBtnVoted) {
-      toggleCommentDownvotePost(commentEl.querySelector('.js_comment_downvote_btn'), '');
-      return;
+    if (!checkBtnVoted) {
+      if (upvotedComments[postIndex].includes(commentID)) {
+        toggleCommentUpvotePost(commentEl.querySelector('.js_comment_upvote_btn'));
+        return;
+      }
+      if (downvotedComments[postIndex].includes(commentID)) {
+        toggleCommentDownvotePost(commentEl.querySelector('.js_comment_downvote_btn'));
+        return;
+      }
+    } else {
+      if (!upvotedComments[postIndex].includes(commentID)) {
+        toggleCommentUpvotePost(commentEl.querySelector('.js_comment_upvote_btn'));
+        return;
+      }
+      if (!downvotedComments[postIndex].includes(commentID)) {
+        toggleCommentDownvotePost(commentEl.querySelector('.js_comment_downvote_btn'));
+        return;
+      }
     }
   });
 });

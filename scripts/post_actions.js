@@ -155,13 +155,24 @@ window.addEventListener('pageshow', () => {
     console.log('postEl:', postEl);
     console.log('checkBtnVoted:', checkBtnVoted);
     const postElIndex = Number(postEl.getAttribute('data-post-index'));
-    if (upvotedPosts.includes(postElIndex) && !checkBtnVoted) {
-      toggleUpvotePost(postEl.querySelector('.js_upvote_btn'), '');
-      return;
-    }
-    if (downvotedPosts.includes(postElIndex) && !checkBtnVoted) {
-      toggleDownvotePost(postEl.querySelector('.js_downvote_btn'), '');
-      return;
+    if (!checkBtnVoted) {
+      if (upvotedPosts.includes(postElIndex)) {
+        toggleUpvotePost(postEl.querySelector('.js_upvote_btn'));
+        return;
+      }
+      if (downvotedPosts.includes(postElIndex)) {
+        toggleDownvotePost(postEl.querySelector('.js_downvote_btn'));
+        return;
+      }
+    } else {
+      if (!upvotedPosts.includes(postElIndex)) {
+        toggleUpvotePost(postEl.querySelector('.js_upvote_btn'));
+        return;
+      }
+      if (!downvotedPosts.includes(postElIndex)) {
+        toggleDownvotePost(postEl.querySelector('.js_downvote_btn'));
+        return;
+      }
     }
   });
 });

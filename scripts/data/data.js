@@ -151,7 +151,7 @@ const posts = [
   }
 ];
 
-// localStorage.clear();
+localStorage.clear();
 let upvotedPosts = [];
 if (JSON.parse(localStorage.getItem('upvotedPosts'))) {
   upvotedPosts = JSON.parse(localStorage.getItem('upvotedPosts'));
@@ -166,7 +166,10 @@ for (let i = 0; i < posts.length; i++) {
   upvotedComments.push([]);
 }
 if (JSON.parse(localStorage.getItem('upvotedComments'))) {
+  console.log('upvoted comments is sum in there');
   upvotedComments = JSON.parse(localStorage.getItem('upvotedComments'));
+} else {
+  localStorage.setItem('upvotedComments', JSON.stringify(upvotedComments));
 }
 let downvotedComments = [];
 for (let i = 0; i < posts.length; i++) {
