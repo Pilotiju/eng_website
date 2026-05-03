@@ -343,21 +343,31 @@ window.addEventListener('pageshow', () => {
   Array.from(commentsHTML).forEach((commentEl) => {
     const checkBtnVoted = commentEl.querySelector('.js_post__vote_btns_wrapper').classList.contains('comment__vote_btn--voted');
     const commentID = Number(commentEl.getAttribute('data-comment-id'));
-    if (!checkBtnVoted) {
-      if (upvotedComments[postIndex].includes(commentID)) {
-        toggleCommentUpvotePost(commentEl.querySelector('.js_comment_upvote_btn'));
-        return;
-      } else if (downvotedComments[postIndex].includes(commentID)) {
-        toggleCommentDownvotePost(commentEl.querySelector('.js_comment_downvote_btn'));
-        return;
+
+    if (checkBtnVoted) {
+      const checkUpvoteBtn = commentEl.querySelector('.comment__upvote_btn--upvoted');
+      const checkDownvoteBtn = commentEl.querySelector('.comment__downvote_btn--downvoted');
+
+      if (checkUpvoteBtn) {
+        if (!upvotedComments[postIndex].includes(commentID)) {
+          toggleCommentUpvotePost(commentEl.querySelector('.js_comment_upvote_btn'));
+        }
+        if (downvotedComments[postIndex].includes(commentID)) {
+          toggleCommentDownvotePost(commentEl.querySelector('.js_comment_downvote_btn'));
+        }
+      } else if (checkDownvoteBtn) {
+        if (!downvotedComments[postIndex].includes(commentID)) {
+          toggleCommentDownvotePost(commentEl.querySelector('.js_comment_downvote_btn'));
+        }
+        if (upvotedComments[postIndex].includes(commentID)) {
+          toggleCommentUpvotePost(commentEl.querySelector('.js_comment_upvote_btn'));
+        }
       }
     } else {
-      if (!upvotedComments[postIndex].includes(commentID)) {
+      if (upvotedComments[postIndex].includes(commentID)) {
         toggleCommentUpvotePost(commentEl.querySelector('.js_comment_upvote_btn'));
-        return;
-      } else if (!downvotedComments[postIndex].includes(commentID)) {
+      } else if (downvotedComments[postIndex].includes(commentID)) {
         toggleCommentDownvotePost(commentEl.querySelector('.js_comment_downvote_btn'));
-        return;
       }
     }
   });
