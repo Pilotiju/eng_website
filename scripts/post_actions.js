@@ -152,21 +152,22 @@ window.addEventListener('pageshow', () => {
   const postsElHTML = document.getElementsByClassName('js_post_get_data');
   Array.from(postsElHTML).forEach((postEl) => {
     const checkBtnVoted = postEl.querySelector('.js_post__vote_btns_wrapper').classList.contains('post__vote_btn--voted');
-    console.log('================================');
-    console.log('postEl:', postEl);
-    console.log('checkBtnVoted:', checkBtnVoted);
-    console.log('================================');
     const postElIndex = Number(postEl.getAttribute('data-post-index'));
-
-    if (checkBtnVoted){
-      if (!upvotedPosts.includes(postElIndex)){
-        toggleUpvotePost(postEl.querySelector('.js_upvote_btn'));
-        return;
-      } else if (!downvotedPosts.includes(postElIndex)){
-        toggleDownvotePost(postEl.querySelector('.js_downvote_btn'));
-        return;
+    if (checkBtnVoted) {
+      const checkUpvoteBtn = postEl.querySelector('.post__upvote_btn--upvoted');
+      const checkDownvoteBtn = postEl.querySelector('.post__downvote_btn--downvoted');
+      if (checkUpvoteBtn) {
+        if (!upvotedPosts.includes(postElIndex)) {
+          toggleUpvotePost(postEl.querySelector('.js_upvote_btn'));
+          return;
+        }
+      } else if (checkDownvoteBtn) {
+        if (!downvotedPosts.includes(postElIndex)) {
+          toggleDownvotePost(postEl.querySelector('.js_downvote_btn'));
+          return;
+        }
       }
-    } else if (!checkBtnVoted){
+    } else {
       if (upvotedPosts.includes(postElIndex)) {
         toggleUpvotePost(postEl.querySelector('.js_upvote_btn'));
         return;
@@ -175,6 +176,28 @@ window.addEventListener('pageshow', () => {
         return;
       }
     }
+    console.log('================================');
+    console.log('postEl:', postEl);
+    console.log('checkBtnVoted:', checkBtnVoted);
+    console.log('================================');
+
+    // if (checkBtnVoted){
+    //   if (!upvotedPosts.includes(postElIndex)){
+    //     toggleUpvotePost(postEl.querySelector('.js_upvote_btn'));
+    //     return;
+    //   } else if (!downvotedPosts.includes(postElIndex)){
+    //     toggleDownvotePost(postEl.querySelector('.js_downvote_btn'));
+    //     return;
+    //   }
+    // } else if (!checkBtnVoted){
+    //   if (upvotedPosts.includes(postElIndex)) {
+    //     toggleUpvotePost(postEl.querySelector('.js_upvote_btn'));
+    //     return;
+    //   } else if (downvotedPosts.includes(postElIndex)) {
+    //     toggleDownvotePost(postEl.querySelector('.js_downvote_btn'));
+    //     return;
+    //   }
+    // }
   });
 });
 
