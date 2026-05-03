@@ -347,8 +347,7 @@ window.addEventListener('pageshow', () => {
       if (upvotedComments[postIndex].includes(commentID)) {
         toggleCommentUpvotePost(commentEl.querySelector('.js_comment_upvote_btn'));
         return;
-      }
-      if (downvotedComments[postIndex].includes(commentID)) {
+      } else if (downvotedComments[postIndex].includes(commentID)) {
         toggleCommentDownvotePost(commentEl.querySelector('.js_comment_downvote_btn'));
         return;
       }
@@ -356,8 +355,7 @@ window.addEventListener('pageshow', () => {
       if (!upvotedComments[postIndex].includes(commentID)) {
         toggleCommentUpvotePost(commentEl.querySelector('.js_comment_upvote_btn'));
         return;
-      }
-      if (!downvotedComments[postIndex].includes(commentID)) {
+      } else if (!downvotedComments[postIndex].includes(commentID)) {
         toggleCommentDownvotePost(commentEl.querySelector('.js_comment_downvote_btn'));
         return;
       }
