@@ -148,12 +148,14 @@ document.addEventListener('DOMContentLoaded', () => {
   downvoteBtns.forEach(initFuncs.initDownvoteBtn);
 });
 window.addEventListener('pageshow', () => {
-  console.log('window pageshow event');
+  console.log('%c-- window pageshow event --', 'border-left: solid 3px BlueViolet; border-right: solid 3px BlueViolet; padding-left: 3px; padding-right: 3px');
   const postsElHTML = document.getElementsByClassName('js_post_get_data');
   Array.from(postsElHTML).forEach((postEl) => {
     const checkBtnVoted = postEl.querySelector('.js_post__vote_btns_wrapper').classList.contains('post__vote_btn--voted');
+    console.log('================================');
     console.log('postEl:', postEl);
     console.log('checkBtnVoted:', checkBtnVoted);
+    console.log('================================');
     const postElIndex = Number(postEl.getAttribute('data-post-index'));
     if (!checkBtnVoted) {
       if (upvotedPosts.includes(postElIndex)) {
