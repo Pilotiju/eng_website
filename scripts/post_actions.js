@@ -100,7 +100,6 @@ function addVoteBtnUI(voteBtn) {
     }
     console.log(downvotedPosts);
 
-
     thisVoteBtnCount.style.color = 'white';
     thisVoteBtnImg.src = 'img/system/heart-crack-voted.svg';
   }
@@ -108,7 +107,7 @@ function addVoteBtnUI(voteBtn) {
 function removeVoteBtnUI(voteBtn) {
   const voteBtnImg = voteBtn.querySelector('.js_post__action_btn_icon');
   const voteBtnCount = voteBtn.querySelector('.js_post__votes_count');
-  const postIndex = voteBtn.parentElement.parentElement.parentElement.getAttribute('data-post-index');
+  const postIndex = Number(voteBtn.parentElement.parentElement.parentElement.getAttribute('data-post-index'));
   if (voteBtn.classList.contains('js_upvote_btn')) {
     // Update Counter 
     posts[postIndex].upvotesNum--;
