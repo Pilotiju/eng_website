@@ -156,27 +156,20 @@ window.addEventListener('pageshow', () => {
     if (checkBtnVoted) {
       const checkUpvoteBtn = postEl.querySelector('.post__upvote_btn--upvoted');
       const checkDownvoteBtn = postEl.querySelector('.post__downvote_btn--downvoted');
-      console.log('===============================');
-      console.log('checkUpvoteBtn:', checkUpvoteBtn);
-      console.log('checkDownvoteBtn:', checkDownvoteBtn);
 
       if (checkUpvoteBtn) {
         if (!upvotedPosts.includes(postElIndex)) {
           toggleUpvotePost(postEl.querySelector('.js_upvote_btn'));
-          console.log('|==== checkUpvoteBtn -> !upvotedPosts.includes(postElIndex) ====|');
         }
         if (downvotedPosts.includes(postElIndex)) {
           toggleDownvotePost(postEl.querySelector('.js_downvote_btn'));
-          console.log('|==== checkUpvoteBtn -> downvotedPosts.includes(postElIndex) ====|');
         }
       } else if (checkDownvoteBtn) {
         if (!downvotedPosts.includes(postElIndex)) {
           toggleDownvotePost(postEl.querySelector('.js_downvote_btn'));
-          console.log('|==== checkDownvoteBtn -> !downvotedPosts.includes(postElIndex) ====|');
         }
         if (upvotedPosts.includes(postElIndex)) {
           toggleUpvotePost(postEl.querySelector('.js_upvote_btn'));
-          console.log('|==== checkDownvoteBtn -> upvotedPosts.includes(postElIndex) ====|');
         }
       }
     } else {
@@ -186,8 +179,6 @@ window.addEventListener('pageshow', () => {
         toggleDownvotePost(postEl.querySelector('.js_downvote_btn'));
       }
     }
-
-    console.log('===============================');
     // if (checkBtnVoted){
     //   if (!upvotedPosts.includes(postElIndex)){
     //     toggleUpvotePost(postEl.querySelector('.js_upvote_btn'));
