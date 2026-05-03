@@ -151,6 +151,15 @@ const posts = [
   }
 ];
 
+/*
+- localStorage works
+- if upvoted in index
+  => go to page
+  => downvote in page
+  => back to index
+  => upvote gone but downvote not there
+*/
+
 // localStorage.clear();
 let upvotedPosts = [];
 let downvotedPosts = [];

@@ -161,7 +161,7 @@ window.addEventListener('pageshow', () => {
           toggleUpvotePost(postEl.querySelector('.js_upvote_btn'));
           return;
         }
-        if (downvotedPosts.includes(postElIndex) && !checkDownvoteBtn){
+        if (downvotedPosts.includes(postElIndex)){
           toggleDownvotePost(postEl.querySelector('.js_downvote_btn'));
           return;
         }
@@ -170,7 +170,7 @@ window.addEventListener('pageshow', () => {
           toggleDownvotePost(postEl.querySelector('.js_downvote_btn'));
           return;
         }
-        if (upvotedPosts.includes(postElIndex) && !checkUpvoteBtn){
+        if (upvotedPosts.includes(postElIndex)){
           toggleUpvotePost(postEl.querySelector('.js_upvote_btn'));
           return;
         }
