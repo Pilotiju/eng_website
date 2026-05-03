@@ -151,7 +151,7 @@ const posts = [
   }
 ];
 
-localStorage.clear();
+// localStorage.clear();
 let upvotedPosts = [];
 if (JSON.parse(localStorage.getItem('upvotedPosts'))) {
   upvotedPosts = JSON.parse(localStorage.getItem('upvotedPosts'));
