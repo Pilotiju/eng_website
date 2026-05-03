@@ -152,17 +152,18 @@ const posts = [
 ];
 
 // localStorage.clear();
+let upvotedPosts = [];
+let downvotedPosts = [];
+let upvotedComments = [];
+let downvotedComments = [];
 window.addEventListener('pageshow', () => {
-  let upvotedPosts = [];
   if (JSON.parse(localStorage.getItem('upvotedPosts'))) {
     upvotedPosts = JSON.parse(localStorage.getItem('upvotedPosts'));
   }
-  let downvotedPosts = [];
   if (JSON.parse(localStorage.getItem('downvotedPosts'))) {
     downvotedPosts = JSON.parse(localStorage.getItem('downvotedPosts'));
   }
 
-  let upvotedComments = [];
   for (let i = 0; i < posts.length; i++) {
     upvotedComments.push([]);
   }
@@ -172,7 +173,6 @@ window.addEventListener('pageshow', () => {
   } else {
     localStorage.setItem('upvotedComments', JSON.stringify(upvotedComments));
   }
-  let downvotedComments = [];
   for (let i = 0; i < posts.length; i++) {
     downvotedComments.push([]);
   }
