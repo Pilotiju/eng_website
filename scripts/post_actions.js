@@ -110,7 +110,7 @@ function removeVoteBtnUI(voteBtn) {
   const voteBtnCount = voteBtn.querySelector('.js_post__votes_count');
   const postIndex = voteBtn.parentElement.parentElement.parentElement.getAttribute('data-post-index');
   if (voteBtn.classList.contains('js_upvote_btn')) {
-    // Update Counter
+    // Update Counter 
     posts[postIndex].upvotesNum--;
     voteBtnCount.innerText = posts[postIndex].upvotesNum;
 
