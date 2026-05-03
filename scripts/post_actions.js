@@ -75,7 +75,7 @@ function toggleDownvotePost(thisEl) {
 function addVoteBtnUI(voteBtn) {
   const thisVoteBtnImg = voteBtn.querySelector('.js_post__action_btn_icon');
   const thisVoteBtnCount = voteBtn.querySelector('.js_post__votes_count');
-  const postIndex = voteBtn.parentElement.parentElement.parentElement.getAttribute('data-post-index');
+  const postIndex = Number(voteBtn.parentElement.parentElement.parentElement.getAttribute('data-post-index'));
   if (voteBtn.classList.contains('js_upvote_btn')) {
     // Update Counter
     posts[postIndex].upvotesNum++;
@@ -149,10 +149,11 @@ document.addEventListener('DOMContentLoaded', () => {
   downvoteBtns.forEach(initFuncs.initDownvoteBtn);
 });
 window.addEventListener('pageshow', () => {
+  console.log('window pageshow event');
   const postsElHTML = document.getElementsByClassName('js_post_get_data');
   Array.from(postsElHTML).forEach((postEl) => {
     const checkBtnVoted = postEl.querySelector('.js_post__vote_btns_wrapper').classList.contains('post__vote_btn--voted');
-    const postElIndex = postEl.getAttribute('data-post-index');
+    const postElIndex = Number(postEl.getAttribute('data-post-index'));
     if (upvotedPosts.includes(postElIndex) && !checkBtnVoted) {
       toggleUpvotePost(postEl.querySelector('.js_upvote_btn'), '');
       return;

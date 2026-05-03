@@ -240,15 +240,15 @@ function searchCommentID(thisCommentID, thisCommentArray) {
 function addCommentVoteBtnUI(voteBtn) {
   const voteBtnImg = voteBtn.querySelector('.js_post__action_btn_icon');
   const voteBtnCount = voteBtn.querySelector('.js_comment__votes_count');
-  const thisCommentID = voteBtn.closest('.js_comment_wrapper').getAttribute('data-comment-id');
+  const thisCommentID = Number(voteBtn.closest('.js_comment_wrapper').getAttribute('data-comment-id'));
   const commentObject = searchCommentID(thisCommentID, posts[postIndex].comments);
   if (voteBtn.classList.contains('js_comment_upvote_btn')) {
     // Update Counter
     commentObject.upvotesNum++;
     voteBtnCount.innerText = commentObject.upvotesNum;
 
-    if (!upvotedComments[postIndex].includes(Number(thisCommentID))) {
-      upvotedComments[postIndex].push(Number(thisCommentID));
+    if (!upvotedComments[postIndex].includes(thisCommentID)) {
+      upvotedComments[postIndex].push(thisCommentID);
       localStorage.setItem('upvotedComments', JSON.stringify(upvotedComments));
     }
 
@@ -258,8 +258,8 @@ function addCommentVoteBtnUI(voteBtn) {
     commentObject.downvotesNum++;
     voteBtnCount.innerText = commentObject.downvotesNum;
 
-    if (!downvotedComments[postIndex].includes(Number(thisCommentID))) {
-      downvotedComments[postIndex].push(Number(thisCommentID));
+    if (!downvotedComments[postIndex].includes(thisCommentID)) {
+      downvotedComments[postIndex].push(thisCommentID);
       localStorage.setItem('downvotedComments', JSON.stringify(downvotedComments));
     }
 
