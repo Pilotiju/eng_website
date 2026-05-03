@@ -156,22 +156,30 @@ window.addEventListener('pageshow', () => {
     if (checkBtnVoted) {
       const checkUpvoteBtn = postEl.querySelector('.post__upvote_btn--upvoted');
       const checkDownvoteBtn = postEl.querySelector('.post__downvote_btn--downvoted');
+      console.log('===============================');
+      console.log('checkUpvoteBtn:', checkUpvoteBtn);
+      console.log('checkDownvoteBtn:', checkDownvoteBtn);
+
       if (checkUpvoteBtn) {
         if (!upvotedPosts.includes(postElIndex)) {
           toggleUpvotePost(postEl.querySelector('.js_upvote_btn'));
+          console.log('|==== checkUpvoteBtn -> !upvotedPosts.includes(postElIndex) ====|');
           return;
         }
-        if (downvotedPosts.includes(postElIndex)){
+        if (downvotedPosts.includes(postElIndex)) {
           toggleDownvotePost(postEl.querySelector('.js_downvote_btn'));
+          console.log('|==== checkUpvoteBtn -> downvotedPosts.includes(postElIndex) ====|');
           return;
         }
       } else if (checkDownvoteBtn) {
         if (!downvotedPosts.includes(postElIndex)) {
           toggleDownvotePost(postEl.querySelector('.js_downvote_btn'));
+          console.log('|==== checkDownvoteBtn -> !downvotedPosts.includes(postElIndex) ====|');
           return;
         }
-        if (upvotedPosts.includes(postElIndex)){
+        if (upvotedPosts.includes(postElIndex)) {
           toggleUpvotePost(postEl.querySelector('.js_upvote_btn'));
+          console.log('|==== checkDownvoteBtn -> upvotedPosts.includes(postElIndex) ====|');
           return;
         }
       }
@@ -184,11 +192,8 @@ window.addEventListener('pageshow', () => {
         return;
       }
     }
-    console.log('================================');
-    console.log('postEl:', postEl);
-    console.log('checkBtnVoted:', checkBtnVoted);
-    console.log('================================');
 
+    console.log('===============================');
     // if (checkBtnVoted){
     //   if (!upvotedPosts.includes(postElIndex)){
     //     toggleUpvotePost(postEl.querySelector('.js_upvote_btn'));
