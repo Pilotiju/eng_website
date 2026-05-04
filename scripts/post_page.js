@@ -7,15 +7,15 @@ function getURLPostIndex() {
     "border-left: LightSkyBlue solid 3px; color: LightSkyBlue; padding: 2px 3px 2px 6px; font-weight: bold; font-size: 15px; background-color: black",
     "margin-left: 5px; color: LightSkyBlue; font-size: 16px;"
   );
-  if (postIndex === null){
+  if (postIndex === null) {
     return null;
-  } else{
+  } else {
     return Number(postIndex);
   }
 }
 let commentID = 0;
 
-if (postIndex === null || posts.length - 1 < postIndex){
+if (postIndex === null || posts.length - 1 < postIndex) {
   error();
 }
 // ======================================================
@@ -23,8 +23,11 @@ function renderPosts() {
   let html = '';
   const postObject = posts[postIndex];
   const { title, userIndex, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink } = postObject;
-  const author = users[userIndex].name;
-  const avatar = users[userIndex].avatar;
+  let author = users[userIndex].name;
+  let avatar = users[userIndex].avatar;
+  if (avatar === '') {
+    avatar = 'circle-user.svg';
+  }
   const postHTML = /*html*/`
             <div data-post-index="${postIndex}" class="posts js_posts js_post_get_data">
               <div class="post__meta post__item">
@@ -50,7 +53,7 @@ function renderPosts() {
                   ${content}
                 </div>
                 
-                <div class="post__actions post__item">
+                <div class="post__actions post__item post_page__post_actions">
                   <div class="js_post__vote_btns_wrapper post__vote_btns_wrapper">
                     <button class="js_upvote_btn post__upvote_btn post__actions_btn js_post__actions_btn post__actions_vote_btn">
                       <img class="js_post__action_btn_icon post__action_btn_icon" src="img/system/heart.svg" alt="Upvote">
@@ -84,7 +87,11 @@ function renderComments(commentArray, nestedLevel, parentCommentID) {
     commentObject.commentID = commentID;
     const userObject = users[commenterIndex];
     console.log(`Object: ${commentObject.content}  |  nestedLevel: ${nestedLevel}  |  commentID: ${commentID}`);
-    const { name, avatar } = userObject;
+    const { name } = userObject;
+    let { avatar } = userObject;
+    if (avatar === '') {
+      avatar = 'circle-user.svg';
+    }
     let commentsHTML = /*html*/`
     <div class="js_comment_wrapper comment_wrapper comment__item" data-comment-id="${commentID}" style="margin-left:${nestedLevel * 50}px">
       <div class="js_comment__meta comment__meta normal_fs" data-parent-comment-id="${parentCommentID}">
@@ -277,8 +284,8 @@ function removeCommentVoteBtnUI(voteBtn) {
     voteBtnCount.innerText = commentObject.upvotesNum;
 
     const tempUpvotedComments = upvotedComments[postIndex].filter((comment) => {
-      console.log('comment: ',comment);
-      if (comment !== thisCommentID){
+      console.log('comment: ', comment);
+      if (comment !== thisCommentID) {
         console.log('add');
       }
       return comment !== thisCommentID;

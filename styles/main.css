@@ -39,7 +39,7 @@ body{
 /** ==================== Main ==================== **/
 .normal_fs{
     font-size: 1rem;
-    line-height: 1.25rem;
+    line-height: 1.4rem;
 }
 
 /** =================== NavBar =================== **/
@@ -94,8 +94,8 @@ main.index_main{
     margin-bottom: 12px;
 }
 .feed_post__text{
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 13px;
+    margin-bottom: 13px;
 }
 .feed_post__image_wrapper{
     display: flex;
@@ -128,7 +128,7 @@ main.index_main{
 /** ==================== Post Page ==================== **/
 main.posts_main{
     display: grid;
-    grid-template-columns: 1fr 2.5fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 100%;
     min-height: 100vh;
     width: 100%;
@@ -137,7 +137,7 @@ main.posts_main{
     display: block;
     position: relative;
     background-color: var(--feed-posts-card-bg);
-    margin: 25px 0px;
+    margin: 10px 0px;
     padding: 15px 15px 8px 15px;
     border-radius: 12px;
     z-index: 0;

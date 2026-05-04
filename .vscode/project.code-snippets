@@ -1,0 +1,48 @@
+{
+  "post": {
+    "scope": "javascript",
+    "prefix": [
+      "datapost"
+    ],
+    "body": [
+      "{",
+    "  title: \"${1:string}\",",
+    "  userIndex: ${2:number},",
+    "  date: \"${3:string}\",",
+    "  feedContent: `",
+      "  ${4:string}",
+    "  `,",
+    "  content: `",
+      "  ${5:string}",
+    "  `,",
+    "  flair: \"${6:string}\",",
+    "  upvotesNum: ${7:number},",
+    "  downvotesNum: ${8:number},",
+    "  commentsNum: ${9:number},",
+    "  comments: [",
+    
+    "  ],",
+    "},"
+  ],
+  "description": "data.js comment"
+  },
+  "Comment": {
+    "scope": "javascript",
+    "prefix": [
+      "datacomment"
+    ],
+    "body": [
+      "{",
+        "  commenterIndex: ${1:number},",
+        "  content: \"${2:string}\",",
+        "  date: \"${3:string}\",",
+        "  upvotesNum: ${4:number},",
+        "  downvotesNum: ${5:number},",
+        "  comments: [",
+
+        "  ]",
+      "},",
+    ],
+  "description": "data.js comment"
+  }
+}

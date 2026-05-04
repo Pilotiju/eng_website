@@ -5,10 +5,13 @@ function renderPosts() {
   let postsHTML = '';
   for (let i = 0; i < posts.length; i++) {
     const postObject = posts[i];
-    const { title, userIndex, date, content, flair, upvotesNum, downvotesNum, commentsNum } = postObject;
+    const { title, userIndex, date, feedContent, flair, upvotesNum, downvotesNum, commentsNum } = postObject;
     const postIndex = i;
-    const author = users[userIndex].name;
-    const avatar = users[userIndex].avatar;
+    let author = users[userIndex].name;
+    let avatar = users[userIndex].avatar;
+    if (avatar === '') {
+      avatar = 'circle-user.svg';
+    }
     const html = /*html*/`
           <div data-post-index="${postIndex}" class="feed_post js_feed_post js_post_get_data">
             <div class="post__meta post__item">
@@ -31,7 +34,7 @@ function renderPosts() {
                   </div>
                 </div>
               </h1>
-                ${content}
+                ${feedContent}
             </div>
 
             <div class="post__actions post__item">
@@ -62,7 +65,7 @@ function renderPosts() {
   document.querySelector('.js_post_feed').innerHTML = postsHTML;
 }
 // =====================================================
-if (!posts){
+if (!posts) {
   error();
 }
 
