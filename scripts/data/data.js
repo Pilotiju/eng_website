@@ -225,7 +225,7 @@ const posts = [
             comments: [
               {
                 commenterIndex: 5,
-                content: "You don't even know under which conditions he was to begin with. So many drug dealers have to do against their will",
+                content: "You don't even know under which conditions he was to begin with. So many drug dealers have to do it against their will.",
                 date: "3 days ago",
                 upvotesNum: 9,
                 downvotesNum: 0,
@@ -301,7 +301,7 @@ const posts = [
       },
       {
         commenterIndex: 13,
-        content: "Ofcourse he was an armed drug dealer. Why are you all defending him?",
+        content: "Of course he was an armed drug dealer. Why are you all defending him?",
         date: "2 days ago",
         upvotesNum: 1,
         downvotesNum: 9,
