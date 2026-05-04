@@ -141,7 +141,7 @@ const posts = [
           <img src="img/posts/temps/spiderman.webp" alt="Post Image" class="feed_post__image">
         </div>
         `,
-    flair: "meme",
+    flair: "own_opinion",
     upvotesNum: 91236,
     downvotesNum: 4,
     commentsNum: 1,

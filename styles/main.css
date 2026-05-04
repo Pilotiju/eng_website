@@ -32,6 +32,8 @@ body{
     /* Flairs */
     --flair-vent-color: rgb(255, 63, 29);
     --flair-meme-color: rgb(79, 224, 106);
+    --flair-news-color: rgb(245, 158, 11);
+    --flair-own_opinion-color: rgb(152, 194, 241);
 }
 
 /** ==================== Main ==================== **/
@@ -173,6 +175,12 @@ main.posts_main{
 }
 .flair__vent{
     background-color: var(--flair-vent-color);
+}
+.flair__news{
+    background-color: var(--flair-news-color);
+}
+.flair__own_opinion{
+    background-color: var(--flair-own_opinion-color);
 }
 
 /* Post Meta */

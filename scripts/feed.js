@@ -27,7 +27,7 @@ function renderPosts() {
                 ${title}
                 <div class="post__flair_wrapper">
                   <div class="post__flair flair__${flair}">
-                    ${flair}
+                    ${flair.replace('_', ' ')}
                   </div>
                 </div>
               </h1>
