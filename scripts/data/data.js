@@ -152,6 +152,11 @@ const posts = [
     userIndex: 0,
     date: "02.06.2017",
     feedContent: `
+    <p class="feed_post__text normal_fs"> 
+        After the incident involving Khalil Harris, parts of the media have made it into a story of a merciless execution. However, Brian Cruise Jr. has finally given his side of the happenings of Friday, sharing his view as a police officer who needed to make a difficult decision in a too short amount of time.
+        It began when Mr. Cruise stopped a Chevrolet Impala with a broken headlight in Garden Heights. This is an area notorious for high rates of crime and radical gang activity. Like any other police officer, Cruise was being very aware of his surroundings, which is a sensible thing to do in such a criminal area. 
+        After making the vehicle pull over, Cruise describes Khalil as a person with a very aggressive and annoyed attitude. While protesters have made the encounter into a misunderstanding, those familiar with police protocol point out that Harris' refusal to follow direct orders created an immediate atmosphere of tension.
+        The height of the incident occurred when Cruise returned to his police car to check Harris' information ...
     `,
     content: `
       <p class="feed_post__text normal_fs"> 

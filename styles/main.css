@@ -81,7 +81,7 @@ main.index_main{
     border-radius: 12px;
 }
 .feed_post:hover{
-    filter: brightness(0.9);
+    filter: brightness(0.95);
     cursor: pointer;
 }
 .post__item{
