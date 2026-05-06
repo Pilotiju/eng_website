@@ -148,7 +148,10 @@ document.addEventListener('DOMContentLoaded', () => {
   downvoteBtns.forEach(initFuncs.initDownvoteBtn);
 });
 window.addEventListener('pageshow', () => {
-  document.querySelector('.js_feed_post__audio').volume = 0.25;
+  const audioEl = document.querySelector('.js_feed_post__audio');
+  if (audioEl){
+    audioEl.volume = 0.25;
+  }
 
   console.log('%c-- window pageshow event --', 'border-left: solid 3px BlueViolet; border-right: solid 3px BlueViolet; padding-left: 3px; padding-right: 3px');
   const postsElHTML = document.getElementsByClassName('js_post_get_data');
