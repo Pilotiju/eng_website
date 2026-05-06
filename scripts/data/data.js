@@ -422,9 +422,9 @@ const posts = [
     </div>
     `,
     flair: "media",
-    upvotesNum: 0,
-    downvotesNum: 0,
-    commentsNum: 0,
+    upvotesNum: 329,
+    downvotesNum: 97,
+    commentsNum: 24,
     comments: [
       {
         commenterIndex: 15,
