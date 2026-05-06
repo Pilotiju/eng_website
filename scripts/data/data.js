@@ -2,236 +2,283 @@ const users = [
   // 0
   {
     name: "GHH Author",
-    banner: "",
     avatar: "",
-    description: "The Garden Heights Happenings",
-    joinDate: "",
   },
   // 1
   {
     name: "spoodermate",
-    banner: "",
     avatar: "spoodermate.jpg",
-    description: "\"With great power comes great responsibility\" <br> - Uncle Ben",
-    joinDate: "",
   },
   // 2
   {
     name: "thitanos",
-    banner: "",
     avatar: "",
-    description: "",
-    joinDate: "",
   },
   // 3
   {
     name: "steayray",
-    banner: "",
     avatar: "",
-    description: "",
-    joinDate: "",
   },
   // 4
   {
     name: "fisht",
-    banner: "",
     avatar: "",
-    description: "",
-    joinDate: "",
   },
   // 5
   {
     name: "po11y",
-    banner: "",
-    avatar: "",
-    description: "",
-    joinDate: "",
+    avatar: "po11y.jpg",
   },
   // 6
   {
     name: "stuperman",
-    banner: "",
     avatar: "",
-    description: "",
-    joinDate: "",
   },
   // 7
   {
     name: "idkman",
-    banner: "",
     avatar: "",
-    description: "",
-    joinDate: "",
   },
   // 8
   {
     name: "aweforil",
-    banner: "",
     avatar: "",
-    description: "",
-    joinDate: "",
   },
   // 9
   {
     name: "Saller",
-    banner: "",
     avatar: "",
-    description: "",
-    joinDate: "",
   },
   // 10
   {
     name: "turnite",
-    banner: "",
     avatar: "turnite.jpg",
-    description: "",
-    joinDate: "",
   },
   // 11
   {
-    name: "johnny2eyesBrother",
-    banner: "",
+    name: "EMPTY",
     avatar: "",
-    description: "",
-    joinDate: "",
   },
   // 12
   {
     name: "johnny2eyesBrother",
-    banner: "",
     avatar: "johnny2eyesBrother.jpg",
-    description: "",
-    joinDate: "",
   },
   // 13
   {
     name: "bromium",
-    banner: "",
     avatar: "bromium.jpg",
-    description: "",
-    joinDate: "",
   },
   // 14
   {
     name: "ASMR - Official Channel",
-    banner: "",
     avatar: "",
-    description: "",
-    joinDate: "",
   },
   // 15
   {
     name: "BigFaz",
-    banner: "",
     avatar: "BigFaz.jpg",
-    description: "",
-    joinDate: "",
   },
   // 16
   {
     name: "SmallFred",
-    banner: "",
     avatar: "SmallFred.jpg",
-    description: "",
-    joinDate: "",
   },
   // 17
   {
     name: "MFazFred",
-    banner: "",
     avatar: "MFazFred.jpg",
-    description: "",
-    joinDate: "",
   },
   // 18
   {
     name: "BB",
-    banner: "",
     avatar: "BB.jpg",
-    description: "",
-    joinDate: "",
   },
   // 19
   {
     name: "Danieler",
-    banner: "",
     avatar: "Danieler.jpg",
-    description: "",
-    joinDate: "",
   },
   // 20
   {
     name: "nellie45",
-    banner: "",
     avatar: "nellie45.jpg",
-    description: "",
-    joinDate: "",
   },
   // 21
   {
     name: "larpitude",
-    banner: "",
     avatar: "larpitude.jpg",
-    description: "",
-    joinDate: "",
   },
   // 22
   {
     name: "unturn",
-    banner: "",
     avatar: "",
-    description: "",
-    joinDate: "",
   },
   // 23
   {
     name: "meanerer",
-    banner: "",
     avatar: "",
-    description: "",
-    joinDate: "",
   },
   // 24
   {
     name: "facterist",
-    banner: "",
     avatar: "",
-    description: "",
-    joinDate: "",
   },
   // 25
   {
     name: "ILoveFreeStuff",
-    banner: "",
     avatar: "ILoveFreeStuff.jpg",
-    description: "",
-    joinDate: "",
   },
   // 26
   {
     name: "SuspiciousUser76",
-    banner: "",
     avatar: "SuspiciousUser76.jpg",
-    description: "",
-    joinDate: "",
   },
   // 27
   {
     name: "dumberist",
-    banner: "",
     avatar: "dumberist.jpg",
-    description: "",
-    joinDate: "",
   },
   // 28
   {
-    name: "yourJournal Ban Bot",
-    banner: "",
+    name: "yourJournal Moderator Bot",
     avatar: "yourJournal_Ban_Bot.webp",
-    description: "",
-    joinDate: "",
   },
-
+  // 29
+  {
+    name: "granulatedsugarinabag",
+    avatar: "",
+  },
+  // 30
+  {
+    name: "wormeirt",
+    avatar: "",
+  },
+  // 31
+  {
+    name: "hatterick",
+    avatar: "",
+  },
+  // 32
+  {
+    name: "latheine",
+    avatar: "",
+  },
+  // 33
+  {
+    name: "loveydovey313",
+    avatar: "",
+  },
+  // 34
+  {
+    name: "stongper",
+    avatar: "",
+  },
+  // 35
+  {
+    name: "restperc",
+    avatar: "",
+  },
+  // 36
+  {
+    name: "wriiter",
+    avatar: "",
+  },
+  // 37
+  {
+    name: "Farnty",
+    avatar: "",
+  },
+  // 38
+  {
+    name: "aster",
+    avatar: "",
+  },
+  // 39
+  {
+    name: "jurny",
+    avatar: "",
+  },
+  // 40
+  {
+    name: "homerinmyslf",
+    avatar: "",
+  },
+  // 41
+  {
+    name: "nellie45]",
+    avatar: "",
+  },
+  // 42
+  {
+    name: "BongorTheFirst",
+    avatar: "",
+  },
+  // 43
+  {
+    name: "motored",
+    avatar: "",
+  },
+  // 44
+  {
+    name: "lokin",
+    avatar: "",
+  },
+  // 45
+  {
+    name: "affinereryyyre",
+    avatar: "",
+  },
+  // 46
+  {
+    name: "johnny3eyes",
+    avatar: "",
+  },
+  // 47
+  {
+    name: "",
+    avatar: "",
+  },
+  // 48
+  {
+    name: "",
+    avatar: "",
+  },
+  // 49
+  {
+    name: "",
+    avatar: "",
+  },
+  // 50
+  {
+    name: "",
+    avatar: "",
+  },
+  // 51
+  {
+    name: "",
+    avatar: "",
+  },
+  // 52
+  {
+    name: "",
+    avatar: "",
+  },
+  // 53
+  {
+    name: "",
+    avatar: "",
+  },
+  // 54
+  {
+    name: "",
+    avatar: "",
+  },
+  // 55
+  {
+    name: "",
+    avatar: "",
+  },
 ];
 
 const posts = [
@@ -240,11 +287,12 @@ const posts = [
     userIndex: 0,
     date: "02.06.2017",
     feedContent: `
-    <p class="feed_post__text normal_fs"> 
+    <p class="feed_post__text normal_fs">
       After the incident involving Khalil Harris, parts of the media have made it into a story of a merciless execution. However, Brian Cruise Jr. has finally given his side of the happenings of Friday, sharing his view as a police officer who needed to make a difficult decision in a too short amount of time.
       It began when Mr. Cruise stopped a Chevrolet Impala with a broken headlight in Garden Heights. This is an area notorious for high rates of crime and radical gang activity. Like any other police officer, Cruise was being very aware of his surroundings, which is a sensible thing to do in such a criminal area. 
       After making the vehicle pull over, Cruise describes Khalil as a person with a very aggressive and annoyed attitude. While protesters have made the encounter into a misunderstanding, those familiar with police protocol point out that Harris' refusal to follow direct orders created an immediate atmosphere of tension.
-      The height of the incident occurred when Cruise returned to his police car to check Harris' information ...
+      The height of the incident occurred when Cruise returned to his police car to check Harris' information...
+    </p>
     `,
     content: `
       <p class="feed_post__text normal_fs"> 
@@ -637,6 +685,238 @@ const posts = [
                     comments: [
                     ]
                   },
+                ]
+              },
+            ]
+          },
+        ]
+      },
+    ],
+  },
+  {
+    title: "RACISM HAS TO STOP!",
+    userIndex: 5,
+    date: "20.05.2017",
+    feedContent: `
+    <p class="feed_post__text normal_fs">
+      We live in a world with eight billion people and full of diversity. But then again, we also live in a society where people get mocked, laughed at, or even worse, get physically assaulted.
+      For what reason? 
+      Their skin color, their heritage, their nationality, or their culture. 
+      Which is why I strongly believe that racism is a huge problem for society and desperately needs to be stopped!
+      Firstly, racism can negatively affect a person's mental health and your behavior. This is because, when people experience some form of discrimination, they often alter their behavior afterward to fit in with the social norm. For instance, my Vietnamese friend from high school brought "phở" (a famous traditional Vietnamese noodle soup dish) one time for lunch. Though he got mocked by his classmates, criticizing his noodles. Since then, he has been bringing peanut butter sandwiches, which everyone usually has for lunch, to not get laughed at anymore. This kind of situation does not only happen to my friend. In fact, according to a survey of...
+    </p>
+`,
+    content: `
+      <p class="feed_post__text normal_fs">
+        We live in a world with eight billion people and full of diversity. But then again, we also live in a society where people get mocked, laughed at, or even worse, get physically assaulted. 
+      </p>
+      <p class="feed_post__text normal_fs">
+        <strong>For what reason?</strong><br>
+        Their skin color, their heritage, their nationality, or their culture. 
+      </p>
+      <p class="feed_post__text normal_fs">
+        Which is why I strongly believe that racism is a huge problem for society and desperately needs to be stopped!
+      </p>
+      <p class="feed_post__text normal_fs">
+        Firstly, racism can negatively affect a person's mental health and your behavior. This is because, when people experience some form of discrimination, they often alter their behavior afterward to fit in with the social norm. For instance, my Vietnamese friend from high school brought "phở" (a famous traditional Vietnamese noodle soup dish) one time for lunch. Though he got mocked by his classmates, criticizing his noodles. Since then, he has been bringing peanut butter sandwiches, which everyone usually has for lunch, to not get laughed at anymore. This kind of situation does not only happen to my friend. In fact, according to a survey of the University of Connecticut, 15% of students reported experiencing race-based bullying or harassment.
+        Aside from the fact that racism affects our behavior, it also divides communities. This is mainly because people develop opinions about one or another, which leads to creating sides or groups within society. For example, in 2020, George Floyd, a 46-year-old Black American man, was wrongfully pinned down and choked to death by an officer due to a suspicion of using a counterfeit bill in a local supermarket. 
+        Furthermore, racism can decelerate scientific progress and innovations. The reason for this is that we have many talented people. But then, their work and contributions would get ignored or get stolen by other scientists. A great example of this is Katherine Johnson. She is a NASA mathematician whose crucial work on orbital mechanics was essential to U.S. manned spaceflight. She and her colleagues were often overlooked and faced both gender and racial discrimination, sitting in segregated areas and having their work credited to white male colleagues.
+        What is also worth mentioning, is the fact that people of color have to face difficulties in education solely due to racism. According to a study published by researchers at Johns Hopkins University, teacher expectations are lower for Black students than for equally performing white students, which results in poor academic performances. This illustrates how, for example, Black students have a low chance of succeeding in life due to discrimination from teachers in educational institutions.
+      </p>
+      <p class="feed_post__text normal_fs">
+        In summary, racial discrimination can have an enormous impact on someone by affecting their mental health or complicating their academic journey. But it also steals someone's hard work and fuels conflicts, leading to many divided communities.
+        Which is why my suggestion to this problem is to make the consequences of creating racist remarks stricter. For example, students would have to face long detentions and write a letter for their behavior. At the end of the day, racism is a form of hatred that is taught from generation to generation. So, it is incredibly necessary for us to be properly educated and reflect on ourselves about what we should say and what we do to others!
+      </p>
+    `,
+    flair: "own_opinion",
+    upvotesNum: 0,
+    downvotesNum: 0,
+    commentsNum: 0,
+    comments: [
+      {
+        commenterIndex: 29,
+        content: "Isn't this like the one-hundreth time someone wrote this type of opinion piece? This is getting tiring.",
+        date: "4 months ago",
+        upvotesNum: 4,
+        downvotesNum: 28,
+        comments: [
+          {
+            commenterIndex: 30,
+            content: "Well if it weren't a problem people wouldn't write about it. Sad that the topic is still so relevant in today's society",
+            date: "4 months ago",
+            upvotesNum: 31,
+            downvotesNum: 19,
+            comments: [
+              {
+                commenterIndex: 10,
+                content: "so trueeeee",
+                date: "2 weeks ago",
+                upvotesNum: 3,
+                downvotesNum: 12,
+                comments: [
+
+                ]
+              },
+            ]
+          },
+          {
+            commenterIndex: 31,
+            content: "<mark>@granulatedsugarinabag</mark> is right. These posts just ruin my homepage. You all should just stop whining.<br><br> <em>\"They are criticizing my asian noodles\"</em> man just tell a teacher it can't be that hard.",
+            date: "3 days ago",
+            upvotesNum: 3,
+            downvotesNum: 9,
+            comments: [
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 32,
+        content: "Katherina Johnsons story is so sad. I don't understand how racism is still a Thing.",
+        date: "1 month ago",
+        upvotesNum: 23,
+        downvotesNum: 8,
+        comments: [
+          {
+            commenterIndex: 33,
+            content: "Don't even get me started on Katherina Johnson, so underrated. ",
+            date: "3 weeks ago",
+            upvotesNum: 8,
+            downvotesNum: 2,
+            comments: [
+              {
+                commenterIndex: 34,
+                content: "Yeah she had it extra difficult being a woman at that time as well. She truly was a strong person.",
+                date: "2 weeks ago",
+                upvotesNum: 14,
+                downvotesNum: 6,
+                comments: [
+                ]
+              },
+            ]
+          },
+          {
+            commenterIndex: 35,
+            content: "Even getting to work such a job at the time is crazy to me. Respect.",
+            date: "30 minutes ago",
+            upvotesNum: 2,
+            downvotesNum: 0,
+            comments: [
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 36,
+        content: "Well written man. Hope this changes.",
+        date: "2 weeks ago",
+        upvotesNum: 23,
+        downvotesNum: 4,
+        comments: [
+          {
+            commenterIndex: 37,
+            content: "Keep dreaming buckaroo :)",
+            date: "3 days ago",
+            upvotesNum: 1,
+            downvotesNum: 8,
+            comments: [
+              {
+                commenterIndex: 38,
+                content: "How sad you must be say something like this.",
+                date: "3 days ago",
+                upvotesNum: 7,
+                downvotesNum: 4,
+                comments: [
+                ]
+              },
+              {
+                commenterIndex: 39,
+                content: "Moderators ban this guy.",
+                date: "15 minutes ago",
+                upvotesNum: 3,
+                downvotesNum: 1,
+                comments: [
+                ]
+              },
+            ]
+          },
+          {
+            commenterIndex: 40,
+            content: "Hope so too",
+            date: "1 week ago",
+            upvotesNum: 32,
+            downvotesNum: 7,
+            comments: [
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 9,
+        content: "Why can't people just be nice to each other?",
+        date: "2 months ago",
+        upvotesNum: 42,
+        downvotesNum: 16,
+        comments: [
+          {
+            commenterIndex: 41,
+            content: "History has made some irreversible damage sadly.",
+            date: "1 month ago",
+            upvotesNum: 26,
+            downvotesNum: 5,
+            comments: [
+              {
+                commenterIndex: 42,
+                content: "You're right but maybe that's something we should change.",
+                date: "1 month ago",
+                upvotesNum: 37,
+                downvotesNum: 10,
+                comments: [
+                ]
+              },
+              {
+                commenterIndex: 43,
+                content: "For real tho. I mean we are all still humans aren't we?",
+                date: "1 day ago",
+                upvotesNum: 11,
+                downvotesNum: 2,
+                comments: [
+                ]
+              },
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 44,
+        content: "These posts fill me with rage, sadness and motivation to change something. Maybe it's time to start protesting.",
+        date: "3 weeks ago",
+        upvotesNum: 83,
+        downvotesNum: 3,
+        comments: [
+          {
+            commenterIndex: 45,
+            content: "I'm so with you on this.",
+            date: "3 weeks ago",
+            upvotesNum: 30,
+            downvotesNum: 6,
+            comments: [
+            ]
+          },
+          {
+            commenterIndex: 46,
+            content: "<em>@#$!</em> those racist <em>@#!*?%</em>ers",
+            date: "2 days ago",
+            upvotesNum: 21,
+            downvotesNum: 2,
+            comments: [
+              {
+                commenterIndex: 28,
+                content: "<u>Rule 3:</u> <strong>No profanity allowed</strong> <br><br> <mark>@johnny3eyes</mark> your comment has been censored.",
+                date: "2 days ago",
+                upvotesNum: 1,
+                downvotesNum: 1,
+                comments: [
                 ]
               },
             ]
