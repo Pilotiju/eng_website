@@ -731,7 +731,7 @@ const posts = [
     flair: "own_opinion",
     upvotesNum: 0,
     downvotesNum: 0,
-    commentsNum: 0,
+    commentsNum: 21,
     comments: [
       {
         commenterIndex: 29,
@@ -955,7 +955,7 @@ const posts = [
     flair: "news",
     upvotesNum: 372,
     downvotesNum: 135,
-    commentsNum: 0,
+    commentsNum: 12,
     comments: [
       {
         commenterIndex: 47,
