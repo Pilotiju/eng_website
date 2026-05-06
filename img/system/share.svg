@@ -1,1 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-share2-icon lucide-share-2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="24"
+   height="24"
+   viewBox="0 0 24 24"
+   fill="none"
+   stroke="currentColor"
+   stroke-width="2"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   class="lucide lucide-share2-icon lucide-share-2"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="share.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="5.9441164"
+     inkscape:cx="-13.711037"
+     inkscape:cy="-10.094015"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <circle
+     cx="18"
+     cy="5"
+     r="3"
+     id="circle1"
+     style="stroke:#c7cae7;stroke-opacity:1" />
+  <circle
+     cx="6"
+     cy="12"
+     r="3"
+     id="circle2"
+     style="stroke:#c7cae7;stroke-opacity:1" />
+  <circle
+     cx="18"
+     cy="19"
+     r="3"
+     id="circle3"
+     style="stroke:#c7cae7;stroke-opacity:1" />
+  <line
+     x1="8.59"
+     x2="15.42"
+     y1="13.51"
+     y2="17.49"
+     id="line3"
+     style="stroke:#c7cae7;stroke-opacity:1" />
+  <line
+     x1="15.41"
+     x2="8.59"
+     y1="6.51"
+     y2="10.49"
+     id="line4"
+     style="stroke:#c7cae7;stroke-opacity:1" />
+</svg>

@@ -7,7 +7,7 @@ function getURLPostIndex() {
     "border-left: LightSkyBlue solid 3px; color: LightSkyBlue; padding: 2px 3px 2px 6px; font-weight: bold; font-size: 15px; background-color: black",
     "margin-left: 5px; color: LightSkyBlue; font-size: 16px;"
   );
-  if (postIndex === null) {
+  if (postIndex === null || postIndex === '') {
     return null;
   } else {
     return Number(postIndex);
@@ -15,7 +15,7 @@ function getURLPostIndex() {
 }
 let commentID = 0;
 
-if (postIndex === null || posts.length - 1 < postIndex) {
+if (postIndex === null || posts.length - 1 < postIndex || posts[postIndex] === undefined) {
   error();
 }
 // ======================================================
@@ -98,7 +98,7 @@ function renderComments(commentArray, nestedLevel, parentCommentID) {
         <div class="comment__avatar_wrapper">
           <img src="img/avatars/${avatar}" alt="Commentor avatar" class="comment__avatar">
         </div>
-        <span class="comment__user_name">${name} --- nested:[${nestedLevel}] --- ID:[${commentID}] --- parentCommentID:[${parentCommentID}]</span>
+        <span class="comment__user_name">${name} - ID:[${commentID}] - parentCommentID:[${parentCommentID}]</span>
         <span class="comment__meta_seperator">•</span>
         <span class="comment__date">${date}</span>
       </div>

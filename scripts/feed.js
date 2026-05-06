@@ -2,6 +2,9 @@ let preventPost = 0;
 
 // =====================================================
 function renderPosts() {
+  const postSeperator = /*html*/`
+    <div class="feed_post__seperator"></div>
+  `;
   let postsHTML = '';
   for (let i = 0; i < posts.length; i++) {
     const postObject = posts[i];
@@ -61,6 +64,9 @@ function renderPosts() {
           </div>
         `;
     postsHTML += html;
+    if (i !== posts.length - 1){
+      postsHTML += postSeperator;
+    }
   }
   document.querySelector('.js_post_feed').innerHTML = postsHTML;
 }

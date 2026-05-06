@@ -83,7 +83,7 @@ const users = [
   {
     name: "turnite",
     banner: "",
-    avatar: "",
+    avatar: "turnite.jpg",
     description: "",
     joinDate: "",
   },
@@ -99,7 +99,7 @@ const users = [
   {
     name: "johnny2eyesBrother",
     banner: "",
-    avatar: "",
+    avatar: "johnny2eyesBrother.jpg",
     description: "",
     joinDate: "",
   },
@@ -107,13 +107,13 @@ const users = [
   {
     name: "bromium",
     banner: "",
-    avatar: "",
+    avatar: "bromium.jpg",
     description: "",
     joinDate: "",
   },
   // 14
   {
-    name: "",
+    name: "ASMR - Official Channel",
     banner: "",
     avatar: "",
     description: "",
@@ -121,25 +121,113 @@ const users = [
   },
   // 15
   {
-    name: "",
+    name: "BigFaz",
     banner: "",
-    avatar: "",
+    avatar: "BigFaz.jpg",
     description: "",
     joinDate: "",
   },
   // 16
   {
-    name: "",
+    name: "SmallFred",
     banner: "",
-    avatar: "",
+    avatar: "SmallFred.jpg",
     description: "",
     joinDate: "",
   },
   // 17
   {
-    name: "",
+    name: "MFazFred",
+    banner: "",
+    avatar: "MFazFred.jpg",
+    description: "",
+    joinDate: "",
+  },
+  // 18
+  {
+    name: "BB",
+    banner: "",
+    avatar: "BB.jpg",
+    description: "",
+    joinDate: "",
+  },
+  // 19
+  {
+    name: "Danieler",
+    banner: "",
+    avatar: "Danieler.jpg",
+    description: "",
+    joinDate: "",
+  },
+  // 20
+  {
+    name: "nellie45",
+    banner: "",
+    avatar: "nellie45.jpg",
+    description: "",
+    joinDate: "",
+  },
+  // 21
+  {
+    name: "larpitude",
+    banner: "",
+    avatar: "larpitude.jpg",
+    description: "",
+    joinDate: "",
+  },
+  // 22
+  {
+    name: "unturn",
     banner: "",
     avatar: "",
+    description: "",
+    joinDate: "",
+  },
+  // 23
+  {
+    name: "meanerer",
+    banner: "",
+    avatar: "",
+    description: "",
+    joinDate: "",
+  },
+  // 24
+  {
+    name: "facterist",
+    banner: "",
+    avatar: "",
+    description: "",
+    joinDate: "",
+  },
+  // 25
+  {
+    name: "ILoveFreeStuff",
+    banner: "",
+    avatar: "ILoveFreeStuff.jpg",
+    description: "",
+    joinDate: "",
+  },
+  // 26
+  {
+    name: "SuspiciousUser76",
+    banner: "",
+    avatar: "SuspiciousUser76.jpg",
+    description: "",
+    joinDate: "",
+  },
+  // 27
+  {
+    name: "dumberist",
+    banner: "",
+    avatar: "dumberist.jpg",
+    description: "",
+    joinDate: "",
+  },
+  // 28
+  {
+    name: "yourJournal Ban Bot",
+    banner: "",
+    avatar: "yourJournal_Ban_Bot.webp",
     description: "",
     joinDate: "",
   },
@@ -179,28 +267,28 @@ const posts = [
     flair: "news",
     upvotesNum: 7,
     downvotesNum: 84,
-    commentsNum: 132,
+    commentsNum: 15,
     comments: [
       {
         commenterIndex: 1,
         content: "\"The Truth Behind the Carnation Street Shooting\" sure buddy",
-        date: "1 week ago",
-        upvotesNum: 4,
-        downvotesNum: 1,
+        date: "3 months ago",
+        upvotesNum: 92,
+        downvotesNum: 21,
         comments: [
           {
             commenterIndex: 2,
             content: "Were you there when it happened or what?",
-            date: "1 week ago",
-            upvotesNum: 1,
-            downvotesNum: 1,
+            date: "3 months ago",
+            upvotesNum: 21,
+            downvotesNum: 43,
             comments: [
               {
                 commenterIndex: 1,
                 content: "If you knew anything about the incident you'd know this is completely false information they're giving in the report.",
-                date: "1 week ago",
-                upvotesNum: 18,
-                downvotesNum: 0,
+                date: "2 months ago",
+                upvotesNum: 43,
+                downvotesNum: 17,
                 comments: [
 
                 ]
@@ -212,9 +300,9 @@ const posts = [
       {
         commenterIndex: 3,
         content: "I hate the GHH for making such a disgustingly fake report. I knew Khalil and he would never do such a thing.",
-        date: "2 weeks ago",
-        upvotesNum: 31,
-        downvotesNum: 7,
+        date: "1 month ago",
+        upvotesNum: 51,
+        downvotesNum: 21,
         comments: [
           {
             commenterIndex: 4,
@@ -318,7 +406,245 @@ const posts = [
         ]
       },
     ]
-  }
+  },
+  {
+    title: "Racism and Discrimination - an Interview with Hailey Grant",
+    userIndex: 14,
+    date: "28.06.2017",
+    feedContent: `
+    <div class="feed_post__audio_wrapper">
+      <audio class="js_feed_post__audio feed_post__audio" src="audio/interview.MP3" controls></audio>
+    </div>
+    `,
+    content: `
+    <div class="feed_post__audio_wrapper">
+      <audio class="js_feed_post__audio feed_post__audio" src="audio/interview.MP3" controls></audio>
+    </div>
+    `,
+    flair: "media",
+    upvotesNum: 0,
+    downvotesNum: 0,
+    commentsNum: 0,
+    comments: [
+      {
+        commenterIndex: 15,
+        content: "This interview so weird LOL",
+        date: "1 month ago",
+        upvotesNum: 38,
+        downvotesNum: 32,
+        comments: [
+          {
+            commenterIndex: 16,
+            content: "I mean they made some good points but talking with some random girl Starr went to school with is kinda weird. You're right about that.",
+            date: "3 weeks ago",
+            upvotesNum: 10,
+            downvotesNum: 7,
+            comments: [
+
+            ]
+          },
+          {
+            commenterIndex: 17,
+            content: "ASMR is my favorite podcast studio how dare you!",
+            date: "15 minutes ago",
+            upvotesNum: 1,
+            downvotesNum: 0,
+            comments: [
+              {
+                commenterIndex: 15,
+                content: "Didn't say it's bad just weird.",
+                date: "15 minutes ago",
+                upvotesNum: 1,
+                downvotesNum: 1,
+                comments: [
+                ]
+              },
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 18,
+        content: "Who even cares who this Hailey girl is?",
+        date: "1 month ago",
+        upvotesNum: 1,
+        downvotesNum: 10,
+        comments: [
+          {
+            commenterIndex: 19,
+            content: "I didn't even know who she was until now.",
+            date: "3 weeks ago",
+            upvotesNum: 1,
+            downvotesNum: 6,
+            comments: [
+            ]
+          },
+          {
+            commenterIndex: 18,
+            content: "It's kinda crazy to me how she agreed to join this interview",
+            date: "3 weeks",
+            upvotesNum: 3,
+            downvotesNum: 5,
+            comments: [
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 20,
+        content: "I usually just listen to these peoples podcasts to sleep but this one kind of caught my attention.",
+        date: "3 weeks ago",
+        upvotesNum: 23,
+        downvotesNum: 3,
+        comments: [
+          {
+            commenterIndex: 21,
+            content: "Same here I usually just instantly sleep when Mr. Lare is in an episode.",
+            date: "2 weeks ago",
+            upvotesNum: 19,
+            downvotesNum: 7,
+            comments: [
+            ]
+          },
+          {
+            commenterIndex: 10,
+            content: "trueeee",
+            date: "2 weeks",
+            upvotesNum: 2,
+            downvotesNum: 13,
+            comments: [
+              {
+                commenterIndex: 22,
+                content: "Do you know any other words beside \"truee\"?",
+                date: "1 week ago",
+                upvotesNum: 28,
+                downvotesNum: 6,
+                comments: [
+                  {
+                    commenterIndex: 10,
+                    content: `<img src="img/comments/womp_womp.gif" alt="Comment Img" class="js_comment__img comment__img">`,
+                    date: "3 days ago",
+                    upvotesNum: 1,
+                    downvotesNum: 32,
+                    comments: [
+                    ]
+                  },
+                ]
+              },
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 23,
+        content: "Womp, Womp. Some girl was mean to her friend in school. Unnecessary podcast and studio.",
+        date: "3 weeks ago",
+        upvotesNum: 21,
+        downvotesNum: 11,
+        comments: [
+          {
+            commenterIndex: 24,
+            content: "I mean it's still important to bring awareness to the topic.",
+            date: "2 days ago",
+            upvotesNum: 8,
+            downvotesNum: 18,
+            comments: [
+              {
+                commenterIndex: 23,
+                content: "Just unnecessary stuff on my homepage.",
+                date: "1 day ago",
+                upvotesNum: 12,
+                downvotesNum: 2,
+                comments: [
+                ]
+              },
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 25,
+        content: "Join my chat group to learn about way to make money without working: www.definitelynotascam.com/moneymoneymoney/misterkrab",
+        date: "1 month ago",
+        upvotesNum: 2,
+        downvotesNum: 127,
+        comments: [
+          {
+            commenterIndex: 26,
+            content: "This worked thanks. Now I'm 999 times richer.",
+            date: "1 month ago",
+            upvotesNum: 4,
+            downvotesNum: 12,
+            comments: [
+              {
+                commenterIndex: 27,
+                content: "Really how? My mobile started heating up after I downloaded the app but that's all that happened.",
+                date: "2 weeks ago",
+                upvotesNum: 6,
+                downvotesNum: 20,
+                comments: [
+                  {
+                    commenterIndex: 25,
+                    content: "No way I this actually worked. I have all your bank details now HAHAHA 🤣🤣😂😂 Are these your numbers: AccNum: 1111-3123-4123-9312 PIN: 1234",
+                    date: "3 days ago",
+                    upvotesNum: 0,
+                    downvotesNum: 12,
+                    comments: [
+                      {
+                        commenterIndex: 27,
+                        content: "Yo I forgot my PIN thank you so much. I already knew my account number though but ok.",
+                        date: "2 days ago",
+                        upvotesNum: 1,
+                        downvotesNum: 5,
+                        comments: [
+                          {
+                            commenterIndex: 25,
+                            content: "You've got to be kidding me.",
+                            date: "1 day ago",
+                            upvotesNum: 1,
+                            downvotesNum: 0,
+                            comments: [
+                              {
+                                commenterIndex: 28,
+                                content: "<mark>@ILoveFreeStuff</mark> Has been banned. <br><br> <strong>Moderator Comment:</strong><br><mark>@dumberist</mark> what are you even doing?",
+                                date: "30 minutes ago",
+                                upvotesNum: 9,
+                                downvotesNum: 0,
+                                comments: [
+                                ]
+                              },
+                            ]
+                          },
+                        ]
+                      },
+                    ]
+                  },
+                ]
+              },
+              {
+                commenterIndex: 23,
+                content: "0 times 999 is still 0 buddy.",
+                date: "30 minutes ago",
+                upvotesNum: 1,
+                downvotesNum: 3,
+                comments: [
+                  {
+                    commenterIndex: 26,
+                    content: `<img src="img/comments/laughing.gif" alt="Comment Img" class="js_comment__img comment__img">`,
+                    date: "15 minutes ago",
+                    upvotesNum: 3,
+                    downvotesNum: 0,
+                    comments: [
+                    ]
+                  },
+                ]
+              },
+            ]
+          },
+        ]
+      },
+    ],
+  },
 ];
 
 // localStorage.clear();

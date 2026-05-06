@@ -119,7 +119,7 @@ function removeVoteBtnUI(voteBtn) {
     upvotedPosts = tempUpvotedPosts;
     localStorage.setItem('upvotedPosts', JSON.stringify(upvotedPosts));
 
-    voteBtnCount.style.color = 'black';
+    voteBtnCount.style.color = 'var(--text-text-color)';
     voteBtnImg.src = 'img/system/heart.svg';
   } else {
     // Update Counter
@@ -132,7 +132,7 @@ function removeVoteBtnUI(voteBtn) {
     downvotedPosts = tempDownvotedPosts;
     localStorage.setItem('downvotedPosts', JSON.stringify(downvotedPosts));
 
-    voteBtnCount.style.color = 'black';
+    voteBtnCount.style.color = 'var(--text-text-color)';
     voteBtnImg.src = 'img/system/heart-crack.svg';
   }
 }
@@ -148,6 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
   downvoteBtns.forEach(initFuncs.initDownvoteBtn);
 });
 window.addEventListener('pageshow', () => {
+  document.querySelector('.js_feed_post__audio').volume = 0.25;
+
   console.log('%c-- window pageshow event --', 'border-left: solid 3px BlueViolet; border-right: solid 3px BlueViolet; padding-left: 3px; padding-right: 3px');
   const postsElHTML = document.getElementsByClassName('js_post_get_data');
   Array.from(postsElHTML).forEach((postEl) => {
