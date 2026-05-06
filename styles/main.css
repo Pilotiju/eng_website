@@ -10,8 +10,9 @@ body{
     /* Texts */
     --text-comment-date-color: rgb(99, 111, 158);
     --text-heading-color: rgb(210, 214, 243);
-    --text-text-color: rgb(199, 202, 231);
+    --text-text-color: rgb(206, 209, 238);
     --text-marked-color: rgb(123, 171, 233);
+    --text-quote-color: rgb(161, 166, 216);
 
     /* Feed */
     --feed-posts-card-bg: rgb(31, 34, 49);
@@ -172,6 +173,14 @@ main.index_main{
 }
 .feed_post__audio::-webkit-media-controls-panel{
     background-color: var(--post-audio-color);
+}
+.quote_text_wrapper{
+    padding: 7px 0px 7px 10px;
+    border-left: 3px solid var(--text-quote-color);
+    color: var(--text-quote-color) !important;
+}
+.quote_text_wrapper p{
+    margin: 0;
 }
 
 /** ==================== Post Page ==================== **/

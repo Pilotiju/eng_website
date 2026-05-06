@@ -236,22 +236,22 @@ const users = [
   },
   // 47
   {
-    name: "",
+    name: "Picmines",
     avatar: "",
   },
   // 48
   {
-    name: "",
+    name: "RagerraiteD",
     avatar: "",
   },
   // 49
   {
-    name: "",
+    name: "UnRaerae",
     avatar: "",
   },
   // 50
   {
-    name: "",
+    name: "yourdadFhaha",
     avatar: "",
   },
   // 51
@@ -289,7 +289,7 @@ const posts = [
     feedContent: `
     <p class="feed_post__text normal_fs">
       After the incident involving Khalil Harris, parts of the media have made it into a story of a merciless execution. However, Brian Cruise Jr. has finally given his side of the happenings of Friday, sharing his view as a police officer who needed to make a difficult decision in a too short amount of time.
-      It began when Mr. Cruise stopped a Chevrolet Impala with a broken headlight in Garden Heights. This is an area notorious for high rates of crime and radical gang activity. Like any other police officer, Cruise was being very aware of his surroundings, which is a sensible thing to do in such a criminal area. 
+      It began when Mr. Cruise stopped a Chevrolet Impala with a broken taillight in Garden Heights. This is an area notorious for high rates of crime and radical gang activity. Like any other police officer, Cruise was being very aware of his surroundings, which is a sensible thing to do in such a criminal area. 
       After making the vehicle pull over, Cruise describes Khalil as a person with a very aggressive and annoyed attitude. While protesters have made the encounter into a misunderstanding, those familiar with police protocol point out that Harris' refusal to follow direct orders created an immediate atmosphere of tension.
       The height of the incident occurred when Cruise returned to his police car to check Harris' information...
     </p>
@@ -299,7 +299,7 @@ const posts = [
         After the incident involving Khalil Harris, parts of the media have made it into a story of a merciless execution. However, Brian Cruise Jr. has finally given his side of the happenings of Friday, sharing his view as a police officer who needed to make a difficult decision in a too short amount of time.
       </p>
       <p class="feed_post__text normal_fs">
-        It began when Mr. Cruise stopped a Chevrolet Impala with a broken headlight in Garden Heights. This is an area notorious for high rates of crime and radical gang activity. Like any other police officer, Cruise was being very aware of his surroundings, which is a sensible thing to do in such a criminal area. 
+        It began when Mr. Cruise stopped a Chevrolet Impala with a broken taillight in Garden Heights. This is an area notorious for high rates of crime and radical gang activity. Like any other police officer, Cruise was being very aware of his surroundings, which is a sensible thing to do in such a criminal area. 
         After making the vehicle pull over, Cruise describes Khalil as a person with a very aggressive and annoyed attitude. While protesters have made the encounter into a misunderstanding, those familiar with police protocol point out that Harris' refusal to follow direct orders created an immediate atmosphere of tension.
         The height of the incident occurred when Cruise returned to his police car to check Harris' information. Despite being told to remain in place, Harris entered his vehicle through the open driver's side door and reached for something that Cruise says "looked like a gun." <br>
         Other police officers stood by his actions, as Khalil was later found to be a drug dealer, and because in that moment of tension, you could risk your life by not reacting accordingly. The message from the police station was, "If a suspect ignores a command and reaches back into a vehicle, an officer has to assume the worst."
@@ -333,7 +333,7 @@ const posts = [
             comments: [
               {
                 commenterIndex: 1,
-                content: "If you knew anything about the incident you'd know this is completely false information they're giving in the report.",
+                content: "If you knew anything about the incident you'd know this report is completely false.",
                 date: "2 months ago",
                 upvotesNum: 43,
                 downvotesNum: 17,
@@ -919,6 +919,148 @@ const posts = [
                 comments: [
                 ]
               },
+            ]
+          },
+        ]
+      },
+    ],
+  },
+  {
+    title: "Today on the News",
+    userIndex: 12,
+    date: "29.05.2017",
+    feedContent: `
+    <div class="feed_post__image_wrapper">
+      <img src="img/posts/police_father_interview.png" alt="Post BG Image" class="feed_post__image__bg">
+      <img src="img/posts/police_father_interview.png" alt="Post Image" class="feed_post__image">
+    </div>
+    `,
+    content: `
+    <div class="feed_post__image_wrapper">
+      <img src="img/posts/police_father_interview.png" alt="Post BG Image" class="feed_post__image__bg">
+      <img src="img/posts/police_father_interview.png" alt="Post Image" class="feed_post__image">
+    </div>
+    <p class="feed_post__text normal_fs">
+      Look what I saw today on the TV:
+    </p>
+    <div class="quote_text_wrapper">
+      <p>
+        Officer Brian Cruise's father states his son's side of the incident.
+      </p>
+    </div>
+    <p class="feed_post__text normal_fs">
+      He states that his son pulled the kid over because he had a broken taillight and was speeding.
+    </p>
+    `,
+    flair: "news",
+    upvotesNum: 372,
+    downvotesNum: 135,
+    commentsNum: 0,
+    comments: [
+      {
+        commenterIndex: 47,
+        content: "This has to be one of the worst interviews ever. The father was just trying to cover up the actions of his racist son.",
+        date: "3 months ago",
+        upvotesNum: 30,
+        downvotesNum: 7,
+        comments: [
+          {
+            commenterIndex: 48,
+            content: "\"cover up\" The police officer was just doing his job. If some kid wanted to attack you you'd definitely also panic. It was all an accident.",
+            date: "3 months ago",
+            upvotesNum: 8,
+            downvotesNum: 41,
+            comments: [
+              {
+                commenterIndex: 49,
+                content: "No it was not. There have been multiple things that clearly state otherwise.",
+                date: "2 months ago",
+                upvotesNum: 23,
+                downvotesNum: 4,
+                comments: [
+                ]
+              },
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 5,
+        content: "For anyone wondering this interview was complete and utter ********. The father was just trying to make everyone empathize for his son.",
+        date: "4 months ago",
+        upvotesNum: 53,
+        downvotesNum: 12,
+        comments: [
+          {
+            commenterIndex: 50,
+            content: "I kinda suspected that based on the image. Just an old man wasting peoples time on the television.",
+            date: "3 months ago",
+            upvotesNum: 19,
+            downvotesNum: 4,
+            comments: [
+            ]
+          },
+          {
+            commenterIndex: 9,
+            content: "It's crazy how far people will go to make you believe this type of stuff.",
+            date: "2 months ago",
+            upvotesNum: 29,
+            downvotesNum: 6,
+            comments: [
+              {
+                commenterIndex: 10,
+                content: "trueeee",
+                date: "2 months ago",
+                upvotesNum: 13,
+                downvotesNum: 18,
+                comments: [
+                ]
+              },
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 1,
+        content: "\"Brian turned around and saw something in the car door. He thought it was a gun-\" <br><br> The so called \"gun\" was a hairbrush. a. <strong>hairbrush.</strong> <br><br> He should get some glasses.",
+        date: "3 weeks ago",
+        upvotesNum: 32,
+        downvotesNum: 4,
+        comments: [
+          {
+            commenterIndex: 2,
+            content: "Oh you saw them or what? How do <strong>you</strong> know that it wasn't a gun?",
+            date: "3 weeks ago",
+            upvotesNum: 2,
+            downvotesNum: 83,
+            comments: [
+              {
+                commenterIndex: 1,
+                content: "Are you living under a rock? Ms. Ofrah made a post addressing the incident with a picture of the hairbrush (or \"gun\") in the car door. <br><br> You should really inform yourself better next time.",
+                date: "3 weeks ago",
+                upvotesNum: 110,
+                downvotesNum: 4,
+                comments: [
+                ]
+              },
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 29,
+        content: "He acted in a panic and now he <strong>and his family</strong> are getting death threats?! Are we serious?",
+        date: "2 weeks ago",
+        upvotesNum: 2,
+        downvotesNum: 103,
+        comments: [
+          {
+            commenterIndex: 46,
+            content: "justified",
+            date: "1 weeks ago",
+            upvotesNum: 53,
+            downvotesNum: 10,
+            comments: [
             ]
           },
         ]
