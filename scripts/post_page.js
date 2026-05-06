@@ -25,6 +25,7 @@ function renderPosts() {
   const { title, userIndex, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink } = postObject;
   let author = users[userIndex].name;
   let avatar = users[userIndex].avatar;
+  document.title = `YJ - ${title}`;
   if (avatar === '') {
     avatar = 'circle-user.svg';
   }
