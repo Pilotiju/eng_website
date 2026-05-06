@@ -413,12 +413,12 @@ const posts = [
     date: "28.06.2017",
     feedContent: `
     <div class="feed_post__audio_wrapper">
-      <audio class="js_feed_post__audio feed_post__audio" src="audio/interview.MP3" controls></audio>
+      <audio class="js_feed_post__audio feed_post__audio" src="audio/interview.mp3" controls></audio>
     </div>
     `,
     content: `
     <div class="feed_post__audio_wrapper">
-      <audio class="js_feed_post__audio feed_post__audio" src="audio/interview.MP3" controls></audio>
+      <audio class="js_feed_post__audio feed_post__audio" src="audio/interview.mp3" controls></audio>
     </div>
     `,
     flair: "media",
