@@ -696,7 +696,7 @@ const posts = [
   {
     title: "RACISM HAS TO STOP!",
     userIndex: 5,
-    date: "20.05.2017",
+    date: "20.05.2018",
     feedContent: `
     <p class="feed_post__text normal_fs">
       We live in a world with eight billion people and full of diversity. But then again, we also live in a society where people get mocked, laughed at, or even worse, get physically assaulted.

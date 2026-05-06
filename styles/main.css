@@ -96,7 +96,7 @@ main.index_main{
     display: block;
     position: relative;
     background-color: var(--feed-posts-card-bg);
-    padding: 15px 15px 8px 15px;
+    padding: 9px 15px 8px 15px;
     border-radius: 12px;
 }
 .feed_post:hover{
