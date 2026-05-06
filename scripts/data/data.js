@@ -313,8 +313,8 @@ const posts = [
       </p>
       `,
     flair: "news",
-    upvotesNum: 7,
-    downvotesNum: 84,
+    upvotesNum: 54,
+    downvotesNum: 213,
     commentsNum: 15,
     comments: [
       {
@@ -705,7 +705,7 @@ const posts = [
       Which is why I strongly believe that racism is a huge problem for society and desperately needs to be stopped!
       Firstly, racism can negatively affect a person's mental health and your behavior. This is because, when people experience some form of discrimination, they often alter their behavior afterward to fit in with the social norm. For instance, my Vietnamese friend from high school brought "phở" (a famous traditional Vietnamese noodle soup dish) one time for lunch. Though he got mocked by his classmates, criticizing his noodles. Since then, he has been bringing peanut butter sandwiches, which everyone usually has for lunch, to not get laughed at anymore. This kind of situation does not only happen to my friend. In fact, according to a survey of...
     </p>
-`,
+    `,
     content: `
       <p class="feed_post__text normal_fs">
         We live in a world with eight billion people and full of diversity. But then again, we also live in a society where people get mocked, laughed at, or even worse, get physically assaulted. 
@@ -729,8 +729,8 @@ const posts = [
       </p>
     `,
     flair: "own_opinion",
-    upvotesNum: 0,
-    downvotesNum: 0,
+    upvotesNum: 293,
+    downvotesNum: 102,
     commentsNum: 21,
     comments: [
       {
