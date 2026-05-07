@@ -256,25 +256,95 @@ const users = [
   },
   // 51
   {
-    name: "",
+    name: "fanerick",
     avatar: "",
   },
   // 52
   {
-    name: "",
+    name: "worrit",
     avatar: "",
   },
   // 53
   {
-    name: "",
+    name: "Relaley",
     avatar: "",
   },
   // 54
   {
-    name: "",
+    name: "sonnion",
     avatar: "",
   },
   // 55
+  {
+    name: "Frieenderlie",
+    avatar: "",
+  },
+  // 56
+  {
+    name: "Operinte",
+    avatar: "",
+  },
+  // 57
+  {
+    name: "PurpleGuy",
+    avatar: "",
+  },
+  // 58
+  {
+    name: "",
+    avatar: "",
+  },
+  // 59
+  {
+    name: "",
+    avatar: "",
+  },
+  // 60
+  {
+    name: "",
+    avatar: "",
+  },
+  // 61
+  {
+    name: "",
+    avatar: "",
+  },
+  // 62
+  {
+    name: "",
+    avatar: "",
+  },
+  // 63
+  {
+    name: "",
+    avatar: "",
+  },
+  // 64
+  {
+    name: "",
+    avatar: "",
+  },
+  // 65
+  {
+    name: "",
+    avatar: "",
+  },
+  // 66
+  {
+    name: "",
+    avatar: "",
+  },
+  // 67
+  {
+    name: "",
+    avatar: "",
+  },
+  // 68
+  {
+    name: "",
+    avatar: "",
+  },
+  // 69
   {
     name: "",
     avatar: "",
@@ -1063,6 +1133,151 @@ const posts = [
             comments: [
             ]
           },
+        ]
+      },
+    ],
+  },
+  {
+    title: "Should you fight your battles alone?",
+    userIndex: 36,
+    date: "17.04.2017",
+    feedContent: `
+      <p class="feed_post__text normal_fs">
+        Have you ever witnessed something incredibly horrific that has left you traumatized for a long time? Unfortunately, this similar situation happened to my friend before. However, she just opened up to me about it recently.
+        At that moment I wondered. Is it worth it to fight your battles alone?
+        Honestly, it isn't. It's always good to be open about your situation to your closest people, like, for example, a real friend. This is because you will get a sense of relief since you're letting go of the negative thoughts that had been swirling around in your head for some time. For example, I struggled deeply due to the huge amount of pressure and stress at school. At first, I didn't really have the courage to open up to someone about it, since I was scared that they wouldn't take me seriously. Although, as I talked with a very close friend about it, I felt incredibly relieved.
+        I also strongly believe that if you decide to not open up about it to anyone and bottle up your feelings, it's only going to get worse. The reason for this is that the pressure, which you have been...
+      </p>
+    `,
+    content: `
+      <p class="feed_post__text normal_fs">
+        Have you ever witnessed something incredibly horrific that has left you traumatized for a long time? Unfortunately, this similar situation happened to my friend before. However, she just opened up to me about it recently.<br>
+      </p>
+      <p class="feed_post__text normal_fs">
+        At that moment I wondered. <strong>Is it worth it to fight your battles alone?</strong>
+      </p>
+      <p class="feed_post__text normal_fs">
+        Honestly, it isn't. It's always good to be open about your situation to your closest people, like, for example, a real friend. This is because you will get a sense of relief since you're letting go of the negative thoughts that had been swirling around in your head for some time. For example, I struggled deeply due to the huge amount of pressure and stress at school. At first, I didn't really have the courage to open up to someone about it, since I was scared that they wouldn't take me seriously. Although, as I talked with a very close friend about it, I felt incredibly relieved.
+        I also strongly believe that if you decide to not open up about it to anyone and bottle up your feelings, it's only going to get worse. The reason for this is that the pressure, which you have been holding in, keeps getting bigger. It can come to the point where you feel completely hopeless and depressed.  For instance, my friend, who I mentioned before, also told me that she was completely lost in her negative thoughts. It came to the point where she avoided everyone and had terrible grades. But luckily, she had the courage to talk about it with me.
+      </p>
+      <p class="feed_post__text normal_fs">
+        At the end of the day, we should always remind ourselves that we aren't fighting our battles alone and that a small amount of support couldn't hurt. 
+      </p>
+      <p class="feed_post__text normal_fs">
+        What are your thoughts on this topic? Have you noticed someone acting weird recently? Please, don't be afraid to ask them what's going on.
+      </p>    
+    `,
+    flair: "own_opinion",
+    upvotesNum: 0,
+    downvotesNum: 0,
+    commentsNum: 0,
+    comments: [
+      {
+        commenterIndex: 51,
+        content: "This user keeps posting BANGER texts. That opinion post you wrote before was great as well.",
+        date: "6 months ago",
+        upvotesNum: 43,
+        downvotesNum: 10,
+        comments: [
+          {
+            commenterIndex: 13,
+            content: "The insane glaze for no reason is crazy. My 7 year old brother writes better than this.",
+            date: "1 week ago",
+            upvotesNum: 2,
+            downvotesNum: 9,
+            comments: [
+              {
+                commenterIndex: 52,
+                content: "What are we even saying at this point?",
+                date: "1 week ago",
+                upvotesNum: 6,
+                downvotesNum: 2,
+                comments: [
+                ]
+              },
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 53,
+        content: "Kinda weird to admit this post kinda helped me out. Let me notice I wasn't really speaking much with people other than myself for a while. Hope it helps someone else out.",
+        date: "4 months ago",
+        upvotesNum: 32,
+        downvotesNum: 7,
+        comments: [
+          {
+            commenterIndex: 51,
+            content: "Same, this one hit deep.",
+            date: "3 months ago",
+            upvotesNum: 20,
+            downvotesNum: 3,
+            comments: [
+              {
+                commenterIndex: 31,
+                content: "hatterickYour life can't be that bad. Just shut it.",
+                date: "2 weeks ago",
+                upvotesNum: 12,
+                downvotesNum: 19,
+                comments: [
+                  {
+                    commenterIndex: 54,
+                    content: "-_-",
+                    date: "1 week ago",
+                    upvotesNum: 4,
+                    downvotesNum: 1,
+                    comments: [
+                    ]
+                  },
+                ]
+              },
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 55,
+        content: "Reading this really helped me understand that even things that seem \"small\" can be very life-changing. ",
+        date: "1 month ago",
+        upvotesNum: 59,
+        downvotesNum: 12,
+        comments: [
+          {
+            commenterIndex: 10,
+            content: "truee",
+            date: "1 week ago",
+            upvotesNum: 2,
+            downvotesNum: 5,
+            comments: [
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 56,
+        content: "Asked my friend how he actually felt today and this post really changed up our relationship. He opened up to so much to me. He's been doing a lot better since then.",
+        date: "4 days ago",
+        upvotesNum: 10,
+        downvotesNum: 3,
+        comments: [
+          {
+            commenterIndex: 57,
+            content: "This comment fills me with joy.",
+            date: "1 day ago",
+            upvotesNum: 4,
+            downvotesNum: 1,
+            comments: [
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 15,
+        content: "Man, this really opened my eyes. I finally opened up to my friend, and it took that strong feeling off of my chest.",
+        date: "1 week ago",
+        upvotesNum: 12,
+        downvotesNum: 3,
+        comments: [
         ]
       },
     ],
