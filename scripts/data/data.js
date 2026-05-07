@@ -12,17 +12,17 @@ const users = [
   // 2
   {
     name: "thitanos",
-    avatar: "",
+    avatar: "thitanos.jpg",
   },
   // 3
   {
     name: "steayray",
-    avatar: "",
+    avatar: "steayray.webp",
   },
   // 4
   {
     name: "fisht",
-    avatar: "",
+    avatar: "fisht.jpg",
   },
   // 5
   {
@@ -32,22 +32,22 @@ const users = [
   // 6
   {
     name: "stuperman",
-    avatar: "",
+    avatar: "stuperman.jpg",
   },
   // 7
   {
     name: "idkman",
-    avatar: "",
+    avatar: "idkman.webp",
   },
   // 8
   {
     name: "aweforil",
-    avatar: "",
+    avatar: "aweforil.jpg",
   },
   // 9
   {
     name: "Saller",
-    avatar: "",
+    avatar: "Saller.jpg",
   },
   // 10
   {
@@ -112,17 +112,17 @@ const users = [
   // 22
   {
     name: "unturn",
-    avatar: "",
+    avatar: "unturn.jpg",
   },
   // 23
   {
     name: "meanerer",
-    avatar: "",
+    avatar: "meanerer.jpg",
   },
   // 24
   {
     name: "facterist",
-    avatar: "",
+    avatar: "facterist.webp",
   },
   // 25
   {
@@ -147,32 +147,32 @@ const users = [
   // 29
   {
     name: "granulatedsugarinabag",
-    avatar: "",
+    avatar: "granulatedsugarinabag.jpg",
   },
   // 30
   {
     name: "wormeirt",
-    avatar: "",
+    avatar: "wormeirt.webp",
   },
   // 31
   {
     name: "hatterick",
-    avatar: "",
+    avatar: "hatterick.jpg",
   },
   // 32
   {
     name: "latheine",
-    avatar: "",
+    avatar: "latheine.webp",
   },
   // 33
   {
     name: "loveydovey313",
-    avatar: "",
+    avatar: "loveydovey313.jpg",
   },
   // 34
   {
     name: "stongper",
-    avatar: "",
+    avatar: "stongper.jpg",
   },
   // 35
   {
