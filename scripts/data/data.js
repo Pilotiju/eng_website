@@ -321,27 +321,27 @@ const users = [
   },
   // 64
   {
-    name: "",
+    name: "Artist of the year - Official Account",
     avatar: "",
   },
   // 65
   {
-    name: "",
+    name: "2PAC_fan",
     avatar: "",
   },
   // 66
   {
-    name: "",
+    name: "Musicwithlily",
     avatar: "",
   },
   // 67
   {
-    name: "",
+    name: "timeraveller",
     avatar: "",
   },
   // 68
   {
-    name: "",
+    name: "Piloteer",
     avatar: "",
   },
   // 69
@@ -1168,9 +1168,9 @@ const posts = [
       </p>    
     `,
     flair: "own_opinion",
-    upvotesNum: 0,
-    downvotesNum: 0,
-    commentsNum: 0,
+    upvotesNum: 173,
+    downvotesNum: 26,
+    commentsNum: 10,
     comments: [
       {
         commenterIndex: 51,
@@ -1299,9 +1299,9 @@ const posts = [
     </div>
     `,
     flair: "news",
-    upvotesNum: 0,
-    downvotesNum: 0,
-    commentsNum: 0,
+    upvotesNum: 4261,
+    downvotesNum: 271,
+    commentsNum: 22,
     comments: [
       {
         commenterIndex: 16,
@@ -1496,6 +1496,119 @@ const posts = [
             date: "4 months",
             upvotesNum: 32,
             downvotesNum: 75,
+            comments: [
+            ]
+          },
+        ]
+      },
+    ],
+  },
+  {
+    title: "Artist of the year 1996: Tupac Shakur - A voice that changed hip-hop culture <u>[TEMP USER]</u>",
+    userIndex: 64,
+    date: "01.01.1997",
+    feedContent: `
+      <p class="feed_post__text normal_fs">
+        One of the most popular songs of pop-culture is "California Love". But did you know that this hit was made by one of the most famous US-American rappers? Tupac Amaru Shakur was an influential American rapper and an actor, who is one of the leading names in the 1990s genre of gangsta rap. In addition, he is often referred to just as Tupac or 2pac.  But why does Tupac have such an important occurrence worldwide?
+        First of all, the music he made tackles complex social issues, resonating with audiences worldwide. Beyond music, he was a prominent voice advocating for social justice and change (especially because of injustices endured by many black Americans and minorities). 
+        Tupac's original name is Lesane Parish Crooks although he was renamed to Tupac Amaru Shakur shortly after his birth. He was born on 16th June 1971 in New York and his career began in the late 1980s by joining the hip-hop group "Digital Underground". One of the reasonable pushes of his career was his first major role under the...
+      </p>
+    `,
+    content: `
+      <p class="feed_post__text normal_fs">
+        One of the most popular songs of pop-culture is <em>"California Love"</em>. But did you know that this hit was made by one of the most famous US-American rappers? Tupac Amaru Shakur was an influential American rapper and an actor, who is one of the leading names in the 1990s genre of gangsta rap. In addition, he is often referred to just as Tupac or 2pac.  But why does Tupac have such an important occurrence worldwide?
+      </p>
+      <p class="feed_post__text normal_fs">
+        First of all, the music he made tackles complex social issues, resonating with audiences worldwide. Beyond music, he was a prominent voice advocating for social justice and change (especially because of injustices endured by many black Americans and minorities). <br>
+        Tupac's original name is <em>Lesane Parish Crooks</em> although he was renamed to Tupac Amaru Shakur shortly after his birth. He was born on 16th June 1971 in New York and his career began in the late 1980s by joining the hip-hop group <em>"Digital Underground"</em>. One of the reasonable pushes of his career was his first major role under the stage named <em>"MC New York"</em>. At the time Tupac appeared in the music video of the group's hit single <em>"Humpty Dance"</em>, which showcased his conspicuous rap-skills. And since then, he has become one of the most famous and successful rappers of all time. But why does he deserve the title of <strong><em>Artist of the year</em></strong>? <br>
+        Tupac deserves the title <strong><em>Artist of the year</em></strong> because through his songs, the voices of many can become louder. His songs contain social and political topics, like poverty, police violence and racism. He also represents his emotions and deep feelings in the lyrics of his songs. His music represents a mixture of street reality and his inner pain. Tupac's style and personality made him a cultural icon, especially for many teenagers and young adults. Even the influence of his appearance in movies like <em>"Juice"</em> or <em>"Poetic Justice"</em> show his versatility and his extended influence on the pop-culture. <br>
+        He also deserves the title because he has a major difference to other rappers. While rappers like Drake rap about women and money, Tupac deals more with critical issues in society.
+      </p>
+      <p class="feed_post__text normal_fs">
+        In conclusion, Tupac deserves the title <strong><em>Artist of the year</em></strong>, because he had a major influence on the pop-culture till today, especially with his style and personality. He represents the freedom of opinions, equality and tolerance. With his lyrics he expresses himself on the radicalism of the police, the injustice and the strong role discrimination has in society.
+      </p>
+    `,
+    flair: "news",
+    upvotesNum: 1741,
+    downvotesNum: 293,
+    commentsNum: 9,
+    comments: [
+      {
+        commenterIndex: 65,
+        content: "I love tupac's music so much. Sad that he died so young.",
+        date: "10 years ago",
+        upvotesNum: 831,
+        downvotesNum: 52,
+        comments: [
+          {
+            commenterIndex: 66,
+            content: "Same here. Can't stop listening to Changes. Such a good one.",
+            date: "10 years ago",
+            upvotesNum: 742,
+            downvotesNum: 27,
+            comments: [
+              {
+                commenterIndex: 65,
+                content: "Great pick. My favorite would probably be California Love though",
+                date: "10 years ago",
+                upvotesNum: 482,
+                downvotesNum: 18,
+                comments: [
+                ]
+              },
+              {
+                commenterIndex: 10,
+                content: "trueee",
+                date: "10 years ago",
+                upvotesNum: 291,
+                downvotesNum: 163,
+                comments: [
+                ]
+              },
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 8,
+        content: "Personally I like Biggie more but I can listen to some tupac from time to time.",
+        date: "10 years ago",
+        upvotesNum: 303,
+        downvotesNum: 41,
+        comments: [
+        ]
+      },
+      {
+        commenterIndex: 67,
+        content: "unrelated but I have a weird feeling about Drake.",
+        date: "10 years ago",
+        upvotesNum: 241,
+        downvotesNum: 131,
+        comments: [
+          {
+            commenterIndex: 8,
+            content: "Who is Drake?",
+            date: "10 years ago",
+            upvotesNum: 103,
+            downvotesNum: 114,
+            comments: [
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 61,
+        content: "Listening to tupac gets way to relatable sometimes. I absolutely love his way of singing and always feel empowered and understood after listening to him. Hope some else feels the same.",
+        date: "10 years ago",
+        upvotesNum: 461,
+        downvotesNum: 86,
+        comments: [
+          {
+            commenterIndex: 68,
+            content: "Love listening to his stuff. California Love is my fav.",
+            date: "10 years ago",
+            upvotesNum: 381,
+            downvotesNum: 52,
             comments: [
             ]
           },
