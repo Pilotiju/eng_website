@@ -13,6 +13,7 @@ body{
     --text-text-color: rgb(206, 209, 238);
     --text-marked-color: rgb(123, 171, 233);
     --text-quote-color: rgb(161, 166, 216);
+    --text-op-color: rgb(113, 214, 245);
 
     /* Feed */
     --feed-posts-card-bg: rgb(31, 34, 49);

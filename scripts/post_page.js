@@ -14,17 +14,20 @@ function getURLPostIndex() {
   }
 }
 let commentID = 0;
+let postAuthorID = 0;
 
 if (postIndex === null || posts.length - 1 < postIndex || posts[postIndex] === undefined) {
   error();
 }
 // ======================================================
+
 function renderPosts() {
   let html = '';
   const postObject = posts[postIndex];
   const { title, userIndex, date, content, flair, upvotesNum, downvotesNum, commentsNum, postLink } = postObject;
   let author = users[userIndex].name;
   let avatar = users[userIndex].avatar;
+  postAuthorID = userIndex;
   document.title = `YJ - ${title}`;
   if (avatar === '') {
     avatar = 'circle-user.svg';
@@ -84,6 +87,7 @@ function renderComments(commentArray, nestedLevel, parentCommentID) {
   let html = '';
   commentArray.forEach((commentObject, i) => {
     let seperatorHTML = '';
+    let checkOp = '';
     const { commenterIndex, content, date, upvotesNum, downvotesNum } = commentObject;
     commentObject.commentID = commentID;
     const userObject = users[commenterIndex];
@@ -93,13 +97,16 @@ function renderComments(commentArray, nestedLevel, parentCommentID) {
     if (avatar === '') {
       avatar = 'circle-user.svg';
     }
+    if (commenterIndex === postAuthorID) {
+      checkOp = ' (Original Poster)';
+    }
     let commentsHTML = /*html*/`
     <div class="js_comment_wrapper comment_wrapper comment__item" data-comment-id="${commentID}" style="margin-left:${nestedLevel * 50}px">
       <div class="js_comment__meta comment__meta normal_fs" data-parent-comment-id="${parentCommentID}">
         <div class="comment__avatar_wrapper">
           <img src="img/avatars/${avatar}" alt="Commentor avatar" class="comment__avatar">
         </div>
-        <span class="comment__user_name">${name} - ID:[${commentID}] - parentCommentID:[${parentCommentID}]</span>
+        <span class="comment__user_name">${name}<span class="post__op_username">${checkOp}</span> - ID:[${commentID}] - parentCommentID:[${parentCommentID}]</span>
         <span class="comment__meta_seperator">•</span>
         <span class="comment__date">${date}</span>
       </div>
