@@ -36,8 +36,7 @@ body{
     --main-navbar-border-bottom: rgb(74, 82, 121);
 
     /* Flairs */
-    --flair-vent-color: rgb(255, 63, 29);
-    --flair-meme-color: rgb(79, 224, 106);
+    --flair-JusticeForKhalil-color: rgb(255, 63, 29);
     --flair-news-color: rgb(245, 158, 11);
     --flair-own_opinion-color: rgb(152, 194, 241);
     --flair-media-color: rgb(35, 144, 252);
@@ -229,12 +228,8 @@ main.posts_main{
     border-radius: 30px;
     position: relative;
 }
-.flair__meme{
-    background-color: var(--flair-meme-color);
-    color: black;
-}
-.flair__vent{
-    background-color: var(--flair-vent-color);
+.flair__JusticeForKhalil{
+    background-color: var(--flair-JusticeForKhalil-color);
     color: black;
 }
 .flair__news{

@@ -764,6 +764,227 @@ const posts = [
     ],
   },
   {
+    title: "Everyone at Williamson Prep: JOIN THE PROTEST FOR KHALIL! <mark><em>#JusticeForKhalil!</em></mark>",
+    userIndex: 62,
+    date: "01.06.2017",
+    feedContent: `
+    <div class="feed_post__image_wrapper">
+      <img src="img/posts/khalil_death_protest.jpg" alt="Post BG Image" class="feed_post__image__bg">
+      <img src="img/posts/khalil_death_protest.jpg" alt="Post Image" class="feed_post__image">
+    </div>
+    `,
+    content: `
+    <div class="feed_post__image_wrapper">
+      <img src="img/posts/khalil_death_protest.jpg" alt="Post BG Image" class="feed_post__image__bg">
+      <img src="img/posts/khalil_death_protest.jpg" alt="Post Image" class="feed_post__image">
+    </div>
+    `,
+    flair: "JusticeForKhalil",
+    upvotesNum: 4261,
+    downvotesNum: 271,
+    commentsNum: 22,
+    comments: [
+      {
+        commenterIndex: 16,
+        content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
+        date: "4 months ago",
+        upvotesNum: 193,
+        downvotesNum: 19,
+        comments: [
+          {
+            commenterIndex: 59,
+            content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
+            date: "4 months ago",
+            upvotesNum: 150,
+            downvotesNum: 21,
+            comments: [
+            ]
+          },
+          {
+            commenterIndex: 58,
+            content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
+            date: "4 months ago",
+            upvotesNum: 142,
+            downvotesNum: 20,
+            comments: [
+            ]
+          },
+          {
+            commenterIndex: 60,
+            content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
+            date: "4 months ago",
+            upvotesNum: 146,
+            downvotesNum: 12,
+            comments: [
+            ]
+          },
+          {
+            commenterIndex: 3,
+            content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
+            date: "4 months ago",
+            upvotesNum: 152,
+            downvotesNum: 8,
+            comments: [
+            ]
+          },
+          {
+            commenterIndex: 5,
+            content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
+            date: "4 months ago",
+            upvotesNum: 221,
+            downvotesNum: 24,
+            comments: [
+            ]
+          },
+          {
+            commenterIndex: 24,
+            content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
+            date: "4 months ago",
+            upvotesNum: 145,
+            downvotesNum: 17,
+            comments: [
+            ]
+          },
+          {
+            commenterIndex: 36,
+            content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
+            date: "4 months ago",
+            upvotesNum: 124,
+            downvotesNum: 14,
+            comments: [
+            ]
+          },
+          {
+            commenterIndex: 29,
+            content: "man shut up you cry babies",
+            date: "3 months ago",
+            upvotesNum: 2,
+            downvotesNum: 273,
+            comments: [
+              {
+                commenterIndex: 36,
+                content: "you just had to ruin it didn't you? show some respect",
+                date: "3 months ago",
+                upvotesNum: 64,
+                downvotesNum: 6,
+                comments: [
+                ]
+              },
+              {
+                commenterIndex: 3,
+                content: "Go to hell",
+                date: "3 months ago",
+                upvotesNum: 83,
+                downvotesNum: 16,
+                comments: [
+                ]
+              },
+            ]
+          },
+          {
+            commenterIndex: 9,
+            content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
+            date: "4 months ago",
+            upvotesNum: 110,
+            downvotesNum: 12,
+            comments: [
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 47,
+        content: "finally a good reason to skip school. thanks to whoever thought of this",
+        date: "4 months ago",
+        upvotesNum: 19,
+        downvotesNum: 42,
+        comments: [
+          {
+            commenterIndex: 58,
+            content: "Man, this is messed up. It's supposed to be a serious matter and y'all are using it to your advantage.",
+            date: "3 months ago",
+            upvotesNum: 32,
+            downvotesNum: 4,
+            comments: [
+            ]
+          },
+          {
+            commenterIndex: 16,
+            content: "Yeah this is really not cool, bro",
+            date: "3 months ago",
+            upvotesNum: 29,
+            downvotesNum: 5,
+            comments: [
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 59,
+        content: "I hope this protest gives him the attention he deserves.",
+        date: "4 months ago",
+        upvotesNum: 42,
+        downvotesNum: 3,
+        comments: [
+          {
+            commenterIndex: 9,
+            content: "yeah, he was such an innocent child",
+            date: "4 months ago",
+            upvotesNum: 31,
+            downvotesNum: 12,
+            comments: [
+              {
+                commenterIndex: 10,
+                content: "truee",
+                date: "1 day ago",
+                upvotesNum: 3,
+                downvotesNum: 8,
+                comments: [
+                ]
+              },
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 61,
+        content: "let's hope this does something",
+        date: "4 months ago",
+        upvotesNum: 93,
+        downvotesNum: 13,
+        comments: [
+          {
+            commenterIndex: 3,
+            content: "It has to. I really miss Khalil, man. He <strong>needs</strong> to get his justice.",
+            date: "4 months ago",
+            upvotesNum: 120,
+            downvotesNum: 17,
+            comments: [
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 63,
+        content: "A free day? Hell yeah I'm in!",
+        date: "4 months ago",
+        upvotesNum: 41,
+        downvotesNum: 63,
+        comments: [
+          {
+            commenterIndex: 62,
+            content: "Thats the point dude",
+            date: "4 months",
+            upvotesNum: 32,
+            downvotesNum: 75,
+            comments: [
+            ]
+          },
+        ]
+      },
+    ],
+  },
+  {
     title: "RACISM HAS TO STOP!",
     userIndex: 5,
     date: "20.05.2018",
@@ -1278,227 +1499,6 @@ const posts = [
         upvotesNum: 12,
         downvotesNum: 3,
         comments: [
-        ]
-      },
-    ],
-  },
-  {
-    title: "Everyone at Williamson Prep: JOIN THE PROTEST FOR KHALIL! <mark><em>#JusticeForKhalil!</em></mark>",
-    userIndex: 62,
-    date: "string",
-    feedContent: `
-    <div class="feed_post__image_wrapper">
-      <img src="img/posts/khalil_death_protest.jpg" alt="Post BG Image" class="feed_post__image__bg">
-      <img src="img/posts/khalil_death_protest.jpg" alt="Post Image" class="feed_post__image">
-    </div>
-    `,
-    content: `
-    <div class="feed_post__image_wrapper">
-      <img src="img/posts/khalil_death_protest.jpg" alt="Post BG Image" class="feed_post__image__bg">
-      <img src="img/posts/khalil_death_protest.jpg" alt="Post Image" class="feed_post__image">
-    </div>
-    `,
-    flair: "news",
-    upvotesNum: 4261,
-    downvotesNum: 271,
-    commentsNum: 22,
-    comments: [
-      {
-        commenterIndex: 16,
-        content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
-        date: "4 months ago",
-        upvotesNum: 193,
-        downvotesNum: 19,
-        comments: [
-          {
-            commenterIndex: 59,
-            content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
-            date: "4 months ago",
-            upvotesNum: 150,
-            downvotesNum: 21,
-            comments: [
-            ]
-          },
-          {
-            commenterIndex: 58,
-            content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
-            date: "4 months ago",
-            upvotesNum: 142,
-            downvotesNum: 20,
-            comments: [
-            ]
-          },
-          {
-            commenterIndex: 60,
-            content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
-            date: "4 months ago",
-            upvotesNum: 146,
-            downvotesNum: 12,
-            comments: [
-            ]
-          },
-          {
-            commenterIndex: 3,
-            content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
-            date: "4 months ago",
-            upvotesNum: 152,
-            downvotesNum: 8,
-            comments: [
-            ]
-          },
-          {
-            commenterIndex: 5,
-            content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
-            date: "4 months ago",
-            upvotesNum: 221,
-            downvotesNum: 24,
-            comments: [
-            ]
-          },
-          {
-            commenterIndex: 24,
-            content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
-            date: "4 months ago",
-            upvotesNum: 145,
-            downvotesNum: 17,
-            comments: [
-            ]
-          },
-          {
-            commenterIndex: 36,
-            content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
-            date: "4 months ago",
-            upvotesNum: 124,
-            downvotesNum: 14,
-            comments: [
-            ]
-          },
-          {
-            commenterIndex: 29,
-            content: "man shut up you cry babies",
-            date: "3 months ago",
-            upvotesNum: 2,
-            downvotesNum: 273,
-            comments: [
-              {
-                commenterIndex: 36,
-                content: "you just had to ruin it didn't you? show some respect",
-                date: "3 months ago",
-                upvotesNum: 64,
-                downvotesNum: 6,
-                comments: [
-                ]
-              },
-              {
-                commenterIndex: 3,
-                content: "Go to hell",
-                date: "3 months ago",
-                upvotesNum: 83,
-                downvotesNum: 16,
-                comments: [
-                ]
-              },
-            ]
-          },
-          {
-            commenterIndex: 9,
-            content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
-            date: "4 months ago",
-            upvotesNum: 110,
-            downvotesNum: 12,
-            comments: [
-            ]
-          },
-        ]
-      },
-      {
-        commenterIndex: 47,
-        content: "finally a good reason to skip school. thanks to whoever thought of this",
-        date: "4 months ago",
-        upvotesNum: 19,
-        downvotesNum: 42,
-        comments: [
-          {
-            commenterIndex: 58,
-            content: "Man, this is messed up. It's supposed to be a serious matter and y'all are using it to your advantage.",
-            date: "3 months ago",
-            upvotesNum: 32,
-            downvotesNum: 4,
-            comments: [
-            ]
-          },
-          {
-            commenterIndex: 16,
-            content: "Yeah this is really not cool, bro",
-            date: "3 months ago",
-            upvotesNum: 29,
-            downvotesNum: 5,
-            comments: [
-            ]
-          },
-        ]
-      },
-      {
-        commenterIndex: 59,
-        content: "I hope this protest gives him the attention he deserves.",
-        date: "4 months ago",
-        upvotesNum: 42,
-        downvotesNum: 3,
-        comments: [
-          {
-            commenterIndex: 9,
-            content: "yeah, he was such an innocent child",
-            date: "4 months ago",
-            upvotesNum: 31,
-            downvotesNum: 12,
-            comments: [
-              {
-                commenterIndex: 10,
-                content: "truee",
-                date: "1 day ago",
-                upvotesNum: 3,
-                downvotesNum: 8,
-                comments: [
-                ]
-              },
-            ]
-          },
-        ]
-      },
-      {
-        commenterIndex: 61,
-        content: "let's hope this does something",
-        date: "4 months ago",
-        upvotesNum: 93,
-        downvotesNum: 13,
-        comments: [
-          {
-            commenterIndex: 3,
-            content: "It has to. I really miss Khalil, man. He <strong>needs</strong> to get his justice.",
-            date: "4 months ago",
-            upvotesNum: 120,
-            downvotesNum: 17,
-            comments: [
-            ]
-          },
-        ]
-      },
-      {
-        commenterIndex: 63,
-        content: "A free day? Hell yeah I'm in!",
-        date: "4 months ago",
-        upvotesNum: 41,
-        downvotesNum: 63,
-        comments: [
-          {
-            commenterIndex: 62,
-            content: "Thats the point dude",
-            date: "4 months",
-            upvotesNum: 32,
-            downvotesNum: 75,
-            comments: [
-            ]
-          },
         ]
       },
     ],
