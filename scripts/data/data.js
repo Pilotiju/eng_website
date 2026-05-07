@@ -1504,7 +1504,7 @@ const posts = [
     ],
   },
   {
-    title: "Artist of the year 1996: Tupac Shakur - A voice that changed hip-hop culture <u>[TEMP USER]</u>",
+    title: "Artist of the year 1996: Tupac Shakur - A voice that changed hip-hop culture",
     userIndex: 64,
     date: "01.01.1997",
     feedContent: `
