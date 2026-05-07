@@ -476,7 +476,7 @@ const posts = [
     comments: [
       {
         commenterIndex: 15,
-        content: "This interview so weird LOL",
+        content: "This interview is so weird LOL",
         date: "1 month ago",
         upvotesNum: 38,
         downvotesNum: 32,
