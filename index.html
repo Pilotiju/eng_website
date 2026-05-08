@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="styles/main.css">
   <link rel="stylesheet" type="text/css" href="styles/error.css">
+  <link rel="stylesheet" type="text/css" href="styles/ads.css">
   <link rel="preload" as="image" href="img/system/heart-voted.svg">
   <link rel="preload" as="image" href="img/system/heart-crack-voted.svg">
   <link rel="icon" href="img/favico.png" type="image/png">
@@ -17,12 +18,12 @@
   </a>
   <div class="whitespace"></div>
   <div class="main_navbar__item js_main_navbar__account">
-    <img src="img/system/circle-user-round.svg" alt="Account Image" class="main_navbar__account_image">
+    <img src="img/system/circle-user-round.svg" alt="Account Image" class="js_main_navbar__account_image main_navbar__account_image">
   </div>
 </nav>
 
 <main class="index_main">
-  <div class="index_main_item_column"></div>
+  <div class="index_main_item_column js_ads_collumm ads_collumm"></div>
   <div class="index_main_item_column js_post_feed"> <!-- JS injects Feed here --> </div>
   <div class="index_main_item_column"></div>
 </main>
@@ -31,5 +32,6 @@
 <script src="scripts/data/data.js"></script>
 <script src="scripts/feed.js"></script>
 <script src="scripts/post_actions.js"></script>
+<script src="scripts/ads.js"></script>
 </body>
 </html>

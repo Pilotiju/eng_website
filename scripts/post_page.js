@@ -35,6 +35,10 @@ function renderPosts() {
   const postHTML = /*html*/`
             <div data-post-index="${postIndex}" class="posts js_posts js_post_get_data">
               <div class="post__meta post__item">
+              <a href="index.html" class="post__back_arrow_wrapper">
+                <img src="img/system/arrow-big-left.svg" alt="back arrow img" class="post__back_arrow_img">
+              </a>
+
                 <div class="post__user_wrapper">
                   <div class="post__avatar_wrapper">
                     <img src="img/avatars/${avatar}" alt="Avatar" class="post__avatar">

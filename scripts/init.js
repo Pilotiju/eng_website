@@ -38,3 +38,12 @@ function error() {
     </div>
   `;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const navbarLoginIcon = document.querySelector('.js_main_navbar__account_image');
+  navbarLoginIcon.addEventListener('click', () => {
+    localStorage.clear();
+    alert('reset data');
+    location.reload();
+  });
+});

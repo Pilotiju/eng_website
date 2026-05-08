@@ -1,3 +1,32 @@
+.posts_main{
+    padding-top: 62px;
+}
+.posts_wrapper{
+    margin-bottom: 20px;
+}
+
+/* Arrow back */
+.post__back_arrow_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    border-radius: 50%;
+    position: absolute;
+    left: -46px;
+    top: -1.5px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--post-action-bg);
+}
+.post__back_arrow_img{
+    transition: all 0.1s;
+}
+.post__back_arrow_wrapper:hover .post__back_arrow_img{
+    scale: 1.1;
+    cursor: pointer;
+}
+
 /* Post Actions */
 .post_page__post_actions{
     margin-top: 18px;

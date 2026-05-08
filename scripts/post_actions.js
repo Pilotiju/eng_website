@@ -184,24 +184,5 @@ window.addEventListener('pageshow', () => {
         toggleDownvotePost(postEl.querySelector('.js_downvote_btn'));
       }
     }
-    // if (checkBtnVoted){
-    //   if (!upvotedPosts.includes(postElIndex)){
-    //     toggleUpvotePost(postEl.querySelector('.js_upvote_btn'));
-    //     return;
-    //   } else if (!downvotedPosts.includes(postElIndex)){
-    //     toggleDownvotePost(postEl.querySelector('.js_downvote_btn'));
-    //     return;
-    //   }
-    // } else if (!checkBtnVoted){
-    //   if (upvotedPosts.includes(postElIndex)) {
-    //     toggleUpvotePost(postEl.querySelector('.js_upvote_btn'));
-    //     return;
-    //   } else if (downvotedPosts.includes(postElIndex)) {
-    //     toggleDownvotePost(postEl.querySelector('.js_downvote_btn'));
-    //     return;
-    //   }
-    // }
   });
 });
-
-// console.log('%clocalStorage', 'color: rgb(129, 36, 190); border-left: rgb(129, 36, 190) solid 3px; padding-left: 5px', localStorage, '%cupvotedPosts', 'color: rgb(255, 63, 29); border-left: rgb(255, 63, 29) solid 3px; padding-left: 5px', upvotedPosts, '%cdownvotedPosts', 'color: rgb(106, 92, 255); border-left: rgb(106, 92, 255) solid 3px; padding-left: 5px', downvotedPosts)

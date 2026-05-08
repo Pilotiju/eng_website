@@ -55,13 +55,14 @@ mark{
 /** =================== NavBar =================== **/
 .main_navbar{
     display: grid;
-    position: relative;
+    position: fixed;
     grid-template-columns: max-content 1fr 65px;
     grid-template-rows: 100%;
     width: 100%;
     height: 65px;
     border-bottom: 2px var(--main-navbar-border-bottom) solid;
     background-color: var(--main-navbar-bg);
+    z-index: 10;
 }
 .main_navbar__item{
     padding: 10px;
@@ -82,6 +83,9 @@ mark{
 .main_navbar__account_image{
     width: 100%;
 }
+.main_navbar__account_image:hover{
+    cursor: pointer;
+}
 
 /** ==================== Index ==================== **/
 main.index_main{
@@ -89,7 +93,8 @@ main.index_main{
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 100%;
     min-height: 100vh;
-    padding-top: 15px;
+    padding-top: 80px;
+    padding-bottom: 80px;
     width: 100%;
 }
 
