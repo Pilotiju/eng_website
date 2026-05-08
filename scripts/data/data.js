@@ -1852,7 +1852,7 @@ const posts = [
     ],
   },
   {
-    title: "Big Mav's tore - More than just a shop in Garden Heights",
+    title: "Big Mav's store - More than just a shop in Garden Heights",
     userIndex: 3,
     date: "03.07.2017",
     feedContent: `
