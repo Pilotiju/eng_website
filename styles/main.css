@@ -11,6 +11,7 @@ body{
     --text-comment-date-color: rgb(99, 111, 158);
     --text-heading-color: rgb(210, 214, 243);
     --text-text-color: rgb(206, 209, 238);
+    --text-repost-color: rgb(147, 150, 179);
     --text-marked-color: rgb(123, 171, 233);
     --text-quote-color: rgb(161, 166, 216);
     --text-op-color: rgb(113, 214, 245);
@@ -94,7 +95,7 @@ main.index_main{
     grid-template-rows: 100%;
     min-height: 100vh;
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 20px;
     width: 100%;
 }
 
@@ -133,6 +134,9 @@ main.index_main{
     background-color: black;
     overflow: hidden;
     border-radius: 15px;
+}
+.feed_post__image_wrapper--upright .feed_post__image{
+    max-height: 600px !important;
 }
 .feed_post__image{
     object-fit: contain;
@@ -186,6 +190,10 @@ main.index_main{
 }
 .quote_text_wrapper p{
     margin: 0;
+}
+.repost_text{
+    color: var(--text-repost-color);
+    font-style: italic;
 }
 
 /** ==================== Post Page ==================== **/

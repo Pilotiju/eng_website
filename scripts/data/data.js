@@ -346,6 +346,46 @@ const users = [
   },
   // 69
   {
+    name: "Dalv1n",
+    avatar: "",
+  },
+  // 70
+  {
+    name: "GD_mem",
+    avatar: "",
+  },
+  // 71
+  {
+    name: "Khal1l",
+    avatar: "",
+  },
+  // 72
+  {
+    name: "",
+    avatar: "",
+  },
+  // 73
+  {
+    name: "",
+    avatar: "",
+  },
+  // 74
+  {
+    name: "",
+    avatar: "",
+  },
+  // 75
+  {
+    name: "",
+    avatar: "",
+  },
+  // 76
+  {
+    name: "",
+    avatar: "",
+  },
+  // 77
+  {
     name: "",
     avatar: "",
   },
@@ -768,13 +808,13 @@ const posts = [
     userIndex: 62,
     date: "01.06.2017",
     feedContent: `
-    <div class="feed_post__image_wrapper">
+    <div class="feed_post__image_wrapper feed_post__image_wrapper--upright">
       <img src="img/posts/khalil_death_protest.jpg" alt="Post BG Image" class="feed_post__image__bg">
       <img src="img/posts/khalil_death_protest.jpg" alt="Post Image" class="feed_post__image">
     </div>
     `,
     content: `
-    <div class="feed_post__image_wrapper">
+    <div class="feed_post__image_wrapper feed_post__image_wrapper--upright">
       <img src="img/posts/khalil_death_protest.jpg" alt="Post BG Image" class="feed_post__image__bg">
       <img src="img/posts/khalil_death_protest.jpg" alt="Post Image" class="feed_post__image">
     </div>
@@ -1609,6 +1649,182 @@ const posts = [
             date: "10 years ago",
             upvotesNum: 381,
             downvotesNum: 52,
+            comments: [
+            ]
+          },
+        ]
+      },
+    ],
+  },
+  {
+    title: "Repost: Join Big D's party!",
+    userIndex: 32,
+    date: "28.05.2017",
+    feedContent: `
+    <div class="feed_post__image_wrapper feed_post__image_wrapper--upright">
+      <img src="img/posts/big_d_party.png" alt="Post BG Image" class="feed_post__image__bg">
+      <img src="img/posts/big_d_party.png" alt="Post Image" class="feed_post__image">
+    </div>
+    `,
+    content: `
+    <div class="feed_post__image_wrapper feed_post__image_wrapper--upright">
+      <img src="img/posts/big_d_party.png" alt="Post BG Image" class="feed_post__image__bg">
+      <img src="img/posts/big_d_party.png" alt="Post Image" class="feed_post__image">
+    </div>
+    `,
+    flair: "news",
+    upvotesNum: 272,
+    downvotesNum: 53,
+    commentsNum: 17,
+    comments: [
+      {
+        commenterIndex: 65,
+        content: "Let's gooo. Another one of Big D's parties!!! Been waiting since the last one.",
+        date: "4 months ago",
+        upvotesNum: 72,
+        downvotesNum: 14,
+        comments: [
+          {
+            commenterIndex: 66,
+            content: "I don't really get the hype. It's always so many people it's so overwhelming.",
+            date: "4 months ago",
+            upvotesNum: 32,
+            downvotesNum: 27,
+            comments: [
+              {
+                commenterIndex: 49,
+                content: "Naaaahh, I don't understand how people DON'T want to go to those parties. They're so fun. The pain after is all worth it.",
+                date: "4 months ago",
+                upvotesNum: 28,
+                downvotesNum: 15,
+                comments: [
+                  {
+                    commenterIndex: 5,
+                    content: "Well this aged badly.",
+                    date: "4 months ago",
+                    upvotesNum: 31,
+                    downvotesNum: 4,
+                    comments: [
+                    ]
+                  },
+                ]
+              },
+              {
+                commenterIndex: 71,
+                content: "That's what's cool 'bout them you know? Get to dance a lot and see sum old friends again",
+                date: "4 months ago",
+                upvotesNum: 271,
+                downvotesNum: 8,
+                comments: [
+                  {
+                    commenterIndex: 5,
+                    content: "<mark><em>#JusticeForKhalil</em></mark> ✊🏿",
+                    date: "3 months ago",
+                    upvotesNum: 183,
+                    downvotesNum: 17,
+                    comments: [
+                    ]
+                  },
+                  {
+                    commenterIndex: 58,
+                    content: "Last comment huh. RIP",
+                    date: "1 month ago",
+                    upvotesNum: 83,
+                    downvotesNum: 3,
+                    comments: [
+                    ]
+                  },
+                ]
+              },
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 60,
+        content: "Wait wasn't this where the gunshots were fired??",
+        date: "3 months ago",
+        upvotesNum: 29,
+        downvotesNum: 8,
+        comments: [
+          {
+            commenterIndex: 5,
+            content: "Yup, two casualties that evening. One during the party and the other at Carnation Street. RIP",
+            date: "3 months ago",
+            upvotesNum: 42,
+            downvotesNum: 7,
+            comments: [
+              {
+                commenterIndex: 60,
+                content: "Wow that sucks. Hope their family is doing ok.",
+                date: "3 months ago",
+                upvotesNum: 23,
+                downvotesNum: 2,
+                comments: [
+                ]
+              },
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 3,
+        content: "I'm so glad I didn't go to that party. <strong>TWO</strong> deaths in one evening is so messed up. ",
+        date: "3 months ago",
+        upvotesNum: 52,
+        downvotesNum: 6,
+        comments: [
+          {
+            commenterIndex: 60,
+            content: "For real. RIP Khalil. Hope he flies high",
+            date: "3 months ago",
+            upvotesNum: 73,
+            downvotesNum: 8,
+            comments: [
+              {
+                commenterIndex: 3,
+                content: "Hate how the news framed his as a criminal :(",
+                date: "3 months ago",
+                upvotesNum: 21,
+                downvotesNum: 3,
+                comments: [
+                ]
+              },
+              {
+                commenterIndex: 5,
+                content: "Also don't forget <mark><em></em></mark>",
+                date: "3 months ago",
+                upvotesNum: 93,
+                downvotesNum: 4,
+                comments: [
+                ]
+              },
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 16,
+        content: "Man the last party was <strong>crazy</strong>. I gotta check this one out. <mark>@Dalv1n</mark> you gonna be there?",
+        date: "4 months ago",
+        upvotesNum: 52,
+        downvotesNum: 19,
+        comments: [
+          {
+            commenterIndex: 69,
+            content: "You bet buddy",
+            date: "4 months ago",
+            upvotesNum: 121,
+            downvotesNum: 21,
+            comments: [
+            ]
+          },
+          {
+            commenterIndex: 70,
+            content: "He better be",
+            date: "4 months ago",
+            upvotesNum: 21,
+            downvotesNum: 62,
             comments: [
             ]
           },
