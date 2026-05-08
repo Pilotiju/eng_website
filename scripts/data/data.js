@@ -2145,12 +2145,57 @@ const posts = [
         downvotesNum: 8,
         comments: [
           {
+            commenterIndex: 3,
+            content: "I've heard he's going to reopen it, which is sooo cool. He's actually not moving!",
+            date: "2 weeks ago",
+            upvotesNum: 22,
+            downvotesNum: 12,
+            comments: [
+              {
+                commenterIndex: 36,
+                content: "Yeah, Mr. Lewis is actually so generous for giving Mav is store.",
+                date: "2 weeks ago",
+                upvotesNum: 24,
+                downvotesNum: 9,
+                comments: [
+                ]
+              },
+            ]
+          },
+          {
             commenterIndex: 10,
             content: "truee",
             date: "1 week ago",
             upvotesNum: 10,
             downvotesNum: 19,
             comments: [
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 2,
+        content: "Were there any people inside the store?",
+        date: "2 weeks ago",
+        upvotesNum: 19,
+        downvotesNum: 3,
+        comments: [
+          {
+            commenterIndex: 3,
+            content: "There was. They came out relatively safely though.",
+            date: "2 weeks ago",
+            upvotesNum: 31,
+            downvotesNum: 2,
+            comments: [
+              {
+                commenterIndex: 2,
+                content: "Thank goodness for that.",
+                date: "1 week ago",
+                upvotesNum: 13,
+                downvotesNum: 2,
+                comments: [
+                ]
+              },
             ]
           },
         ]
