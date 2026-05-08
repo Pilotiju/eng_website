@@ -13,7 +13,7 @@ function renderPosts() {
     let author = users[userIndex].name;
     let avatar = users[userIndex].avatar;
     if (avatar === '') {
-      avatar = 'circle-user.svg';
+      avatar = 'circle-user-round.svg';
     }
     const html = /*html*/`
           <div data-post-index="${postIndex}" class="feed_post js_feed_post js_post_get_data">

@@ -20,7 +20,7 @@ const users = [
   // 0
   {
     name: "GHH Author",
-    avatar: "",
+    avatar: "circle-user.svg",
   },
   // 1
   {
@@ -90,7 +90,7 @@ const users = [
   // 14
   {
     name: "ASMR - Official Channel",
-    avatar: "",
+    avatar: "circle-user.svg",
   },
   // 15
   {
@@ -200,7 +200,7 @@ const users = [
   // 36
   {
     name: "wriiter",
-    avatar: "",
+    avatar: "wriiter.jpg",
   },
   // 37
   {
@@ -250,7 +250,7 @@ const users = [
   // 46
   {
     name: "johnny3eyes",
-    avatar: "",
+    avatar: "johnny3eyes.jpg",
   },
   // 47
   {
@@ -265,7 +265,7 @@ const users = [
   // 49
   {
     name: "UnRaerae",
-    avatar: "",
+    avatar: "UnRaerae.jpg",
   },
   // 50
   {
@@ -320,12 +320,12 @@ const users = [
   // 60
   {
     name: "wadeamin",
-    avatar: "",
+    avatar: "wadeamin.jpg",
   },
   // 61
   {
     name: "Edpowering",
-    avatar: "",
+    avatar: "Edpowering.jpeg",
   },
   // 62
   {
@@ -340,17 +340,17 @@ const users = [
   // 64
   {
     name: "Artist of the year - Official Account",
-    avatar: "",
+    avatar: "circle-user.svg",
   },
   // 65
   {
     name: "2PAC_fan",
-    avatar: "",
+    avatar: "2PAC_fan.jpg",
   },
   // 66
   {
     name: "Musicwithlily",
-    avatar: "",
+    avatar: "Musicwithlily.webp",
   },
   // 67
   {
@@ -375,38 +375,8 @@ const users = [
   // 71
   {
     name: "Khal1l",
-    avatar: "",
-  },
-  // 72
-  {
-    name: "",
-    avatar: "",
-  },
-  // 73
-  {
-    name: "",
-    avatar: "",
-  },
-  // 74
-  {
-    name: "",
-    avatar: "",
-  },
-  // 75
-  {
-    name: "",
-    avatar: "",
-  },
-  // 76
-  {
-    name: "",
-    avatar: "",
-  },
-  // 77
-  {
-    name: "",
-    avatar: "",
-  },
+    avatar: "Khal1l.webp",
+  }
 ];
 
 const posts = [

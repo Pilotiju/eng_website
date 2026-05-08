@@ -30,7 +30,7 @@ function renderPosts() {
   postAuthorID = userIndex;
   document.title = `YJ - ${title}`;
   if (avatar === '') {
-    avatar = 'circle-user.svg';
+    avatar = 'circle-user-round.svg';
   }
   const postHTML = /*html*/`
             <div data-post-index="${postIndex}" class="posts js_posts js_post_get_data">
@@ -99,7 +99,7 @@ function renderComments(commentArray, nestedLevel, parentCommentID) {
     const { name } = userObject;
     let { avatar } = userObject;
     if (avatar === '') {
-      avatar = 'circle-user.svg';
+      avatar = 'circle-user-round.svg';
     }
     if (commenterIndex === postAuthorID) {
       checkOp = ' (Original Poster)';
