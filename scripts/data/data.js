@@ -823,7 +823,7 @@ const posts = [
     flair: "JusticeForKhalil",
     upvotesNum: 4261,
     downvotesNum: 271,
-    commentsNum: 22,
+    commentsNum: 24,
     comments: [
       {
         commenterIndex: 16,
@@ -1450,7 +1450,7 @@ const posts = [
     flair: "own_opinion",
     upvotesNum: 173,
     downvotesNum: 26,
-    commentsNum: 10,
+    commentsNum: 12,
     comments: [
       {
         commenterIndex: 51,
@@ -2024,7 +2024,7 @@ const posts = [
     flair: "news",
     upvotesNum: 93,
     downvotesNum: 18,
-    commentsNum: 11,
+    commentsNum: 16,
     comments: [
       {
         commenterIndex: 5,
