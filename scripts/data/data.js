@@ -2047,6 +2047,9 @@ const posts = [
       <img src="img/posts/mavs_store_burning.jpeg" alt="Post BG Image" class="feed_post__image__bg">
       <img src="img/posts/mavs_store_burning.jpeg" alt="Post Image" class="feed_post__image">
     </div>
+    <p class="feed_post__text normal_fs">
+      You guys remember the store I talked about recently? Welp...
+    </p>
     `,
     flair: "news",
     upvotesNum: 93,
