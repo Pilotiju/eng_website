@@ -3,7 +3,6 @@ let ammountOfAdRolls = 2;
 
 function getNotUsedAdIndex() {
   let adIndex = Math.floor(Math.random() * 3);
-  console.log(`ammountOfAdRolls: ${ammountOfAdRolls}`);
   ammountOfAdRolls--;
   if (implementedAds.includes(adIndex)) {
     return getNotUsedAdIndex();
