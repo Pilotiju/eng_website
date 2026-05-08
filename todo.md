@@ -1,7 +1,7 @@
 - [X] Bid D's party + comments
+- [X] einige “Protest at Williamson” comments
 - [ ] ads (link, bilder etc.) [bilder noch von @Annalena]
 - [ ] annalenas blog post über den store + comments [jemand muss noch comments schreiben]
 - [ ] der store abgebrannt + comments [jemand muss noch comments schreiben]
-- [ ] einige “Protest at Williamson” comments
 - [ ] einige "Big Mav’s Store burning" comments
 - [ ] mind. 35 weitere avatare / profile pics

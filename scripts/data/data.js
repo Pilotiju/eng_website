@@ -815,9 +815,22 @@ const posts = [
     `,
     content: `
     <div class="feed_post__image_wrapper feed_post__image_wrapper--upright">
-      <img src="img/posts/khalil_death_protest.jpg" alt="Post BG Image" class="feed_post__image__bg">
-      <img src="img/posts/khalil_death_protest.jpg" alt="Post Image" class="feed_post__image">
+    <img src="img/posts/khalil_death_protest.jpg" alt="Post BG Image" class="feed_post__image__bg">
+    <img src="img/posts/khalil_death_protest.jpg" alt="Post Image" class="feed_post__image">
     </div>
+    <br>
+    <p class="feed_post__text normal_fs">
+      <mark><em>#JusticeForKhalil</em></mark> !
+    </p>
+    <p class="feed_post__text normal_fs">
+      The person on the poster is Khalil Harris, a young African-american teenage boy who got shot, by a police officer.
+    </p>
+    <p class="feed_post__text normal_fs">
+      He was shot to death, just because he appeared to be "dangerous".
+    </p>
+    <p class="feed_post__text normal_fs">
+      Let's <strong>all protest</strong> together for Khalil Harris and fight against the discrimination of people of color!
+    </p>
     `,
     flair: "JusticeForKhalil",
     upvotesNum: 4261,
@@ -1018,10 +1031,28 @@ const posts = [
             upvotesNum: 32,
             downvotesNum: 75,
             comments: [
+              {
+                commenterIndex: 59,
+                content: "I thought you were protesting so they give Khalil the justice he deserves?",
+                date: "4 months ago",
+                upvotesNum: 42,
+                downvotesNum: 12,
+                comments: [
+                  {
+                    commenterIndex: 62,
+                    content: `<img src="img/comments/shh.gif" alt="Comment Img" class="js_comment__img comment__img">`,
+                    date: "4 months ago",
+                    upvotesNum: 2,
+                    downvotesNum: 73,
+                    comments: [
+                    ]
+                  },
+                ]
+              },
             ]
           },
         ]
-      },
+      }
     ],
   },
   {

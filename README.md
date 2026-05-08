@@ -11,6 +11,7 @@
 ## gifs
 - https://tenor.com/de/view/weird-al-weird-al-yankovic-al-yankovic-hamster-hamster-meme-gif-580425811717152137
 - https://giphy.com/gifs/funny-JDbx0yICUNdPW
+- https://tenor.com/de/view/rainn-wilson-shh-secret-prank-gif-17131726
 
 ## Profile pic
 - https://wallpapers.com/images/featured-full/cooles-profilbild-87h46gcobjl5e4xu.jpg
