@@ -1863,6 +1863,86 @@ const posts = [
       },
     ],
   },
+  {
+    title: "Big Mav's Store - More than just a shop in Garden Heights",
+    userIndex: 3,
+    date: "03.07.2017",
+    feedContent: `
+      Whenever I walk through Garden Heights, there is this one place I always end up stopping by: Mav's Store. It might look like a simple corner shop at first, but for many people here - including me- it means a lot more than that.
+      The store is owned by Maverick Carter, or “Big Mav” as everyone calls him. What I've always respected about him is that he didn't wait for things to get better in Garden Heights. Instead, he tried to build something himself. The store may not be fancy but feels real and authentic. It feels like a place built with hard work and joy. When I go inside, it doesn't feel like just shopping for stuff. People talk, laugh, and sometimes even argue a little. Although, in a way,  that shows they know each other. It feels like a small community inside a store. I've seen kids from school stop by after class, adults discussing life, and Mr. Carter himself always keeping an eye on everything, like he truly cares about what happens here. 
+      But I also notice that it's not always easy. The store has its struggles, just like the neighborhood. But still, it stays open, and that alone feels like saying, “We are always here.” What I personally take from Big Mav's Store is that small places can still have a huge positive impact. It shows that you don't need perfection to make a difference,  just effort, courage, and honesty. 
+      So if you ever pass by a place like Big Mav's Store in your neighborhood, don't just walk past it. Go inside and talk to people. Make some new connections and get the warm feeling of being accepted. It doesn't matter what's going on in your life because the moment you enter the store, all the tension fades away. 
+      What about you? Do you have a place where you feel truly accepted and welcome? Comment down below!
+    `,
+    content: `
+      <p class="feed_post__text normal_fs">
+        Whenever I walk through Garden Heights, there is this one place I always end up stopping by: Mav's Store. It might look like a simple corner shop at first, but for many people here - including me- it means a lot more than that.
+      </p>
+      <p class="feed_post__text normal_fs">
+        The store is owned by Maverick Carter, or “Big Mav” as everyone calls him. What I've always respected about him is that he didn't wait for things to get better in Garden Heights. Instead, he tried to build something himself. The store may not be fancy but feels real and authentic. It feels like a place built with hard work and joy. When I go inside, it doesn't feel like just shopping for stuff. People talk, laugh, and sometimes even argue a little. Although, in a way,  that shows they know each other. It feels like a small community inside a store. I've seen kids from school stop by after class, adults discussing life, and Mr. Carter himself always keeping an eye on everything, like he truly cares about what happens here. 
+      </p>
+      <p class="feed_post__text normal_fs">
+      But I also notice that it's not always easy. The store has its struggles, just like the neighborhood. But still, it stays open, and that alone feels like saying, “We are always here.” What I personally take from Big Mav's Store is that small places can still have a huge positive impact. It shows that you don't need perfection to make a difference,  just effort, courage, and honesty. 
+      </p>
+      <p class="feed_post__text normal_fs">
+        So if you ever pass by a place like Big Mav's Store in your neighborhood, don't just walk past it. Go inside and talk to people. Make some new connections and get the warm feeling of being accepted. It doesn't matter what's going on in your life because the moment you enter the store, all the tension fades away. 
+      </p>
+      <p class="feed_post__text normal_fs">
+        What about you? Do you have a place where you feel truly accepted and welcome? Comment down below!
+      </p>
+    `,
+    flair: "own_opinion",
+    upvotesNum: 192,
+    downvotesNum: 42,
+    commentsNum: 0,
+    comments: [
+      {
+        commenterIndex: 57,
+        content: "This store is definitely the go to for some snacks. Good prices and always stocked up 👍",
+        date: "3 months ago",
+        upvotesNum: 112,
+        downvotesNum: 17,
+        comments: [
+          {
+            commenterIndex: 65,
+            content: "The snacks do be good. Always love some doritos",
+            date: "3 months ago",
+            upvotesNum: 72,
+            downvotesNum: 8,
+            comments: [
+              {
+                commenterIndex: 3,
+                content: "👍",
+                date: "3 months ago",
+                upvotesNum: 31,
+                downvotesNum: 8,
+                comments: [
+                ]
+              },
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 4,
+        content: "Wait Big Mav? Isn't he a drug dealer?",
+        date: "3 months ago",
+        upvotesNum: 21,
+        downvotesNum: 16,
+        comments: [
+          {
+            commenterIndex: 3,
+            content: "<strong>was</strong>. He isn't doing anything like that anymore.",
+            date: "3 months ago",
+            upvotesNum: 32,
+            downvotesNum: 3,
+            comments: [
+            ]
+          },
+        ]
+      },
+    ],
+  },
 ];
 
 // localStorage.clear();
