@@ -1882,28 +1882,27 @@ const posts = [
     ],
   },
   {
-    title: "Big Mav's Store - More than just a shop in Garden Heights",
+    title: "Big Mav's tore - More than just a shop in Garden Heights",
     userIndex: 3,
     date: "03.07.2017",
     feedContent: `
-      Whenever I walk through Garden Heights, there is this one place I always end up stopping by: Mav's Store. It might look like a simple corner shop at first, but for many people here - including me- it means a lot more than that.
-      The store is owned by Maverick Carter, or “Big Mav” as everyone calls him. What I've always respected about him is that he didn't wait for things to get better in Garden Heights. Instead, he tried to build something himself. The store may not be fancy but feels real and authentic. It feels like a place built with hard work and joy. When I go inside, it doesn't feel like just shopping for stuff. People talk, laugh, and sometimes even argue a little. Although, in a way,  that shows they know each other. It feels like a small community inside a store. I've seen kids from school stop by after class, adults discussing life, and Mr. Carter himself always keeping an eye on everything, like he truly cares about what happens here. 
-      But I also notice that it's not always easy. The store has its struggles, just like the neighborhood. But still, it stays open, and that alone feels like saying, “We are always here.” What I personally take from Big Mav's Store is that small places can still have a huge positive impact. It shows that you don't need perfection to make a difference,  just effort, courage, and honesty. 
-      So if you ever pass by a place like Big Mav's Store in your neighborhood, don't just walk past it. Go inside and talk to people. Make some new connections and get the warm feeling of being accepted. It doesn't matter what's going on in your life because the moment you enter the store, all the tension fades away. 
-      What about you? Do you have a place where you feel truly accepted and welcome? Comment down below!
+      <p class="feed_post__text normal_fs">
+        Whenever I walk through Garden Heights, there is this one place I always end up stopping by: Mav's store. It might look like a simple corner shop at first, but for many people here - including me- it means a lot more than that.
+        The s is owned by Maverick Carter, or “Big Mav” as everyone calls him. What I've always respected about him is that he didn't wait for things to get better in Garden Heights. Instead, he tried to build something himself. The store may not be fancy but feels real and authentic. It feels like a place built with hard work and joy. When I go inside, it doesn't feel like just shopping for stuff. People talk, laugh, and sometimes even argue a little. Although, in a way,  that shows they know each other. It feels like a small community inside a store. I've seen...
+      </p>
     `,
     content: `
       <p class="feed_post__text normal_fs">
-        Whenever I walk through Garden Heights, there is this one place I always end up stopping by: Mav's Store. It might look like a simple corner shop at first, but for many people here - including me- it means a lot more than that.
+        Whenever I walk through Garden Heights, there is this one place I always end up stopping by: Mav's store. It might look like a simple corner shop at first, but for many people here - including me- it means a lot more than that.
       </p>
       <p class="feed_post__text normal_fs">
         The store is owned by Maverick Carter, or “Big Mav” as everyone calls him. What I've always respected about him is that he didn't wait for things to get better in Garden Heights. Instead, he tried to build something himself. The store may not be fancy but feels real and authentic. It feels like a place built with hard work and joy. When I go inside, it doesn't feel like just shopping for stuff. People talk, laugh, and sometimes even argue a little. Although, in a way,  that shows they know each other. It feels like a small community inside a store. I've seen kids from school stop by after class, adults discussing life, and Mr. Carter himself always keeping an eye on everything, like he truly cares about what happens here. 
       </p>
       <p class="feed_post__text normal_fs">
-      But I also notice that it's not always easy. The store has its struggles, just like the neighborhood. But still, it stays open, and that alone feels like saying, “We are always here.” What I personally take from Big Mav's Store is that small places can still have a huge positive impact. It shows that you don't need perfection to make a difference,  just effort, courage, and honesty. 
+      But I also notice that it's not always easy. The store has its struggles, just like the neighborhood. But still, it stays open, and that alone feels like saying, “We are always here.” What I personally take from Big Mav's store is that small places can still have a huge positive impact. It shows that you don't need perfection to make a difference,  just effort, courage, and honesty. 
       </p>
       <p class="feed_post__text normal_fs">
-        So if you ever pass by a place like Big Mav's Store in your neighborhood, don't just walk past it. Go inside and talk to people. Make some new connections and get the warm feeling of being accepted. It doesn't matter what's going on in your life because the moment you enter the store, all the tension fades away. 
+        So if you ever pass by a place like Big Mav's store in your neighborhood, don't just walk past it. Go inside and talk to people. Make some new connections and get the warm feeling of being accepted. It doesn't matter what's going on in your life because the moment you enter the store, all the tension fades away. 
       </p>
       <p class="feed_post__text normal_fs">
         What about you? Do you have a place where you feel truly accepted and welcome? Comment down below!
@@ -1912,7 +1911,7 @@ const posts = [
     flair: "own_opinion",
     upvotesNum: 192,
     downvotesNum: 42,
-    commentsNum: 0,
+    commentsNum: 13,
     comments: [
       {
         commenterIndex: 57,
@@ -1954,6 +1953,200 @@ const posts = [
             date: "3 months ago",
             upvotesNum: 32,
             downvotesNum: 3,
+            comments: [
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 61,
+        content: "This store is sooo chill. So many nice people Big Mav really takes good care of it.",
+        date: "3 months ago",
+        upvotesNum: 41,
+        downvotesNum: 7,
+        comments: [
+          {
+            commenterIndex: 29,
+            content: "Man, it's just a little corner store. Get a life.",
+            date: "2 months ago",
+            upvotesNum: 12,
+            downvotesNum: 25,
+            comments: [
+              {
+                commenterIndex: 9,
+                content: "You have got to be one of the most hateful people on this platform.",
+                date: "2 months ago",
+                upvotesNum: 21,
+                downvotesNum: 4,
+                comments: [
+                ]
+              },
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 5,
+        content: "I really like going here with my friends from time to time. Such a neat store.",
+        date: "3 months ago",
+        upvotesNum: 32,
+        downvotesNum: 17,
+        comments: [
+          {
+            commenterIndex: 24,
+            content: "Same the mood is kinda calming",
+            date: "3 months ago",
+            upvotesNum: 28,
+            downvotesNum: 12,
+            comments: [
+              {
+                commenterIndex: 3,
+                content: "Definitely agree",
+                date: "3 months ago",
+                upvotesNum: 23,
+                downvotesNum: 8,
+                comments: [
+                ]
+              },
+            ]
+          },
+          {
+            commenterIndex: 10,
+            content: "truee",
+            date: "1 month ago",
+            upvotesNum: 13,
+            downvotesNum: 21,
+            comments: [
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 36,
+        content: "I know it's just a corner store but this one is just different from the others in Garden Heights.",
+        date: "4 months ago",
+        upvotesNum: 42,
+        downvotesNum: 13,
+        comments: [
+        ]
+      },
+    ],
+  },
+  {
+    title: "Bad News: Someone burnt down Big Mav's store",
+    userIndex: 3,
+    date: "11.07.2017",
+    feedContent: `
+    <div class="feed_post__image_wrapper">
+      <img src="img/posts/mavs_store_burning.jpeg" alt="Post BG Image" class="feed_post__image__bg">
+      <img src="img/posts/mavs_store_burning.jpeg" alt="Post Image" class="feed_post__image">
+    </div>
+    `,
+    content: `
+    <div class="feed_post__image_wrapper">
+      <img src="img/posts/mavs_store_burning.jpeg" alt="Post BG Image" class="feed_post__image__bg">
+      <img src="img/posts/mavs_store_burning.jpeg" alt="Post Image" class="feed_post__image">
+    </div>
+    `,
+    flair: "news",
+    upvotesNum: 93,
+    downvotesNum: 18,
+    commentsNum: 11,
+    comments: [
+      {
+        commenterIndex: 5,
+        content: "No way?! How?",
+        date: "1 month ago",
+        upvotesNum: 28,
+        downvotesNum: 12,
+        comments: [
+          {
+            commenterIndex: 36,
+            content: "King lit it up...",
+            date: "1 month ago",
+            upvotesNum: 52,
+            downvotesNum: 8,
+            comments: [
+              {
+                commenterIndex: 5,
+                content: "Wasn't he the gang leader Mr. Lewis was talking about on TV that one time?",
+                date: "1 month ago",
+                upvotesNum: 21,
+                downvotesNum: 8,
+                comments: [
+                  {
+                    commenterIndex: 36,
+                    content: "Yup. That's him.",
+                    date: "1 month ago",
+                    upvotesNum: 16,
+                    downvotesNum: 10,
+                    comments: [
+                    ]
+                  },
+                ]
+              },
+              {
+                commenterIndex: 49,
+                content: "If king did it, Mav probably did something to deserve that...",
+                date: "1 month ago",
+                upvotesNum: 21,
+                downvotesNum: 42,
+                comments: [
+                  {
+                    commenterIndex: 5,
+                    content: "I haven't heard anything about Mav doing something wrong to King so I don't think King was in the right here.",
+                    date: "1 month ago",
+                    upvotesNum: 19,
+                    downvotesNum: 3,
+                    comments: [
+                    ]
+                  },
+                ]
+              },
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 61,
+        content: "NOOOO. This was like my favorite store ever. I know it's weird to have such a connection to a store but I just wasn't ready for this. I hope Big Mav is doing alright.",
+        date: "1 month ago",
+        upvotesNum: 32,
+        downvotesNum: 16,
+        comments: [
+          {
+            commenterIndex: 9,
+            content: "Yeah, it's really messed up.",
+            date: "1 month ago",
+            upvotesNum: 21,
+            downvotesNum: 7,
+            comments: [
+            ]
+          },
+          {
+            commenterIndex: 5,
+            content: "So many memories in that store it's actually crazy.",
+            date: "3 weeks ago",
+            upvotesNum: 18,
+            downvotesNum: 5,
+            comments: [
+            ]
+          },
+        ]
+      },
+      {
+        commenterIndex: 30,
+        content: "This sucks. Hope Mav makes it trough all this. Can't stand that King would do something so selfish.",
+        date: "3 weeks ago",
+        upvotesNum: 20,
+        downvotesNum: 8,
+        comments: [
+          {
+            commenterIndex: 10,
+            content: "truee",
+            date: "1 week ago",
+            upvotesNum: 10,
+            downvotesNum: 19,
             comments: [
             ]
           },
