@@ -3,5 +3,5 @@
 - [X] annalenas blog post über den store + comments
 - [X] ads (link, bilder etc.) [bilder noch von @Annalena]
 - [X] der store abgebrannt + comments
-- [ ] einige "Big Mav’s Store burning" comments
+- [X] einige "Big Mav’s Store burning" comments
 - [ ] mind. 35 weitere avatare / profile pics
