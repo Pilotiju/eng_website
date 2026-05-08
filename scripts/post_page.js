@@ -95,7 +95,6 @@ function renderComments(commentArray, nestedLevel, parentCommentID) {
     const { commenterIndex, content, date, upvotesNum, downvotesNum } = commentObject;
     commentObject.commentID = commentID;
     const userObject = users[commenterIndex];
-    console.log(`Object: ${commentObject.content}  |  nestedLevel: ${nestedLevel}  |  commentID: ${commentID}`);
     const { name } = userObject;
     let { avatar } = userObject;
     if (avatar === '') {
@@ -110,7 +109,7 @@ function renderComments(commentArray, nestedLevel, parentCommentID) {
         <div class="comment__avatar_wrapper">
           <img src="img/avatars/${avatar}" alt="Commentor avatar" class="comment__avatar">
         </div>
-        <span class="comment__user_name">${name}<span class="post__op_username">${checkOp}</span> - ID:[${commentID}] - parentCommentID:[${parentCommentID}]</span>
+        <span class="comment__user_name">${name}<span class="post__op_username">${checkOp}</span></span>
         <span class="comment__meta_seperator">•</span>
         <span class="comment__date">${date}</span>
       </div>
