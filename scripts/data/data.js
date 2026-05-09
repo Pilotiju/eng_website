@@ -806,7 +806,6 @@ const posts = [
     <img src="img/posts/khalil_death_protest.jpg" alt="Post BG Image" class="feed_post__image__bg">
     <img src="img/posts/khalil_death_protest.jpg" alt="Post Image" class="feed_post__image">
     </div>
-    <br>
     <p class="feed_post__text normal_fs">
       <mark><em>#JusticeForKhalil</em></mark> !
     </p>
