@@ -2122,7 +2122,7 @@ const posts = [
             comments: [
               {
                 commenterIndex: 36,
-                content: "Yeah, Mr. Lewis is actually so generous for giving Mav is store.",
+                content: "Yeah, Mr. Lewis is actually so generous for giving Mav his store.",
                 date: "2 weeks ago",
                 upvotesNum: 24,
                 downvotesNum: 9,
